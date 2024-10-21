@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Pós Operatorio</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+
+    <body style="background-color: #f4f4f5">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="../img/logo.png" alt="Logo" width="200" height="50" class="d-inline-block align-text-top" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor03">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Menu Principal<span class="visually-hidden">(current)</span> </a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <a class="btn btn-secondary me-2" href="../contato/contato.html">Contato</a>
+                            <button class="btn btn-secondary" type="submit">Version 1.0.0</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <form>
+                <div class="container mt-3">
+                    <!-- Seção Pós-operatório -->
+                    <h5 class="mt-5">Anotação de Enfermagem no Pós-operatório</h5>
+                    <!-- Horário de Retorno da Sala Operatória -->
+                    <div class="row mt-3">
+                        <div class="col-sm-6">
+                            <label class="form-label form-label-sm fw-bold">Horário de Retorno da Sala Operatória</label>
+                            <div class="col-2">
+                                <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-sm-6">
+                            <label class="form-label form-label-sm fw-bold">Retorno da Sala Operatória</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="retornoSala" id="maca" value="maca" />
+                                    <label class="form-check-label" for="maca">Maca</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="retornoSala" id="cadeiraDeRodas" value="cadeiraDeRodas" />
+                                    <label class="form-check-label" for="cadeiraDeRodas">Cadeira de Rodas</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="retornoSala" id="deambulando" value="deambulando" />
+                                    <label class="form-check-label" for="deambulando">Deambulando</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label class="form-label form-label-sm fw-bold">Nível de Consciência</label>
+                            <div class="col-5">
+                                <div class="d-flex">
+                                    <div class="form-check form-check-inline me-3">
+                                        <input class="form-check-input" type="checkbox" name="nivelConsciencia" id="sonolento" value="sonolento" />
+                                        <label class="form-check-label" for="sonolento">Sonolento</label>
+                                    </div>
+                                    <div class="form-check form-check-inline me-3">
+                                        <input class="form-check-input" type="checkbox" name="nivelConsciencia" id="sedado" value="sedado" />
+                                        <label class="form-check-label" for="sedado">Sedado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline me-3">
+                                        <input class="form-check-input" type="checkbox" name="nivelConsciencia" id="acordado" value="acordado" />
+                                        <label class="form-check-label" for="acordado">Acordado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="nivelConsciencia" id="agitado" value="agitado" />
+                                        <label class="form-check-label" for="agitado">Agitado</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <label class="form-label form-label-sm fw-bold">Dor</label>
+                        <div class="d-flex">
+                            <div class="form-check form-check-inline me-3">
+                                <input class="form-check-input" type="radio" name="dor" id="dorSim" value="sim" />
+                                <label class="form-check-label" for="dorSim">Sim</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dor" id="dorNao" value="nao" />
+                                <label class="form-check-label" for="dorNao">Sem dor</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mt-2" id="localDaDorField" style="display: none">
+                            <input type="text" class="form-control form-control-sm" placeholder="Local da dor" />
+                        </div>
+                        <div class="col-sm-12 mt-2" id="escalaEVAField" style="display: none">
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="form-range me-3" min="0" max="10" step="1" id="escalaEVA" value="0" />
+                                <output id="escalaEVAOutput" class="form-text">0</output>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2" id="tickmarks">
+                                <span id="tickmark-0">0</span>
+                                <span id="tickmark-1">1</span>
+                                <span id="tickmark-2">2</span>
+                                <span id="tickmark-3">3</span>
+                                <span id="tickmark-4">4</span>
+                                <span id="tickmark-5">5</span>
+                                <span id="tickmark-6">6</span>
+                                <span id="tickmark-7">7</span>
+                                <span id="tickmark-8">8</span>
+                                <span id="tickmark-9">9</span>
+                                <span id="tickmark-10">10</span>
+                            </div>
+                            <div class="mt-2">
+                                <small><strong>Nota:</strong> dor leve (0-2 cm), dor moderada (3-7 cm) e dor intensa (8-10 cm)</small>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        const escalaEVA = document.getElementById("escalaEVA");
+                        const escalaEVAOutput = document.getElementById("escalaEVAOutput");
+                        const tickmarks = document.getElementById("tickmarks").children;
+
+                        // Sincronizar o valor inicial do output com o valor inicial do range
+                        escalaEVAOutput.value = escalaEVA.value;
+                        Array.from(tickmarks).forEach((mark, index) => {
+                            if (index == escalaEVA.value) {
+                                mark.style.fontWeight = "bold";
+                            } else {
+                                mark.style.fontWeight = "normal";
+                            }
+                        });
+
+                        escalaEVA.addEventListener("input", function () {
+                            escalaEVAOutput.value = escalaEVA.value;
+                            Array.from(tickmarks).forEach((mark, index) => {
+                                if (index == escalaEVA.value) {
+                                    mark.style.fontWeight = "bold";
+                                } else {
+                                    mark.style.fontWeight = "normal";
+                                }
+                            });
+                        });
+                    </script>
+                    <script>
+                        document.querySelectorAll('input[name="dor"]').forEach((elem) => {
+                            elem.addEventListener("change", function (event) {
+                                var localDaDorField = document.getElementById("localDaDorField");
+                                var escalaEVAField = document.getElementById("escalaEVAField");
+                                if (event.target.value === "sim") {
+                                    localDaDorField.style.display = "block";
+                                    escalaEVAField.style.display = "block";
+                                } else {
+                                    localDaDorField.style.display = "none";
+                                    escalaEVAField.style.display = "none";
+                                }
+                            });
+                        });
+                    </script>
+
+                    <!-- Padrão Respiratório -->
+                    <div class="row mt-3">
+                        <div class="col-sm-12">
+                            <label class="form-label form-label-sm fw-bold">Padrão Respiratório</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="respiratorio" id="ventilacaoSemEsforco" value="ventilacaoSemEsforco" />
+                                    <label class="form-check-label" for="ventilacaoSemEsforco">Ventilando em ar ambiente sem esforço</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="respiratorio" id="ventilacaoComEsforco" value="ventilacaoComEsforco" />
+                                    <label class="form-check-label" for="ventilacaoComEsforco">Ventilando em ar ambiente com esforço</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="respiratorio" id="outroRespiratorio" value="outro" />
+                                    <label class="form-check-label" for="outroRespiratorio">Outro (especificar)</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mt-2">
+                                <input type="text" class="form-control form-control-sm" placeholder="Especificar se outro" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Padrão Circulatório -->
+                    <div class="row mt-3">
+                        <div class="col-sm-4">
+                            <label class="form-label form-label-sm fw-bold">Padrão Circulatório - Extremidades</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="circulatorio" id="perfusasAquecidas" value="perfusasAquecidas" />
+                                    <label class="form-check-label" for="perfusasAquecidas">Perfusas e aquecidas</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="circulatorio" id="frias" value="frias" />
+                                    <label class="form-check-label" for="frias">Frias</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="circulatorio" id="cianose" value="cianose" />
+                                    <label class="form-check-label" for="cianose">Cianose</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="form-label form-label-sm fw-bold">Pulsos</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="pulsos" id="semAlteracoes" value="semAlteracoes" />
+                                    <label class="form-check-label" for="semAlteracoes">Sem alterações</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="pulsos" id="comAlteracoes" value="comAlteracoes" />
+                                    <label class="form-check-label" for="comAlteracoes">Com alterações</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aquecido com -->
+
+                        <div class="col-sm-4">
+                            <label class="form-label form-label-sm fw-bold">Aquecido com</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="aquecidoCom" id="lencol" value="lencol" />
+                                    <label class="form-check-label" for="lencol">Lençol</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="aquecidoCom" id="cobertor" value="cobertor" />
+                                    <label class="form-check-label" for="cobertor">Cobertor</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="aquecidoCom" id="naoSeAplica" value="naoSeAplica" />
+                                    <label class="form-check-label" for="naoSeAplica">Não se aplica</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Curativo Cirúrgico -->
+                    <div class="row mt-3">
+                        <div class="col-sm-5">
+                            <label class="form-label form-label-sm fw-bold">Curativo Cirúrgico</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="curativoCirurgico" id="limpoSeco" value="limpoSeco" />
+                                    <label class="form-check-label" for="limpoSeco">Limpo e seco</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="curativoCirurgico" id="sangramentoVisivel" value="sangramentoVisivel" />
+                                    <label class="form-check-label" for="sangramentoVisivel">Sangramento visível</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="curativoCirurgico" id="naoSeAplicaCurativo" value="naoSeAplica" />
+                                    <label class="form-check-label" for="naoSeAplicaCurativo">Não se aplica</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dieta -->
+                        <div class="col-md-3">
+                            <label class="form-label form-label-sm fw-bold">Dieta</label>
+                            <div class="d-flex align-items-center">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="dieta" id="dietaTotal" value="total" />
+                                    <label class="form-check-label" for="dietaTotal">Total</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="radio" name="dieta" id="dietaParcial" value="parcial" />
+                                    <label class="form-check-label" for="dietaParcial">Parcial</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="dieta" id="dietaZero" value="zero" />
+                                    <label class="form-check-label" for="dietaZero">Dieta Zero</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label form-label-sm fw-bold">Horário da Dieta</label>
+                            <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                        </div>
+                    </div>
+                    <!-- Liberado da RPA -->
+                    <div class="row mt-3">
+                        <div class="col-sm-6">
+                            <label class="form-label form-label-sm fw-bold">Liberado da RPA</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="liberadoRPA" id="deambulando" value="deambulando" />
+                                    <label class="form-check-label" for="deambulando">Deambulando</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="liberadoRPA" id="cadeiraDeRodas" value="cadeiraDeRodas" />
+                                    <label class="form-check-label" for="cadeiraDeRodas">em Cadeira de rodas</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="liberadoRPA" id="maca" value="maca" />
+                                    <label class="form-check-label" for="maca">em Maca</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="liberadoRPA" id="muleta" value="muleta" />
+                                    <label class="form-check-label" for="muleta">muleta</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Encaminhado para -->
+
+                        <div class="col-sm-6">
+                            <label class="form-label form-label-sm fw-bold">Encaminhado para</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="encaminhadoPara" id="residencia" value="residencia" />
+                                    <label class="form-check-label" for="residencia">Residência</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="encaminhadoPara" id="repouso" value="repouso" />
+                                    <label class="form-check-label" for="repouso">Repouso</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="encaminhadoPara" id="hupe" value="hupe" />
+                                    <label class="form-check-label" for="hupe">HUPE</label>
+                                </div>
+                                <div class="form-check form-check-inline me-3">
+                                    <input class="form-check-input" type="checkbox" name="encaminhadoPara" id="outro" value="outro" />
+                                    <label class="form-check-label" for="outro">Outro</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mt-2" id="especificarOutroField" style="display: none">
+                                <input type="text" class="form-control form-control-sm" placeholder="Especificar se outro" />
+                            </div>
+                            <script>
+                                document.querySelectorAll('input[name="encaminhadoPara"]').forEach((elem) => {
+                                    elem.addEventListener("change", function (event) {
+                                        var especificarOutroField = document.getElementById("especificarOutroField");
+                                        if (event.target.value === "outro" && event.target.checked) {
+                                            especificarOutroField.style.display = "block";
+                                        } else if (event.target.value === "outro" && !event.target.checked) {
+                                            especificarOutroField.style.display = "none";
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <!-- Horário de Saída e Liberado da RPA -->
+                    <div class="row mt-3">
+                        <div class="col-sm-6">
+                            <label class="form-label form-label-sm fw-bold">Horário de Saída</label>
+                            <div class="col-2">
+                                <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <hr />
+            <section>
+                <div class="container mt-3">
+                    <!-- Botão para copiar os valores do formulário para a área de transferência -->
+                    <button id="btnCopiar" class="btn btn-success mt-3">Copiar para MV</button>
+                    <button id="btnPDF" class="btn btn-info mt-3">Gerar PDF</button>
+                    <button id="btnRecarregar" class="btn btn-danger mt-3" onclick="recarregarPagina()">Limpar Formulario</button>
+                </div>
+            </section>
+            <br /><br /><br /><br /><br /><br /><br />
+            <!-- Modal de Pré-visualização -->
+            <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="previewModalLabel">Pré-visualização dos Dados</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <pre id="previewContent" style="white-space: pre-wrap"></pre>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary" id="confirmCopy">Confirmar e Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("btnCopiar").addEventListener("click", mostrarPrevisualizacao);
+                document.getElementById("confirmCopy").addEventListener("click", copiarParaClipboard);
+            });
+
+            let dados = "";
+
+            function adicionarDado(label, valor) {
+                if (valor) {
+                    dados += `${label}: ${valor}\n`;
+                }
+            }
+
+            function coletarDadosPosOperatorio() {
+                dados = ""; // Reinicia a variável de dados
+
+                // Coleta dos dados do formulário
+                const horarioRetorno = document.querySelector('input[type="time"]').value;
+                adicionarDado("Horário de Retorno da Sala Operatória", horarioRetorno);
+
+                const retornoSala = document.querySelector('input[name="retornoSala"]:checked');
+                adicionarDado("Retorno da Sala Operatória", retornoSala ? retornoSala.nextElementSibling.textContent : "");
+
+                const nivelConsciencia = Array.from(document.querySelectorAll('input[name="nivelConsciencia"]:checked'))
+                    .map((input) => input.nextElementSibling.textContent)
+                    .join(", ");
+                adicionarDado("Nível de Consciência", nivelConsciencia);
+
+                const dor = document.querySelector('input[name="dor"]:checked');
+                if (dor) {
+                    adicionarDado("Dor", dor.nextElementSibling.textContent);
+                    if (dor.value === "sim") {
+                        const localDaDor = document.getElementById("localDaDorField").querySelector("input").value;
+                        const escalaEVA = document.getElementById("escalaEVA").value;
+                        adicionarDado("Local da Dor", localDaDor);
+                        adicionarDado("Escala EVA", escalaEVA);
+                    }
+                } else {
+                    adicionarDado("");
+                }
+
+                const padraoRespiratorio = document.querySelector('input[name="respiratorio"]:checked');
+                adicionarDado("Padrão Respiratório", padraoRespiratorio ? padraoRespiratorio.nextElementSibling.textContent : "");
+
+                const padraoCirculatorio = Array.from(document.querySelectorAll('input[name="circulatorio"]:checked'))
+                    .map((input) => input.nextElementSibling.textContent)
+                    .join(", ");
+                adicionarDado("Padrão Circulatório - Extremidades", padraoCirculatorio);
+
+                const pulsos = document.querySelector('input[name="pulsos"]:checked');
+                adicionarDado("Pulsos", pulsos ? pulsos.nextElementSibling.textContent : "");
+
+                const aquecidoCom = document.querySelector('input[name="aquecidoCom"]:checked');
+                adicionarDado("Aquecido com", aquecidoCom ? aquecidoCom.nextElementSibling.textContent : "");
+
+                const curativoCirurgico = document.querySelector('input[name="curativoCirurgico"]:checked');
+                adicionarDado("Curativo Cirúrgico", curativoCirurgico ? curativoCirurgico.nextElementSibling.textContent : "");
+
+                const dieta = document.querySelector('input[name="dieta"]:checked');
+                adicionarDado("Dieta", dieta ? dieta.nextElementSibling.textContent : "");
+
+                const horarioDieta = document.querySelector('input[placeholder="Horário"]').value;
+                adicionarDado("Horário da Dieta", horarioDieta);
+
+                const liberadoRPA = Array.from(document.querySelectorAll('input[name="liberadoRPA"]:checked'))
+                    .map((input) => input.nextElementSibling.textContent)
+                    .join(", ");
+                adicionarDado("Liberado da RPA", liberadoRPA);
+
+                const encaminhadoPara = Array.from(document.querySelectorAll('input[name="encaminhadoPara"]:checked'))
+                    .map((input) => input.nextElementSibling.textContent)
+                    .join(", ");
+                adicionarDado("Encaminhado para", encaminhadoPara);
+
+                const especificarOutro = document.getElementById("especificarOutroField").style.display !== "none" ? document.getElementById("especificarOutroField").querySelector("input").value : "";
+                adicionarDado("Especificar Outro", especificarOutro);
+
+                const horarioSaida = document.querySelector('input[placeholder="Horário"]').value;
+                adicionarDado("Horário de Saída", horarioSaida);
+            }
+
+            function mostrarPrevisualizacao() {
+                coletarDadosPosOperatorio();
+                document.getElementById("previewContent").textContent = dados;
+
+                // Inicializa e exibe o modal de Bootstrap
+                const modal = new bootstrap.Modal(document.getElementById("previewModal"));
+                modal.show();
+            }
+
+            async function copiarParaClipboard() {
+                try {
+                    await navigator.clipboard.writeText(dados);
+                    alert("Dados copiados para a área de transferência");
+                } catch (err) {
+                    console.error("Erro ao copiar os dados: ", err);
+                    alert("Erro ao copiar os dados. Tente novamente.");
+                }
+            }
+            function recarregarPagina() {
+                location.reload();
+            }
+            document.getElementById("btnRecarregar").addEventListener("click", recarregarPagina);
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>

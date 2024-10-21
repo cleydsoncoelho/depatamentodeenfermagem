@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Pré Operatório- Enfermeira</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+
+    <body style="background-color: #f4f4f5">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="../img/logo.png" alt="Logo" width="200" height="50" class="d-inline-block align-text-top" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarColor03">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Menu Principal<span class="visually-hidden">(current)</span> </a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <a class="btn btn-secondary me-2" href="../contato/contato.html">Contato</a>
+                            <button class="btn btn-secondary" type="submit">Version 1.0.0</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <form>
+            <div class="container mt-3">
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label for="dataCirurgia" class="form-label fw-bold">Data prevista para a cirurgia:</label>
+                        <div class="col-2">
+                            <input type="date" class="form-control form-control-sm" id="dataCirurgia" name="dataCirurgia" value="" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Conteúdo do TAB -->
+                <div class="mt-5">
+                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-bold" id="funcao-papel-tab" data-bs-toggle="tab" data-bs-target="#funcao-papel" type="button" role="tab" aria-controls="funcao-papel" aria-selected="true">MODO FUNÇÃO DO PAPEL</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-bold" id="interdependencia-tab" data-bs-toggle="tab" data-bs-target="#interdependencia" type="button" role="tab" aria-controls="interdependencia" aria-selected="false">MODO INTERDEPENDÊNCIA</button>
+                        </li>
+                        <li class="nav-item fw-bold" role="presentation">
+                            <button class="nav-link" id="autoconceito-tab" data-bs-toggle="tab" data-bs-target="#autoconceito" type="button" role="tab" aria-controls="autoconceito" aria-selected="false">MODO AUTOCONCEITO</button>
+                        </li>
+                        <li class="nav-item fw-bold" role="presentation">
+                            <button class="nav-link" id="fisiologico-tab" data-bs-toggle="tab" data-bs-target="#fisiologico" type="button" role="tab" aria-controls="fisiologico" aria-selected="false">MODO FISIOLÓGICO</button>
+                        </li>
+                        <li class="nav-item fw-bold" role="presentation">
+                            <button class="nav-link" id="diagnosticos-tab" data-bs-toggle="tab" data-bs-target="#diagnosticos" type="button" role="tab" aria-controls="diagnosticos" aria-selected="false">DIAGNÓSTICOS/METAS/INTERVENÇÕES</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="myTabContent">
+                    <!-- Aba "Função do Papel" -->
+                    <div class="tab-pane fade show active" id="funcao-papel" role="tabpanel" aria-labelledby="funcao-papel-tab">
+                        <div id="funcao-papel-form">
+                            <div class="row mt-3">
+                                <!-- Procedência -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold" for="procedenciaResidencia">Procedência:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="procedenciaResidencia" name="procedencia" value="Residência" />
+                                        <label class="form-check-label" for="procedenciaResidencia">Residência</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="procedenciaHupe" name="procedencia" value="HUPE" />
+                                        <label class="form-check-label" for="procedenciaHupe">HUPE</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="procedenciaOutro" name="procedencia" value="Outro" onclick="toggleDescricaoProcedencia(this)" />
+                                        <label class="form-check-label" for="procedenciaOutro">Outro:</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" id="descricaoProcedencia" name="procedenciaDescricao" placeholder="Descreva" aria-label="Outras Procedências" style="display: none" />
+                                </div>
+                            </div>
+
+                            <!-- Gênero -->
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold" for="mulherCisgenero">Gênero:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="mulherCisgenero" name="genero" value="Mulher Cisgênero" />
+                                        <label class="form-check-label" for="mulherCisgenero">Mulher Cisgênero</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="homemCisgenero" name="genero" value="Homem Cisgênero" />
+                                        <label class="form-check-label" for="homemCisgenero">Homem Cisgênero</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="mulherTransgenero" name="genero" value="Mulher Transgênero" />
+                                        <label class="form-check-label" for="mulherTransgenero">Mulher Transgênero</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="homemTransgenero" name="genero" value="Homem Transgênero" />
+                                        <label class="form-check-label" for="homemTransgenero">Homem Transgênero</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="naoBinario" name="genero" value="Não-binário" />
+                                        <label class="form-check-label" for="naoBinario">Não-binário</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="outrosGenero" name="genero" value="Outros" onclick="toggleDescricaoGenero(this)" />
+                                        <label class="form-check-label" for="outrosGenero">Outros:</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" id="descricaoGenero" name="outrosGeneroDescricao" placeholder="Descreva" aria-label="Outros Gêneros" style="display: none" />
+                                </div>
+                            </div>
+
+                            <!-- Pessoa com Deficiência -->
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold" for="deficienciaSim">Pessoa com deficiência:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="deficienciaSim" name="deficiencia" value="Sim" onclick="toggleDescricaoDeficiencia(this)" />
+                                        <label class="form-check-label" for="deficienciaSim">Sim</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="deficienciaNao" name="deficiencia" value="Não" onclick="toggleDescricaoDeficiencia(this)" />
+                                        <label class="form-check-label" for="deficienciaNao">Não</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" id="descricaoDeficiencia" name="deficienciaDescricao" placeholder="Caso positivo, qual?" aria-label="Descrição da Deficiência" style="display: none" />
+                                </div>
+                            </div>
+
+                            <script>
+                                function toggleDescricaoDeficiencia(radio) {
+                                    const descricaoDeficiencia = document.getElementById("descricaoDeficiencia");
+                                    if (radio.value === "Sim" && radio.checked) {
+                                        descricaoDeficiencia.style.display = "block";
+                                    } else {
+                                        descricaoDeficiencia.style.display = "none";
+                                    }
+                                }
+                            </script>
+
+                            <!-- Situação Empregatícia -->
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold" for="empregadoAutonomo">Situação empregatícia:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="empregadoAutonomo" name="empregadoAutonomo" value="Empregado autônomo" />
+                                        <label class="form-check-label" for="empregadoAutonomo">Empregado autônomo</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="empregadoFormal" name="empregadoFormal" value="Empregado formal" />
+                                        <label class="form-check-label" for="empregadoFormal">Empregado formal</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="desempregado" name="desempregado" value="Desempregado" />
+                                        <label class="form-check-label" for="desempregado">Desempregado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="afastado" name="afastado" value="Afastado" />
+                                        <label class="form-check-label" for="afastado">Afastado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="aposentado" name="aposentado" value="Aposentado" />
+                                        <label class="form-check-label" for="aposentado">Aposentado</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="outroSituacao" name="outroSituacao" value="Outro" onclick="toggleDescricaoSituacao(this)" />
+                                        <label class="form-check-label" for="outroSituacao">Outro</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" id="descricaoSituacao" name="outroSituacaoDescricao" placeholder="Descreva" aria-label="Outra Situação" style="display: none" />
+                                </div>
+                                <script>
+                                    function toggleDescricaoSituacao(checkbox) {
+                                        const descricaoSituacao = document.getElementById("descricaoSituacao");
+                                        if (checkbox.checked) {
+                                            descricaoSituacao.style.display = "block";
+                                        } else {
+                                            descricaoSituacao.style.display = "none";
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aba "Interdependência" -->
+                    <div class="tab-pane fade" id="interdependencia" role="tabpanel" aria-labelledby="interdependencia-tab">
+                        <div id="interdependencia-form">
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 6 para Nome do Acompanhante -->
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold" for="nomeAcompanhante">Nome do Acompanhante:</label>
+                                    <input type="text" class="form-control form-control-sm" id="nomeAcompanhante" name="nomeAcompanhante" />
+                                </div>
+                                <!-- Coluna de tamanho 6 para Vínculo com Acompanhante -->
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold" for="vinculoAcompanhante">Vínculo com Acompanhante:</label>
+                                    <input type="text" class="form-control form-control-sm" id="vinculoAcompanhante" name="vinculoAcompanhante" />
+                                </div>
+                                <!-- Coluna de tamanho 4 para Idade do Acompanhante -->
+                                <div class="col-md-2">
+                                    <label class="form-label fw-bold" for="idadeAcompanhante">Idade:</label>
+                                    <input type="text" class="form-control form-control-sm" id="idadeAcompanhante" name="idadeAcompanhante" />
+                                </div>
+                                <!-- Coluna de tamanho 8 para Acompanhante no Retorno -->
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold" for="acompanhanteSim">O acompanhante lhe acompanhará no retorno a sua residência?</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="acompanhanteSim" name="acompanhanteRetorno" value="Sim" onclick="toggleDescricaoAcompanhante(this)" />
+                                            <label class="form-check-label" for="acompanhanteSim">Sim</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="acompanhanteNao" name="acompanhanteRetorno" value="Não" onclick="toggleDescricaoAcompanhante(this)" />
+                                            <label class="form-check-label" for="acompanhanteNao">Não</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3" id="descricaoAcompanhanteRow" style="display: none">
+                                    <div class="col-md-12">
+                                        <label class="form-label" for="descricaoAcompanhante">Descreva:</label>
+                                        <input type="text" class="form-control form-control-sm" id="descricaoAcompanhante" name="descricaoAcompanhante" placeholder="Descreva" />
+                                    </div>
+                                </div>
+                                <script>
+                                    function toggleDescricaoAcompanhante(radio) {
+                                        const descricaoAcompanhanteRow = document.getElementById("descricaoAcompanhanteRow");
+                                        if (radio.checked && radio.value === "Não") {
+                                            descricaoAcompanhanteRow.style.display = "block"; // Mostrar se o valor for "Sim"
+                                        } else {
+                                            descricaoAcompanhanteRow.style.display = "none"; // Ocultar se for "Não"
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aba "Autoconceito" -->
+                    <div class="tab-pane fade" id="autoconceito" role="tabpanel" aria-labelledby="autoconceito-tab">
+                        <div id="autoconceito-form">
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 6 para Especialidade -->
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold" for="especialidade">Especialidade:</label>
+                                    <select class="form-select form-select-sm" id="especialidade" name="especialidade">
+                                        <option value="vazio"></option>
+                                        <option value="cirurgiaGeral">Cirurgia Geral</option>
+                                        <option value="cirurgiaMao">Cirurgia de Mão</option>
+                                        <option value="cirurgiaPlastica">Cirurgia Plástica</option>
+                                        <option value="ctac">Ctac</option>
+                                        <option value="dermatologia">Dermatologia</option>
+                                        <option value="perio">Perio</option>
+                                        <option value="proctologia">Proctologia</option>
+                                        <option value="saudeHomem">Saúde do Homem</option>
+                                        <option value="urologia">Urologia</option>
+                                        <option value="vascular">Vascular</option>
+                                    </select>
+                                </div>
+                                <!-- Coluna de tamanho 6 para Nome do Procedimento -->
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold" for="nomeProcedimento">Nome do Procedimento:</label>
+                                    <input type="text" class="form-control form-control-sm" id="nomeProcedimento" name="nomeProcedimento" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Risco Cirúrgico -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold">Risco Cirúrgico:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="asaI" name="riscoCirurgico" value="ASA I" />
+                                        <label class="form-check-label" for="asaI">ASA I</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="asaII" name="riscoCirurgico" value="ASA II" />
+                                        <label class="form-check-label" for="asaII">ASA II</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="asaIII" name="riscoCirurgico" value="ASA III" />
+                                        <label class="form-check-label" for="asaIII">ASA III</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="naoSeAplica" name="riscoCirurgico" value="Não se aplica" />
+                                        <label class="form-check-label" for="naoSeAplica">Não se aplica</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" id="outrasRiscoObservacao" name="outrasRiscoObservacao" placeholder="Observação" aria-label="Observação" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Exames Complementares -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold" for="examesComplementares">Exames Complementares:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="hemograma" name="exameHemograma" value="Hemograma" />
+                                        <label class="form-check-label" for="hemograma">Hemograma</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="bioquimica" name="exameBioquimica" value="Bioquímica" />
+                                        <label class="form-check-label" for="bioquimica">Bioquímica</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="coagulograma" name="exameCoagulograma" value="Coagulograma" />
+                                        <label class="form-check-label" for="coagulograma">Coagulograma</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="ecg" name="exameECG" value="ECG" />
+                                        <label class="form-check-label" for="ecg">ECG</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="radiografia" name="exameRadiografia" value="Radiografia de Tórax" />
+                                        <label class="form-check-label" for="radiografia">Radiografia de Tórax</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="outrosExames" name="exameOutros" value="Outros" />
+                                        <label class="form-check-label" for="outrosExames">Outros Exames:</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" id="outrosExamesObservacao" name="outrosExamesObservacao" placeholder="Observação" aria-label="Observação" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Jejum -->
+                                <div class="col-md-2">
+                                    <label for="jejumSim" class="form-label fw-bold">Jejum:</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="jejumSim" name="jejum" value="Sim" />
+                                        <label class="form-check-label" for="jejumSim">Sim</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="jejumNao" name="jejum" value="Não" />
+                                        <label class="form-check-label" for="jejumNao">Não</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <label for="hora" class="form-label fw-bold">Hora:</label>
+                                    <input type="time" class="form-control form-control-sm" id="hora" name="hora" placeholder="Hora" aria-label="Hora" />
+                                </div>
+                                <div class="col-md-9">
+                                    <label for="obsUltimaRefeicao" class="form-label" for="obsUltimaRefeicao">Observações sobre o Jejum:</label>
+                                    <input type="text" class="form-control form-control-sm" id="obsUltimaRefeicao" name="obsUltimaRefeicao" placeholder="Observações" aria-label="Horário da Última Refeição" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Comorbidades -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold" for="comorbidades">Comorbidades:</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="hipertensao" name="comorbidadeHipertensao" value="Hipertensão" />
+                                        <label class="form-check-label" for="hipertensao">Hipertensão</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="diabetes" name="comorbidadeDiabetes" value="Diabetes" />
+                                        <label class="form-check-label" for="diabetes">Diabetes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="doencaCardiaca" name="comorbidadeDoencaCardiaca" value="Doença Cardíaca" />
+                                        <label class="form-check-label" for="doencaCardiaca">Doença Cardíaca</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="asma" name="comorbidadeAsma" value="Asma" />
+                                        <label class="form-check-label" for="asma">Asma</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="aids" name="comorbidadeAIDS" value="AIDS" onclick="aidsCheckboxClicked()" />
+                                        <label class="form-check-label" for="aids">AIDS</label>
+                                    </div>
+
+                                    <div id="aidsAlert" class="alert alert-danger mt-2" style="display: none">Atenção: Paciente realizará protocolo de segurança institucional.</div>
+
+                                    <script>
+                                        function aidsCheckboxClicked() {
+                                            const aidsCheckbox = document.getElementById("aids");
+                                            const aidsAlert = document.getElementById("aidsAlert");
+                                            if (aidsCheckbox.checked) {
+                                                aidsAlert.style.display = "block";
+                                            } else {
+                                                aidsAlert.style.display = "none";
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label" for="outrasComorbidadesDescricao">Outras:</label>
+                                    <input type="text" class="form-control form-control-sm" id="outrasComorbidadesDescricao" name="outrasComorbidadesDescricao" placeholder="Descreva outras comorbidades" aria-label="Outras Comorbidades" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Neoplasias -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold">Já teve Neoplasias?</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="neoplasiasNao" name="neoplasias" value="Não" onclick="toggleNeoplasiasInput(this)" />
+                                        <label class="form-check-label" for="neoplasiasNao">Não</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="neoplasiasSim" name="neoplasias" value="Sim" onclick="toggleNeoplasiasInput(this)" />
+                                        <label class="form-check-label" for="neoplasiasSim">Sim</label>
+                                    </div>
+                                    <br />
+                                    <label class="form-label" id="neoplasiasQualLabel" style="display: none">Qual?</label>
+                                    <input type="text" class="form-control form-control-sm" name="neoplasiasQual" placeholder="Qual Neoplasia?" aria-label="Qual Neoplasia?" id="neoplasiasQualInput" style="display: none" />
+                                </div>
+                            </div>
+
+                            <script>
+                                function toggleNeoplasiasInput(radio) {
+                                    const neoplasiasQualLabel = document.getElementById("neoplasiasQualLabel");
+                                    const neoplasiasQualInput = document.getElementById("neoplasiasQualInput");
+                                    if (radio.value === "Sim" && radio.checked) {
+                                        neoplasiasQualLabel.style.display = "block";
+                                        neoplasiasQualInput.style.display = "block";
+                                    } else {
+                                        neoplasiasQualLabel.style.display = "none";
+                                        neoplasiasQualInput.style.display = "none";
+                                    }
+                                }
+                            </script>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Tratamento -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold">Fez Tratamento?</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="tratamentoNao" name="tratamento" value="Não" onclick="toggleDescricaoTratamento(this)" />
+                                        <label class="form-check-label" for="tratamentoNao">Não</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="tratamentoSim" name="tratamento" value="Sim" onclick="toggleDescricaoTratamento(this)" />
+                                        <label class="form-check-label" for="tratamentoSim">Sim</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" name="descricaoTratamento" placeholder="Descreva o tratamento" aria-label="Descrição do Tratamento" style="display: none" id="descricaoTratamento" />
+                                </div>
+                            </div>
+
+                            <script>
+                                function toggleDescricaoTratamento(radio) {
+                                    const descricaoTratamento = document.getElementById("descricaoTratamento");
+                                    if (radio.checked && radio.value === "Sim") {
+                                        descricaoTratamento.style.display = "block";
+                                    } else {
+                                        descricaoTratamento.style.display = "none";
+                                    }
+                                }
+                            </script>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Cirurgias Anteriores -->
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold">Cirurgia(s) anterior(es):</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="cirurgiasAnterioresSim" name="cirurgiasAnteriores" value="Sim" onclick="toggleDescricaoCirurgias(this)" />
+                                        <label class="form-check-label" for="cirurgiasAnterioresSim">Sim</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="cirurgiasAnterioresNao" name="cirurgiasAnteriores" value="Não" onclick="toggleDescricaoCirurgias(this)" />
+                                        <label class="form-check-label" for="cirurgiasAnterioresNao">Não</label>
+                                    </div>
+                                    <br />
+                                    <label class="form-label" id="cirurgiasAnterioresDescricaoLabel" style="display: none">Qual(is)?</label>
+                                    <input type="text" class="form-control form-control-sm" name="cirurgiasAnterioresDescricao" placeholder="Descreva as cirurgias anteriores" aria-label="Cirurgias Anteriores" id="cirurgiasAnterioresDescricaoInput" style="display: none" />
+                                </div>
+                            </div>
+
+                            <script>
+                                function toggleDescricaoCirurgias(radio) {
+                                    const descricaoLabel = document.getElementById("cirurgiasAnterioresDescricaoLabel");
+                                    const descricaoInput = document.getElementById("cirurgiasAnterioresDescricaoInput");
+                                    if (radio.value === "Sim" && radio.checked) {
+                                        descricaoLabel.style.display = "block";
+                                        descricaoInput.style.display = "block";
+                                    } else {
+                                        descricaoLabel.style.display = "none";
+                                        descricaoInput.style.display = "none";
+                                    }
+                                }
+                            </script>
+                            <!--Medicações em Uso-->
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="medicamento_nome_1" class="form-label fw-bold">Lista de Medicamentos:</label>
+                                        <table class="table table-bordered table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome do Medicamento</th>
+                                                    <th>Dose</th>
+                                                    <th>Intervalo</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="medicamentosTbody">
+                                                <tr>
+                                                    <td class="col-6">
+                                                        <label for="medicamento_nome_1" class="visually-hidden">Nome do Medicamento</label>
+                                                        <input type="text" class="form-control form-control-sm" id="medicamento_nome_1" name="medicamento_nome[]" placeholder="Nome do Medicamento" />
+                                                    </td>
+                                                    <td>
+                                                        <label for="medicamento_dose_1" class="visually-hidden">Dose</label>
+                                                        <input type="text" class="form-control form-control-sm" id="medicamento_dose_1" name="medicamento_dose[]" placeholder="Dose" />
+                                                    </td>
+                                                    <td>
+                                                        <label for="medicamento_intervalo_1" class="visually-hidden">Intervalo</label>
+                                                        <input type="text" class="form-control form-control-sm" id="medicamento_intervalo_1" name="medicamento_intervalo[]" placeholder="Intervalo" />
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <button type="button" class="btn btn-primary" id="adicionarMedicamento">Adicionar Medicamento</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="medicamentosAlergia_1" class="form-label">Medicamentos Alergicos:</label>
+                                        <table class="table table-bordered table-sm" id="tabelaMedicamentosAlergia">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-10">Alergias</th>
+                                                    <th class="col-2">Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="medicamentosTbodyAlergia"></tbody>
+                                        </table>
+                                        <button type="button" class="btn btn-danger" id="adicionarMedicamentoAlergia">Adicionar ALERGIA</button>
+                                        <div id="alertAlergia" class="alert alert-warning mt-2 text-dark" style="display: none">Atenção: identifique o paciente conforme o protocolo de segurança para pacientes com alergia.</div>
+                                        <script>
+                                            document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", function () {
+                                                document.getElementById("alertAlergia").style.display = "block";
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Reações Alérgicas -->
+                                <div class="col-md-12">
+                                    <label for="reacaoAlergica" class="form-label fw-bold mt-3">Descreva a reação alérgica, se houver:</label>
+                                    <input type="text" class="form-control form-control-sm" id="reacaoAlergica" name="reacaoAlergica" placeholder="Descreva a reação alérgica" aria-label="Reação Alérgica" />
+                                </div>
+                            </div>
+
+                            <script>
+                                // Função para adicionar uma nova linha à tabela de medicamentos
+                                function adicionarLinhaMedicamento() {
+                                    const tbody = document.getElementById("medicamentosTbody");
+                                    const rowCount = tbody.rows.length;
+                                    const newRow = tbody.insertRow(rowCount);
+                                    const medicamentoId = `medicamento_nome_${rowCount + 1}`;
+                                    const doseId = `medicamento_dose_${rowCount + 1}`;
+                                    const intervaloId = `medicamento_intervalo_${rowCount + 1}`;
+
+                                    newRow.innerHTML = `
+            <td class="col-6">
+                <label for="${medicamentoId}" class="visually-hidden">Nome do Medicamento</label>
+                <input type="text" class="form-control form-control-sm" id="${medicamentoId}" name="medicamento_nome[]" placeholder="Nome do Medicamento" />
+            </td>
+            <td>
+                <label for="${doseId}" class="visually-hidden">Dose</label>
+                <input type="text" class="form-control form-control-sm" id="${doseId}" name="medicamento_dose[]" placeholder="Dose" />
+            </td>
+            <td>
+                <label for="${intervaloId}" class="visually-hidden">Intervalo</label>
+                <input type="text" class="form-control form-control-sm" id="${intervaloId}" name="medicamento_intervalo[]" placeholder="Intervalo" />
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button>
+            </td>
+        `;
+                                }
+
+                                // Função para remover uma linha da tabela de medicamentos
+                                function removerLinhaMedicamento(button) {
+                                    const row = button.closest("tr");
+                                    row.remove();
+                                }
+
+                                // Adiciona uma linha de alergia
+                                function adicionarLinhaAlergia() {
+                                    const tbody = document.getElementById("medicamentosTbodyAlergia");
+                                    const newRow = document.createElement("tr");
+
+                                    const alergiaId = `medicamentoAlergia_${tbody.rows.length + 1}`;
+
+                                    newRow.innerHTML = `
+            <td>
+                <label for="${alergiaId}" class="visually-hidden">Alergia</label>
+                <input type="text" class="form-control form-control-sm" id="${alergiaId}" name="alergia_nome[]" placeholder="Medicamentos, Iodo, Espaladrapo, Luva de Procedimento" />
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaAlergia(this)">Remover</button>
+            </td>
+        `;
+
+                                    tbody.appendChild(newRow);
+                                }
+
+                                // Função para remover uma linha da tabela de alergias
+                                function removerLinhaAlergia(button) {
+                                    const row = button.closest("tr");
+                                    row.remove();
+                                }
+
+                                // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento"
+                                document.getElementById("adicionarMedicamento").addEventListener("click", adicionarLinhaMedicamento);
+
+                                // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento Alergia"
+                                document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", adicionarLinhaAlergia);
+                            </script>
+
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 12 para Tabagista -->
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold" for="tabagistaSim">Tabagista?</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="tabagistaNao" name="tabagista" value="Não" />
+                                        <label class="form-check-label" for="tabagistaNao">Não</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="tabagistaSim" name="tabagista" value="Sim" />
+                                        <label class="form-check-label" for="tabagistaSim">Sim</label>
+                                    </div>
+                                    <label class="form-label ms-2" for="tabagistaFrequencia">Frequência:</label>
+                                    <input type="text" class="form-control form-control-sm" id="tabagistaFrequencia" name="tabagistaFrequencia" placeholder="Frequência" aria-label="Frequência Tabagismo" />
+                                </div>
+
+                                <!-- Coluna de tamanho 12 para Etilista -->
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold" for="etilistaSim">Etilista?</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="etilistaNao" name="etilista" value="Não" />
+                                        <label class="form-check-label" for="etilistaNao">Não</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="etilistaSim" name="etilista" value="Sim" />
+                                        <label class="form-check-label" for="etilistaSim">Sim</label>
+                                    </div>
+                                    <label class="form-label ms-2" for="etilistaFrequencia">Frequência:</label>
+                                    <input type="text" class="form-control form-control-sm" id="etilistaFrequencia" name="etilistaFrequencia" placeholder="Frequência" aria-label="Frequência Etilismo" />
+                                </div>
+
+                                <!-- Coluna de tamanho 12 para Drogas Ilícitas -->
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold" for="drogasIlicitasSim">Drogas Ilícitas?</label><br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="drogasIlicitasNao" name="drogasIlicitas" value="Não" />
+                                        <label class="form-check-label" for="drogasIlicitasNao">Não</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="drogasIlicitasSim" name="drogasIlicitas" value="Sim" />
+                                        <label class="form-check-label" for="drogasIlicitasSim">Sim</label>
+                                    </div>
+                                    <label class="form-label ms-2" for="drogasIlicitasDescricao">Qual(is)?</label>
+                                    <input type="text" class="form-control form-control-sm" id="drogasIlicitasDescricao" name="drogasIlicitasDescricao" placeholder="Qual(is)? - Frequência" aria-label="Drogas Ilícitas" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <!-- Coluna de tamanho 6 para Observações -->
+                                <div class="col-md-12">
+                                    <label for="observacoesautoconceito" class="form-label fw-bold">Observações:</label>
+                                    <textarea class="form-control form-control-sm" id="observacoesautoconceito" name="observacoesautoconceito" placeholder="Descreva alterações se houver" aria-label="Descreva alterações se houver" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aba "Fisiológico" -->
+                    <div class="tab-pane fade" id="fisiologico" role="tabpanel" aria-labelledby="fisiologico-tab">
+                        <div id="fisiologico-form">
+                            <div class="container mt-3">
+                                <div class="row mt-3">
+                                    <!-- Coluna de tamanho 12 para Nível de Consciência -->
+                                    <div class="col-6">
+                                        <label class="form-label fw-bold" for="nivelConscienciaLucido">Nível de Consciência:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="nivelConscienciaLucido" name="nivelConscienciaLucido" value="Lúcido" />
+                                            <label class="form-check-label" for="nivelConscienciaLucido">Lúcido</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="nivelConscienciaOrientado" name="nivelConscienciaOrientado" value="Orientado" />
+                                            <label class="form-check-label" for="nivelConscienciaOrientado">Orientado</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="nivelConscienciaConfuso" name="nivelConscienciaConfuso" value="Confuso" />
+                                            <label class="form-check-label" for="nivelConscienciaConfuso">Confuso</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Coluna de tamanho 12 para Estado Emocional -->
+                                    <div class="col-6">
+                                        <label class="form-label fw-bold" for="estadoEmocionalTranquilo">Estado Emocional:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="estadoEmocionalTranquilo" name="estadoEmocionalTranquilo" value="Tranquilo" />
+                                            <label class="form-check-label" for="estadoEmocionalTranquilo">Tranquilo</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="estadoEmocionalTenso" name="estadoEmocionalTenso" value="Tenso" />
+                                            <label class="form-check-label" for="estadoEmocionalTenso">Tenso</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="estadoEmocionalAnsioso" name="estadoEmocionalAnsioso" value="Ansioso" />
+                                            <label class="form-check-label" for="estadoEmocionalAnsioso">Ansioso</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="estadoEmocionalNervoso" name="estadoEmocionalNervoso" value="Nervoso" />
+                                            <label class="form-check-label" for="estadoEmocionalNervoso">Nervoso</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Acuidade Visual -->
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-bold" for="acuidadeVisualNormal">Acuidade Visual:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="acuidadeVisualNormal" name="acuidadeVisual" value="Normal" />
+                                            <label class="form-check-label" for="acuidadeVisualNormal">Normal</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="acuidadeVisualComprometida" name="acuidadeVisual" value="Comprometida" />
+                                            <label class="form-check-label" for="acuidadeVisualComprometida">Comprometida</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Acuidade Auditiva -->
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-bold" for="acuidadeAuditivaNormal">Acuidade Auditiva:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="acuidadeAuditivaNormal" name="acuidadeAuditiva" value="Normal" />
+                                            <label class="form-check-label" for="acuidadeAuditivaNormal">Normal</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="acuidadeAuditivaComprometida" name="acuidadeAuditiva" value="Comprometida" />
+                                            <label class="form-check-label" for="acuidadeAuditivaComprometida">Comprometida</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Higiene -->
+                                    <div class="col-md-4">
+                                        <label class="form-label fw-bold" for="higieneBoa">Higiene:</label> <br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="higieneBoa" name="higiene" value="Boa" />
+                                            <label class="form-check-label" for="higieneBoa">Boa</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="higieneComprometida" name="higiene" value="Comprometida" />
+                                            <label class="form-check-label" for="higieneComprometida">Comprometida</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Deambulação -->
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold">Deambulação:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoSemDificuldade" name="deambulacao" value="Sem dificuldade" />
+                                            <label class="form-check-label" for="deambulacaoSemDificuldade">Sem dificuldade</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoComDificuldade" name="deambulacao" value="Com dificuldade" />
+                                            <label class="form-check-label" for="deambulacaoComDificuldade">Com dificuldade</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoAndador" name="deambulacao" value="Andador" />
+                                            <label class="form-check-label" for="deambulacaoAndador">Andador</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoMuletas" name="deambulacao" value="Muletas" />
+                                            <label class="form-check-label" for="deambulacaoMuletas">Muletas</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoBengala" name="deambulacao" value="Bengala" />
+                                            <label class="form-check-label" for="deambulacaoBengala">Bengala</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoCadeiraDeRodas" name="deambulacao" value="Cadeira de rodas" />
+                                            <label class="form-check-label" for="deambulacaoCadeiraDeRodas">Cadeira de rodas</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="deambulacaoEmMaca" name="deambulacao" value="Em maca" />
+                                            <label class="form-check-label" for="deambulacaoEmMaca">Em maca</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Uso de Prótese/Órtese -->
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-bold" for="usoDentaria">Uso de Prótese/Órtese:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoDentaria" name="usoDentaria" value="Dentária" />
+                                            <label class="form-check-label" for="usoDentaria">Dentária</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoOrtopedica" name="usoOrtopedica" value="Ortopédica" />
+                                            <label class="form-check-label" for="usoOrtopedica">Ortopédica</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoOcular" name="usoOcular" value="Ocular" />
+                                            <label class="form-check-label" for="usoOcular">Ocular</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoMarcapasso" name="usoMarcapasso" value="Marcapasso" />
+                                            <label class="form-check-label" for="usoMarcapasso">Marcapasso</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoOutras" name="usoOutras" value="Outras" onclick="toggleOutrasProtesesOrteses(this)" />
+                                            <label class="form-check-label" for="usoOutras">Outras</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3" id="outrasProtesesOrtesesRow" style="display: none">
+                                    <div class="col-md-12">
+                                        <label class="form-label" for="outrasProtesesOrteses">Descreva:</label>
+                                        <input type="text" class="form-control form-control-sm" id="outrasProtesesOrteses" name="outrasProtesesOrteses" placeholder="Outras Próteses/Órteses" aria-label="Outras Próteses/Órteses" />
+                                    </div>
+                                </div>
+
+                                <!-- Tricotomia -->
+                                <div class="row mt-3">
+                                    <div class="col-md-9">
+                                        <label class="form-label fw-bold" for="tricotomiaNao">Tricotomia:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="tricotomiaNao" name="tricotomia" value="Não" />
+                                            <label class="form-check-label" for="tricotomiaNao">Não</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="tricotomiaSim" name="tricotomia" value="Sim" />
+                                            <label class="form-check-label" for="tricotomiaSim">Sim. Como?</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="tricotomiaTesoura" name="tricotomiaTesoura" value="Tesoura" />
+                                            <label class="form-check-label" for="tricotomiaTesoura">Tesoura</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="tricotomiaLamina" name="tricotomiaLamina" value="Lâmina" />
+                                            <label class="form-check-label" for="tricotomiaLamina">Lâmina</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="tricotomiaAparador" name="tricotomiaAparador" value="Aparador de Pelos" />
+                                            <label class="form-check-label" for="tricotomiaAparador">Aparador de Pelos</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="tricotomiaCremeDepilatorio" name="tricotomiaCremeDepilatorio" value="Creme depilatório" />
+                                            <label class="form-check-label" for="tricotomiaCremeDepilatorio">Creme depilatório</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label" for="tricotomiaQuando">Quando?</label><br />
+                                        <input type="text" class="form-control form-control-sm" id="tricotomiaQuando" name="tricotomiaQuando" placeholder="Quando" aria-label="Quando" />
+                                    </div>
+                                </div>
+
+                                <!-- Uso de Adereços/Adornos -->
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold" for="usoAderecosSim">Uso de Adereços/Adornos:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="usoAderecosSim" name="usoAderecos" value="Sim" />
+                                            <label class="form-check-label" for="usoAderecosSim">Sim</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="usoAderecosNao" name="usoAderecos" value="Não" />
+                                            <label class="form-check-label" for="usoAderecosNao">Não</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Descrição de Alterações -->
+                                <div class="row mt-3">
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-bold" for="descricaoAlteracoes">Descrição de Alterações:</label>
+                                        <textarea class="form-control form-control-sm" id="descricaoAlteracoes" name="descricaoAlteracoes" placeholder="Descreva alterações se houver" aria-label="Descreva alterações se houver" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aba "Diagnósticos/Metas/Intervenções" -->
+                    <div class="tab-pane fade" id="diagnosticos" role="tabpanel" aria-labelledby="diagnosticos-tab">
+                        <div id="diagnosticos-form">
+                            <form>
+                                <div class="container mt-3">
+                                    <h5>Diagnósticos / Metas / Intervenções</h5>
+                                    <div class="accordion mt-3" id="accordionExample">
+                                        <!-- Os itens do acordeão serão inseridos aqui pelo JavaScript -->
+                                    </div>
+                                </div>
+
+                                <script>
+                                    // Dados JSON
+                                    const dados = [
+                                        {
+                                            id: 1,
+                                            diagnostico: "Ansiedade",
+                                            metas: "Ansiedade diminuída.",
+                                            condutas: ["Identificados fatores causadores", "Encorajada verbalização de sentimentos", "Tranquilizada pessoa", "Tranquilizado familiar", "Solicitada permanência do familiar ou acompanhante"],
+                                            intervencoes: ["Monitorar sinais de ansiedade no paciente", "Acalmar o paciente com comunicação tranquila e suporte emocional", "Comunicar ao enfermeiro qualquer alteração significativa no quadro de ansiedade"],
+                                        },
+                                        {
+                                            id: 2,
+                                            diagnostico: "Risco de Hipotermia",
+                                            metas: "Risco de hipotermia diminuído.",
+                                            condutas: ["Avaliado risco de hipotermia"],
+                                            intervencoes: [
+                                                "Anotar temperatura verificada do paciente no pré-operatório",
+                                                "Anotar temperatura verificada do paciente no pós-operatório",
+                                                "Aquecer pessoa com manta térmica no intraoperatório",
+                                                "Observar sinais de hipotermia",
+                                                "Aquecer pessoa com lençol e cobertor no pós-operatório",
+                                            ],
+                                        },
+                                        {
+                                            id: 3,
+                                            diagnostico: "Risco de lesão por posicionamento perioperatório",
+                                            metas: "Lesão por posicionamento perioperatório ausente.",
+                                            condutas: ["Investigado suscetibilidade a lesão por posicionamento"],
+                                            intervencoes: ["Colocar mecanismos de proteção no posicionamento cirúrgico", "Monitorar pontos de pressão e fricção", "Observar, registrar e comunicar ao enfermeiro o aparecimento de edema e hiperemia nas proeminências ósseas"],
+                                        },
+                                        {
+                                            id: 4,
+                                            diagnostico: "Risco de lesão por queda",
+                                            metas: "Lesão por queda ausente.",
+                                            condutas: ["Preenchida escala de MORSE", "Rastreado risco de queda e de outros acidentes em domicílio", "Colocada pulseira de identificação amarela para risco de queda após preenchimento da escala de MORSE"],
+                                            intervencoes: [
+                                                "Acompanhar pessoa em seus deslocamentos",
+                                                "Posicionar pessoa no leito ou poltrona e mesa cirúrgica",
+                                                "Manter vigilância contínua",
+                                                "Utilizar bandagens de contenção durante cirurgia",
+                                                "Travar as rodas da mesa cirúrgica durante transferência para o leito ou cadeira de rodas",
+                                            ],
+                                        },
+                                        {
+                                            id: 5,
+                                            diagnostico: "Risco de lesão térmica",
+                                            metas: "Lesão térmica ausente.",
+                                            condutas: ["Rastreado uso de adornos, cabelos, cílios e unhas sintéticas", "Solicitada retirada de adornos"],
+                                            intervencoes: [
+                                                "Manter alarme sonoro do dispositivo de eletrocautério em volume audível",
+                                                "Informar imediatamente a equipe cirúrgica em caso de mau funcionamento do dispositivo de eletrocautério",
+                                                "Proteger o corpo de partes metálicas da mesa cirúrgica",
+                                                "Registrar posicionamento correto da placa neutra do bisturi elétrico",
+                                            ],
+                                        },
+                                        {
+                                            id: 6,
+                                            diagnostico: "Alergia",
+                                            metas: "Alergia ausente.",
+                                            condutas: ["Registrada substância alergênica", "Investigado possíveis reações ao alergênico", "Identificado paciente com pulseira de cor vermelha"],
+                                            intervencoes: ["Monitorar os sinais e sintomas de reação alérgica sistêmica e anafilaxia", "Comunicar imediatamente ao enfermeiro a ocorrência de possível reação alérgica"],
+                                        },
+                                        {
+                                            id: 7,
+                                            diagnostico: "Dor aguda",
+                                            metas: "Dor ausente.",
+                                            condutas: ["Avaliados características, intensidade e localização da dor", "Solicitada prescrição de analgesia à equipe médica"],
+                                            intervencoes: ["Avaliar alteração nos sinais vitais", "Avaliar características e intensidade da dor", "Administrar analgésico conforme prescrição médica", "Reavaliar dor após administração de medicação"],
+                                        },
+                                        {
+                                            id: 8,
+                                            diagnostico: "Náusea",
+                                            metas: "Náusea diminuída.",
+                                            condutas: ["Solicitado antiemético à equipe médica", "Monitorar êmese"],
+                                            intervencoes: ["Manter cabeceira do leito a 45 graus no mínimo no pós-operatório, quando possível", "Administrar medicação prescrita"],
+                                        },
+                                        {
+                                            id: 9,
+                                            diagnostico: "Risco de sangramento",
+                                            metas: "Sangramento ausente.",
+                                            condutas: ["Rastreado uso de anticoagulantes"],
+                                            intervencoes: ["Monitorar sinais vitais e saturação de O2", "Observar sinais de sangramento visível na área operada", "Aplicar curativo compressivo em caso de sangramento", "Comunicar imediatamente ao Enfermeiro a ocorrência de sangramento"],
+                                        },
+                                        {
+                                            id: 10,
+                                            diagnostico: "Risco de Aspiração",
+                                            metas: "Aspiração ausente.",
+                                            condutas: ["Investigado suscetibilidade do paciente apresentar aspiração na RPA"],
+                                            intervencoes: [
+                                                "Manter cabeceira elevada, quando possível",
+                                                "Monitorar presença de náuseas e vômitos",
+                                                "Auxiliar o paciente a lateralizar a cabeça na presença de náuseas e vômitos",
+                                                "Deixar sistema de aspiração de vias aéreas montado para uso, se necessário",
+                                                "Comunicar imediatamente ao Enfermeiro a ocorrência de aspiração",
+                                            ],
+                                        },
+                                    ];
+
+                                    // Função para adicionar os itens do acordeão
+                                    function adicionarItensAcordeao(dados) {
+                                        const acordeao = document.getElementById("accordionExample");
+
+                                        dados.forEach((item) => {
+                                            const itemAcordeao = document.createElement("div");
+                                            itemAcordeao.className = "accordion-item";
+                                            itemAcordeao.innerHTML = `
+                        <h2 class="accordion-header" id="heading${item.id}">
+                            <button class="text-dark accordion-button collapsed" type="button" 
+                                aria-expanded="false" aria-controls="collapse${item.id}">
+                                ${item.diagnostico}
+                            </button>
+                        </h2>
+                        <div id="collapse${item.id}" class="accordion-collapse collapse" 
+                            aria-labelledby="heading${item.id}">
+                            <div class="accordion-body">
+                                <strong>Meta:</strong> ${item.metas}<br><br>
+                                <strong class="clickable" data-type="conduta-checkbox">Condutas:</strong><br>
+                                ${item.condutas.map((conduta) => `<div><input type="checkbox" class="conduta-checkbox"> ${conduta}</div>`).join("")}
+                                <br>
+                                <strong class="clickable" data-type="intervencao-checkbox">Intervenções:</strong><br>
+                                ${item.intervencoes.map((intervencao) => `<div><input type="checkbox" class="intervencao-checkbox"> ${intervencao}</div>`).join("")}
+                            </div>
+                        </div>
+                    `;
+                                            acordeao.appendChild(itemAcordeao);
+
+                                            // Evento de clique para abrir/fechar o acordeão
+                                            const headerButton = itemAcordeao.querySelector(".accordion-button");
+                                            const collapseDiv = itemAcordeao.querySelector(".accordion-collapse");
+
+                                            headerButton.addEventListener("click", function () {
+                                                if (collapseDiv.classList.contains("show")) {
+                                                    collapseDiv.classList.remove("show"); // Fecha o painel
+                                                    headerButton.classList.add("collapsed");
+                                                } else {
+                                                    // Fecha todos os outros painéis
+                                                    document.querySelectorAll(".accordion-collapse.show").forEach((openDiv) => {
+                                                        openDiv.classList.remove("show");
+                                                        openDiv.previousElementSibling.querySelector(".accordion-button").classList.add("collapsed");
+                                                    });
+
+                                                    // Abre o painel atual
+                                                    collapseDiv.classList.add("show");
+                                                    headerButton.classList.remove("collapsed");
+                                                }
+                                            });
+                                        });
+
+                                        // Adiciona o evento de clique para selecionar/desmarcar todos os checkboxes
+                                        document.querySelectorAll(".clickable").forEach((el) => {
+                                            el.addEventListener("click", function () {
+                                                const type = this.getAttribute("data-type");
+                                                const checkboxes = this.closest(".accordion-body").querySelectorAll(`.${type}`);
+                                                const allChecked = Array.from(checkboxes).every((checkbox) => checkbox.checked);
+
+                                                checkboxes.forEach((checkbox) => (checkbox.checked = !allChecked));
+                                            });
+                                        });
+                                    }
+
+                                    adicionarItensAcordeao(dados);
+                                </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <section>
+                    <div class="container mt-3">
+                        <!-- Botão para copiar os valores do formulário para a área de transferência -->
+                        <button id="btnCopiar" class="btn btn-success mt-3" type="button">Copiar para MV</button>
+                        <button id="btnPDF" class="btn btn-info mt-3">Gerar PDF</button>
+                        <button id="btnRecarregar" class="btn btn-danger mt-3" onclick="recarregarPagina()">Limpar Formulario</button>
+                    </div>
+                </section>
+            </div>
+        </form>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+
+        <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="previewModalLabel">Pré-visualização dos Dados</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <pre id="previewContent" style="white-space: pre-wrap"></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" id="confirmCopy">Confirmar e Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+        <script>
+            function coletarDataCirurgia() {
+                const dataCirurgia = document.getElementById("dataCirurgia").value;
+                if (dataCirurgia) {
+                    const [year, month, day] = dataCirurgia.split("-");
+                    return `Data prevista para a cirurgia: ${day}/${month}/${year}`;
+                }
+                return "";
+            }
+
+            function coletarFuncaoPapel() {
+                const dados = ["\nMODO FUNÇÃO DO PAPEL"];
+
+                const procedencia = Array.from(document.querySelectorAll('input[name="procedencia"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const genero = document.querySelector('input[name="genero"]:checked')?.value || "";
+                const generoDescricao = document.getElementById("descricaoGenero").value;
+                const deficiencia = document.querySelector('input[name="deficiencia"]:checked')?.value || "";
+                const deficienciaDescricao = document.getElementById("descricaoDeficiencia").value;
+                const situacaoEmpregaticia = Array.from(
+                    document.querySelectorAll('input[name="empregadoAutonomo"]:checked, input[name="empregadoFormal"]:checked, input[name="desempregado"]:checked, input[name="afastado"]:checked, input[name="aposentado"]:checked, input[name="outroSituacao"]:checked')
+                )
+                    .map((el) => el.value)
+                    .join(", ");
+                const situacaoDescricao = document.getElementById("descricaoSituacao").value;
+
+                // Condição para incluir procedência
+                if (procedencia) {
+                    dados.push(`Procedência: ${procedencia}`);
+                }
+
+                // Condição para incluir gênero
+                if (genero) {
+                    let generoTexto = `Gênero: ${genero}`;
+                    if (genero === "Outros" && generoDescricao) {
+                        generoTexto += ` (${generoDescricao})`;
+                    }
+                    dados.push(generoTexto);
+                }
+
+                // Condição para incluir pessoa com deficiência
+                if (deficiencia) {
+                    let deficienciaTexto = `Pessoa com deficiência: ${deficiencia}`;
+                    if (deficiencia === "Sim" && deficienciaDescricao) {
+                        deficienciaTexto += ` (${deficienciaDescricao})`;
+                    }
+                    dados.push(deficienciaTexto);
+                }
+
+                // Condição para incluir situação empregatícia
+                if (situacaoEmpregaticia) {
+                    let situacaoTexto = `Situação empregatícia: ${situacaoEmpregaticia}`;
+                    if (situacaoEmpregaticia.includes("Outro") && situacaoDescricao) {
+                        situacaoTexto += ` (${situacaoDescricao})`;
+                    }
+                    dados.push(situacaoTexto);
+                }
+
+                return dados.join("\n");
+            }
+
+            function coletarInterdependencia() {
+                const dados = ["\nMODO INTERDEPENDÊNCIA"];
+
+                const nomeAcompanhante = document.getElementById("nomeAcompanhante").value;
+                const vinculoAcompanhante = document.getElementById("vinculoAcompanhante").value;
+                const idadeAcompanhante = document.getElementById("idadeAcompanhante").value;
+                const acompanhanteRetorno = document.querySelector('input[name="acompanhanteRetorno"]:checked')?.value || "";
+                const descricaoAcompanhante = document.getElementById("descricaoAcompanhante").value;
+
+                if (nomeAcompanhante) {
+                    dados.push(`Nome do Acompanhante: ${nomeAcompanhante}`);
+                }
+
+                if (vinculoAcompanhante) {
+                    dados.push(`Vínculo com Acompanhante: ${vinculoAcompanhante}`);
+                }
+
+                if (idadeAcompanhante) {
+                    dados.push(`Idade do Acompanhante: ${idadeAcompanhante}`);
+                }
+
+                if (acompanhanteRetorno === "Sim") {
+                    dados.push("O acompanhante lhe acompanhará no retorno a sua residência: Sim");
+                } else if (acompanhanteRetorno === "Não") {
+                    dados.push("O acompanhante lhe acompanhará no retorno a sua residência: Não");
+                    if (descricaoAcompanhante) {
+                        dados.push(`Motivo: ${descricaoAcompanhante}`);
+                    }
+                }
+
+                return dados.join("\n");
+            }
+
+            function coletarAutoconceito() {
+                const dados = ["\nMODO AUTOCONCEITO"];
+
+                const especialidade = document.getElementById("especialidade").value;
+                const nomeProcedimento = document.getElementById("nomeProcedimento").value;
+                const riscoCirurgico = document.querySelector('input[name="riscoCirurgico"]:checked')?.value || "";
+                const outrasRiscoObservacao = document.getElementById("outrasRiscoObservacao").value;
+                const examesComplementares = Array.from(document.querySelectorAll('input[name^="exame"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const outrosExamesObservacao = document.getElementById("outrosExamesObservacao").value;
+                const jejum = document.querySelector('input[name="jejum"]:checked')?.value || "";
+                const hora = document.getElementById("hora").value;
+                const obsUltimaRefeicao = document.getElementById("obsUltimaRefeicao").value;
+                const comorbidades = Array.from(document.querySelectorAll('input[name^="comorbidade"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const outrasComorbidadesDescricao = document.getElementById("outrasComorbidadesDescricao").value;
+                const neoplasias = document.querySelector('input[name="neoplasias"]:checked')?.value || "";
+                const neoplasiasQual = document.getElementById("neoplasiasQualInput").value;
+                const tratamento = document.querySelector('input[name="tratamento"]:checked')?.value || "";
+                const descricaoTratamento = document.getElementById("descricaoTratamento").value;
+                const cirurgiasAnteriores = document.querySelector('input[name="cirurgiasAnteriores"]:checked')?.value || "";
+                const cirurgiasAnterioresDescricao = document.getElementById("cirurgiasAnterioresDescricaoInput").value;
+                const medicamentos = Array.from(document.querySelectorAll('input[name="medicamento_nome[]"]'))
+                    .map((el, index) => {
+                        const dose = document.querySelectorAll('input[name="medicamento_dose[]"]')[index].value;
+                        const intervalo = document.querySelectorAll('input[name="medicamento_intervalo[]"]')[index].value;
+
+                        // Verifica se há valor no nome, dose ou intervalo
+                        if (el.value || dose || intervalo) {
+                            return `${el.value} (Dose: ${dose}, Intervalo: ${intervalo})`;
+                        } else {
+                            return null; // Se não houver valores, retorna null
+                        }
+                    })
+                    .filter(Boolean) // Remove valores nulos
+                    .join(", ");
+                const alergias = Array.from(document.querySelectorAll('input[name="alergia_nome[]"]'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const reacaoAlergica = document.getElementById("reacaoAlergica").value;
+                const observacoes = document.getElementById("observacoesautoconceito").value;
+                const tabagista = document.querySelector('input[name="tabagista"]:checked')?.value || "";
+                const tabagistaFrequencia = document.getElementById("tabagistaFrequencia").value;
+                const etilista = document.querySelector('input[name="etilista"]:checked')?.value || "";
+                const etilistaFrequencia = document.getElementById("etilistaFrequencia").value;
+                const drogasIlicitas = document.querySelector('input[name="drogasIlicitas"]:checked')?.value || "";
+                const drogasIlicitasDescricao = document.getElementById("drogasIlicitasDescricao").value;
+
+                if (especialidade && especialidade !== "vazio") {
+                    dados.push(`Especialidade: ${especialidade}`);
+                }
+                if (nomeProcedimento) {
+                    dados.push(`Nome do Procedimento: ${nomeProcedimento}`);
+                }
+                if (riscoCirurgico) {
+                    let riscoTexto = `Risco Cirúrgico: ${riscoCirurgico}`;
+                    if (outrasRiscoObservacao) {
+                        riscoTexto += ` (${outrasRiscoObservacao})`;
+                    }
+                    dados.push(riscoTexto);
+                }
+                if (examesComplementares) {
+                    let examesTexto = `Exames Complementares: ${examesComplementares}`;
+                    if (examesComplementares.includes("Outros") && outrosExamesObservacao) {
+                        examesTexto += ` (${outrosExamesObservacao})`;
+                    }
+                    dados.push(examesTexto);
+                }
+                if (jejum) {
+                    let jejumTexto = `Jejum: ${jejum}`;
+                    if (hora) {
+                        jejumTexto += ` (Hora: ${hora})`;
+                    }
+                    if (obsUltimaRefeicao) {
+                        jejumTexto += ` (Observações: ${obsUltimaRefeicao})`;
+                    }
+                    dados.push(jejumTexto);
+                }
+                if (comorbidades) {
+                    let comorbidadesTexto = `Comorbidades: ${comorbidades}`;
+                    if (outrasComorbidadesDescricao) {
+                        comorbidadesTexto += ` (Outras: ${outrasComorbidadesDescricao})`;
+                    }
+                    dados.push(comorbidadesTexto);
+                }
+                if (neoplasias) {
+                    let neoplasiasTexto = `Já teve Neoplasias: ${neoplasias}`;
+                    if (neoplasias === "Sim" && neoplasiasQual) {
+                        neoplasiasTexto += ` (Qual: ${neoplasiasQual})`;
+                    }
+                    dados.push(neoplasiasTexto);
+                }
+                if (tratamento) {
+                    let tratamentoTexto = `Fez Tratamento: ${tratamento}`;
+                    if (tratamento === "Sim" && descricaoTratamento) {
+                        tratamentoTexto += ` (Descrição: ${descricaoTratamento})`;
+                    }
+                    dados.push(tratamentoTexto);
+                }
+                if (cirurgiasAnteriores) {
+                    let cirurgiasTexto = `Cirurgia(s) anterior(es): ${cirurgiasAnteriores}`;
+                    if (cirurgiasAnteriores === "Sim" && cirurgiasAnterioresDescricao) {
+                        cirurgiasTexto += ` (Qual(is): ${cirurgiasAnterioresDescricao})`;
+                    }
+                    dados.push(cirurgiasTexto);
+                }
+                if (medicamentos) {
+                    dados.push(`Medicamentos em Uso: ${medicamentos}`);
+                }
+                if (alergias) {
+                    dados.push(`Medicamentos Alergicos: ${alergias}`);
+                }
+                if (reacaoAlergica) {
+                    dados.push(`Reação Alérgica: ${reacaoAlergica}`);
+                }
+                if (observacoes) {
+                    dados.push(`Observações: ${observacoes}`);
+                }
+                if (tabagista) {
+                    let tabagistaTexto = `Tabagista: ${tabagista}`;
+                    if (tabagista === "Sim" && tabagistaFrequencia) {
+                        tabagistaTexto += ` (Frequência: ${tabagistaFrequencia})`;
+                    }
+                    dados.push(tabagistaTexto);
+                }
+                if (etilista) {
+                    let etilistaTexto = `Etilista: ${etilista}`;
+                    if (etilista === "Sim" && etilistaFrequencia) {
+                        etilistaTexto += ` (Frequência: ${etilistaFrequencia})`;
+                    }
+                    dados.push(etilistaTexto);
+                }
+                if (drogasIlicitas) {
+                    let drogasTexto = `Drogas Ilícitas: ${drogasIlicitas}`;
+                    if (drogasIlicitas === "Sim" && drogasIlicitasDescricao) {
+                        drogasTexto += ` (Qual(is): ${drogasIlicitasDescricao})`;
+                    }
+                    dados.push(drogasTexto);
+                }
+
+                return dados.join("\n");
+            }
+
+            function coletarFisiologico() {
+                const dados = ["\nMODO FISIOLÓGICO"];
+
+                const nivelConsciencia = Array.from(document.querySelectorAll('input[name^="nivelConsciencia"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const estadoEmocional = Array.from(document.querySelectorAll('input[name^="estadoEmocional"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const acuidadeVisual = document.querySelector('input[name="acuidadeVisual"]:checked')?.value || "";
+                const acuidadeAuditiva = document.querySelector('input[name="acuidadeAuditiva"]:checked')?.value || "";
+                const higiene = document.querySelector('input[name="higiene"]:checked')?.value || "";
+                const deambulacao = document.querySelector('input[name="deambulacao"]:checked')?.value || "";
+                const usoProtesesOrteses = Array.from(document.querySelectorAll('input[name^="uso"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const outrasProtesesOrteses = document.getElementById("outrasProtesesOrteses").value;
+                const tricotomia = document.querySelector('input[name="tricotomia"]:checked')?.value || "";
+                const tricotomiaMetodos = Array.from(document.querySelectorAll('input[name^="tricotomia"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const tricotomiaQuando = document.getElementById("tricotomiaQuando").value;
+                const usoAderecos = document.querySelector('input[name="usoAderecos"]:checked')?.value || "";
+                const descricaoAlteracoes = document.getElementById("descricaoAlteracoes").value;
+
+                if (nivelConsciencia) {
+                    dados.push(`Nível de Consciência: ${nivelConsciencia}`);
+                }
+                if (estadoEmocional) {
+                    dados.push(`Estado Emocional: ${estadoEmocional}`);
+                }
+                if (acuidadeVisual) {
+                    dados.push(`Acuidade Visual: ${acuidadeVisual}`);
+                }
+                if (acuidadeAuditiva) {
+                    dados.push(`Acuidade Auditiva: ${acuidadeAuditiva}`);
+                }
+                if (higiene) {
+                    dados.push(`Higiene: ${higiene}`);
+                }
+                if (deambulacao) {
+                    dados.push(`Deambulação: ${deambulacao}`);
+                }
+                if (usoProtesesOrteses) {
+                    let usoTexto = `Uso de Prótese/Órtese: ${usoProtesesOrteses}`;
+                    if (usoProtesesOrteses.includes("Outras") && outrasProtesesOrteses) {
+                        usoTexto += ` (${outrasProtesesOrteses})`;
+                    }
+                    dados.push(usoTexto);
+                }
+                if (tricotomia) {
+                    let tricotomiaTexto = `Tricotomia: ${tricotomia}`;
+                    if (tricotomia === "Sim" && tricotomiaMetodos) {
+                        tricotomiaTexto += ` (Métodos: ${tricotomiaMetodos})`;
+                    }
+                    if (tricotomiaQuando) {
+                        tricotomiaTexto += ` (Quando: ${tricotomiaQuando})`;
+                    }
+                    dados.push(tricotomiaTexto);
+                }
+                if (usoAderecos) {
+                    dados.push(`Uso de Adereços/Adornos: ${usoAderecos}`);
+                }
+                if (descricaoAlteracoes) {
+                    dados.push(`Descrição de Alterações: ${descricaoAlteracoes}`);
+                }
+
+                return dados.join("\n");
+            }
+
+            function coletarDiagnosticos() {
+                const dados = ["\nPROCESSO DE ENFERMAGEM"];
+
+                const diagnosticos = document.querySelectorAll(".accordion-item");
+
+                diagnosticos.forEach((diagnosticoItem) => {
+                    // Obter o diagnóstico do título do acordeão
+                    const diagnosticoTitulo = diagnosticoItem.querySelector(".accordion-button").textContent.trim();
+                    const metas = diagnosticoItem.querySelector(".accordion-body").querySelector("strong").nextSibling.textContent.trim();
+
+                    // Verifica se há condutas e intervenções selecionadas
+                    const checkboxesCondutas = diagnosticoItem.querySelectorAll(".conduta-checkbox");
+                    const checkboxesIntervencoes = diagnosticoItem.querySelectorAll(".intervencao-checkbox");
+
+                    const condutasSelecionadas = [];
+                    const intervencoesSelecionadas = [];
+
+                    checkboxesCondutas.forEach((checkbox) => {
+                        if (checkbox.checked) {
+                            condutasSelecionadas.push(checkbox.nextSibling.textContent.trim());
+                        }
+                    });
+
+                    checkboxesIntervencoes.forEach((checkbox) => {
+                        if (checkbox.checked) {
+                            intervencoesSelecionadas.push(checkbox.nextSibling.textContent.trim());
+                        }
+                    });
+
+                    if (condutasSelecionadas.length > 0 || intervencoesSelecionadas.length > 0) {
+                        // Adiciona o título do diagnóstico e metas
+                        dados.push(`\nDiagnóstico: ${diagnosticoTitulo}`);
+                        dados.push(`Metas: ${metas}`);
+
+                        // Adiciona condutas e intervenções se houverem selecionadas
+                        if (condutasSelecionadas.length > 0) {
+                            dados.push("Condutas:");
+                            condutasSelecionadas.forEach((conduta) => {
+                                dados.push(`- ${conduta}`);
+                            });
+                        }
+
+                        if (intervencoesSelecionadas.length > 0) {
+                            dados.push("Intervenções:");
+                            intervencoesSelecionadas.forEach((intervencao) => {
+                                dados.push(`- ${intervencao}`);
+                            });
+                        }
+                    }
+                });
+
+                return dados.join("\n");
+            }
+
+            function coletarDados() {
+                const dados = [coletarDataCirurgia(), coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos()].filter(Boolean); // Remove valores vazios
+                return dados.join("\n");
+            }
+
+            document.getElementById("btnCopiar").addEventListener("click", function () {
+                const dados = coletarDados();
+                document.getElementById("previewContent").textContent = dados;
+                const previewModal = new bootstrap.Modal(document.getElementById("previewModal"));
+                previewModal.show();
+            });
+
+            async function copiarParaClipboard() {
+                const dados = document.getElementById("previewContent").textContent;
+                try {
+                    await navigator.clipboard.writeText(dados);
+                    alert("Dados copiados para a área de transferência");
+                } catch (err) {
+                    console.error("Erro ao copiar os dados: ", err);
+                    alert("Erro ao copiar os dados. Tente novamente.");
+                }
+            }
+
+            document.getElementById("confirmCopy").addEventListener("click", copiarParaClipboard);
+
+            function recarregarPagina() {
+                location.reload();
+            }
+        </script>
+    </body>
+</html>
