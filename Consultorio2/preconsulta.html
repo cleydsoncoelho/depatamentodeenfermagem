@@ -859,115 +859,115 @@
                                                 }
                                             }
                                         </script>
-                                        
-                                </div>
+                                    </div>
 
-                                <div class="row mt-3" id="entregaSection" style="display: none">
-                                    <div class="col-12">
-                                        <label class="form-label fw-bold" for="entregueAcompanhante">Entrega:</label><br />
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="entregueAcompanhante" name="entrega" value="Entregue ao Acompanhante" />
-                                            <label class="form-check-label" for="entregueAcompanhante">Entregue ao Acompanhante</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="guardadoUCAMB" name="entrega" value="Guardado na UCAMB" />
-                                            <label class="form-check-label" for="guardadoUCAMB">Guardado na UCAMB</label>
+                                    <div class="row mt-3" id="entregaSection" style="display: none">
+                                        <div class="col-12">
+                                            <label class="form-label fw-bold" for="entregueAcompanhante">Entrega:</label><br />
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="entregueAcompanhante" name="entrega" value="Entregue ao Acompanhante" />
+                                                <label class="form-check-label" for="entregueAcompanhante">Entregue ao Acompanhante</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="guardadoUCAMB" name="entrega" value="Guardado na UCAMB" />
+                                                <label class="form-check-label" for="guardadoUCAMB">Guardado na UCAMB</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row mt-3" id="observacoesProtesesSection" style="display: none">
-                                    <div class="col-md-12">
-                                        <label for="observacoesProteses" class="form-label fw-bold">Observações sobre Próteses/Órteses:</label>
-                                        <textarea class="form-control form-control-sm" id="observacoesProteses" name="observacoesProteses" placeholder="Descreva observações sobre próteses/órteses" aria-label="Observações sobre Próteses/Órteses" rows="2"></textarea>
-                                    </div>
-                                </div>
-
-                                <script>
-                                    function toggleEntregaSection() {
-                                        const checkboxes = [document.getElementById("usoDentariaSuperior"), document.getElementById("usoDentariaInferior"), document.getElementById("usoOrtopedica"), document.getElementById("usoOcular"), document.getElementById("usoMarcapasso")];
-                                        const entregaSection = document.getElementById("entregaSection");
-                                        const observacoesProtesesSection = document.getElementById("observacoesProtesesSection");
-                                        const isChecked = checkboxes.some((checkbox) => checkbox.checked);
-
-                                        entregaSection.style.display = isChecked ? "block" : "none";
-                                        observacoesProtesesSection.style.display = isChecked ? "block" : "none";
-                                    }
-                                </script>
-
-                                <!-- Tricotomia -->
-                                <div class="row mt-3">
-                                    <div class="col-md-9">
-                                        <label class="form-label fw-bold" for="tricotomiaNao">Tricotomia:</label><br />
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="tricotomiaNao" name="tricotomia" value="Não" />
-                                            <label class="form-check-label" for="tricotomiaNao">Não</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="tricotomiaSim" name="tricotomia" value="Sim" />
-                                            <label class="form-check-label" for="tricotomiaSim">Sim. Como?</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="tricotomiaTesoura" name="tricotomiaTesoura" value="Tesoura" />
-                                            <label class="form-check-label" for="tricotomiaTesoura">Tesoura</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="tricotomiaLamina" name="tricotomiaLamina" value="Lâmina" />
-                                            <label class="form-check-label" for="tricotomiaLamina">Lâmina</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="tricotomiaAparador" name="tricotomiaAparador" value="Aparador de Pelos" />
-                                            <label class="form-check-label" for="tricotomiaAparador">Aparador de Pelos</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="tricotomiaCremeDepilatorio" name="tricotomiaCremeDepilatorio" value="Creme depilatório" />
-                                            <label class="form-check-label" for="tricotomiaCremeDepilatorio">Creme depilatório</label>
+                                    <div class="row mt-3" id="observacoesProtesesSection" style="display: none">
+                                        <div class="col-md-12">
+                                            <label for="observacoesProteses" class="form-label fw-bold">Observações sobre Próteses/Órteses:</label>
+                                            <textarea class="form-control form-control-sm" id="observacoesProteses" name="observacoesProteses" placeholder="Descreva observações sobre próteses/órteses" aria-label="Observações sobre Próteses/Órteses" rows="2"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label" for="tricotomiaQuando">Quando?</label><br />
-                                        <input type="text" class="form-control form-control-sm" id="tricotomiaQuando" name="tricotomiaQuando" placeholder="Quando" aria-label="Quando" />
-                                    </div>
-                                </div>
 
-                                <!-- Uso de Adereços/Adornos -->
-                                <div class="row mt-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label fw-bold" for="usoAderecosSim">Uso de Adereços/Adornos:</label><br />
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="usoAderecosSim" name="usoAderecos" value="Sim" onclick="toggleObservacoesAderecos(this)" />
-                                            <label class="form-check-label" for="usoAderecosSim">Sim</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="usoAderecosNao" name="usoAderecos" value="Não" onclick="toggleObservacoesAderecos(this)" />
-                                            <label class="form-check-label" for="usoAderecosNao">Não</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <script>
+                                        function toggleEntregaSection() {
+                                            const checkboxes = [document.getElementById("usoDentariaSuperior"), document.getElementById("usoDentariaInferior"), document.getElementById("usoOrtopedica"), document.getElementById("usoOcular"), document.getElementById("usoMarcapasso")];
+                                            const entregaSection = document.getElementById("entregaSection");
+                                            const observacoesProtesesSection = document.getElementById("observacoesProtesesSection");
+                                            const isChecked = checkboxes.some((checkbox) => checkbox.checked);
 
-                                <script>
-                                    function toggleObservacoesAderecos(radio) {
-                                        const observacoesAderecosSection = document.getElementById("observacoesAderecosSection");
-                                        if (radio.value === "Sim" && radio.checked) {
-                                            observacoesAderecosSection.style.display = "block";
-                                        } else {
-                                            observacoesAderecosSection.style.display = "none";
+                                            entregaSection.style.display = isChecked ? "block" : "none";
+                                            observacoesProtesesSection.style.display = isChecked ? "block" : "none";
                                         }
-                                    }
-                                </script>
+                                    </script>
 
-                                <div class="row mt-3" id="observacoesAderecosSection" style="display: none">
-                                    <div class="col-md-12">
-                                        <label for="observacoesAderecos" class="form-label fw-bold">Observações sobre Adereços/Adornos:</label>
-                                        <textarea class="form-control form-control-sm" id="observacoesAderecos" name="observacoesAderecos" placeholder="Descreva observações sobre adereços/adornos" aria-label="Observações sobre Adereços/Adornos" rows="2"></textarea>
+                                    <!-- Tricotomia -->
+                                    <div class="row mt-3">
+                                        <div class="col-md-9">
+                                            <label class="form-label fw-bold" for="tricotomiaNao">Tricotomia:</label><br />
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="tricotomiaNao" name="tricotomia" value="Não" />
+                                                <label class="form-check-label" for="tricotomiaNao">Não</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="tricotomiaSim" name="tricotomia" value="Sim" />
+                                                <label class="form-check-label" for="tricotomiaSim">Sim. Como?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="tricotomiaTesoura" name="tricotomiaTesoura" value="Tesoura" />
+                                                <label class="form-check-label" for="tricotomiaTesoura">Tesoura</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="tricotomiaLamina" name="tricotomiaLamina" value="Lâmina" />
+                                                <label class="form-check-label" for="tricotomiaLamina">Lâmina</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="tricotomiaAparador" name="tricotomiaAparador" value="Aparador de Pelos" />
+                                                <label class="form-check-label" for="tricotomiaAparador">Aparador de Pelos</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="tricotomiaCremeDepilatorio" name="tricotomiaCremeDepilatorio" value="Creme depilatório" />
+                                                <label class="form-check-label" for="tricotomiaCremeDepilatorio">Creme depilatório</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label" for="tricotomiaQuando">Quando?</label><br />
+                                            <input type="text" class="form-control form-control-sm" id="tricotomiaQuando" name="tricotomiaQuando" placeholder="Quando" aria-label="Quando" />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- Descrição de Alterações -->
-                                <div class="row mt-3">
-                                    <div class="col-md-12">
-                                        <label class="form-label fw-bold" for="descricaoAlteracoes">Descrição de Alterações:</label>
-                                        <textarea class="form-control form-control-sm" id="descricaoAlteracoes" name="descricaoAlteracoes" placeholder="Descreva alterações se houver" aria-label="Descreva alterações se houver" rows="5"></textarea>
+                                    <!-- Uso de Adereços/Adornos -->
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-bold" for="usoAderecosSim">Uso de Adereços/Adornos:</label><br />
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="usoAderecosSim" name="usoAderecos" value="Sim" onclick="toggleObservacoesAderecos(this)" />
+                                                <label class="form-check-label" for="usoAderecosSim">Sim</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="usoAderecosNao" name="usoAderecos" value="Não" onclick="toggleObservacoesAderecos(this)" />
+                                                <label class="form-check-label" for="usoAderecosNao">Não</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        function toggleObservacoesAderecos(radio) {
+                                            const observacoesAderecosSection = document.getElementById("observacoesAderecosSection");
+                                            if (radio.value === "Sim" && radio.checked) {
+                                                observacoesAderecosSection.style.display = "block";
+                                            } else {
+                                                observacoesAderecosSection.style.display = "none";
+                                            }
+                                        }
+                                    </script>
+
+                                    <div class="row mt-3" id="observacoesAderecosSection" style="display: none">
+                                        <div class="col-md-12">
+                                            <label for="observacoesAderecos" class="form-label fw-bold">Observações sobre Adereços/Adornos:</label>
+                                            <textarea class="form-control form-control-sm" id="observacoesAderecos" name="observacoesAderecos" placeholder="Descreva observações sobre adereços/adornos" aria-label="Observações sobre Adereços/Adornos" rows="2"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Descrição de Alterações -->
+                                    <div class="row mt-3">
+                                        <div class="col-md-12">
+                                            <label class="form-label fw-bold" for="descricaoAlteracoes">Descrição de Alterações:</label>
+                                            <textarea class="form-control form-control-sm" id="descricaoAlteracoes" name="descricaoAlteracoes" placeholder="Descreva alterações se houver" aria-label="Descreva alterações se houver" rows="5"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -978,7 +978,7 @@
                         <div id="diagnosticos-form">
                             <form>
                                 <div class="container mt-3">
-                                    <h5>Diagnósticos / Metas / Intervenções</h5>
+                                    <h5>Processo de Enfermagem</h5>
                                     <div class="accordion mt-3" id="accordionExample">
                                         <!-- Os itens do acordeão serão inseridos aqui pelo JavaScript -->
                                     </div>
