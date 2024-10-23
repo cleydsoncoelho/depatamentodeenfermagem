@@ -8,7 +8,7 @@
     </head>
 
     <body style="background-color: #f4f4f5">
-        <header>
+        <header style="position: fixed; top: 0; width: 100%; z-index: 1000">
             <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
                 <div class="container">
                     <a class="navbar-brand" href="#">
@@ -31,6 +31,17 @@
                 </div>
             </nav>
         </header>
+        <header style="position: fixed; top: 70px; width: 100%; z-index: 999">
+            <div class="justify-content-start bg-light">
+                <div class="container mb-3">
+                    <button id="btnCopiar" class="btn btn-success mt-3 me-2 mb-2">Vizualizar e Copiar</button>
+                    <button id="btnPDF" class="btn btn-info mt-3 me-2 mb-2">Gerar PDF</button>
+                    <button id="btnRecarregar" class="btn btn-danger mt-3 mb-2" onclick="recarregarPagina()">Limpar Formulario</button>
+                </div>
+            </div>
+        </header>
+        <div style="height: 140px"></div>
+        <!-- Espaçador para evitar que o conteúdo fique oculto atrás dos cabeçalhos fixos -->
         <form>
             <div class="container mt-5">
                 <!-- Seção Intraoperatório -->
@@ -52,6 +63,10 @@
                         <label class="form-label form-label-sm fw-bold">Auxiliado em entrada do paciente em sala operatória</label>
                         <div class="d-flex">
                             <div class="form-check form-check-inline form-check-sm">
+                                <input class="form-check-input" type="checkbox" name="entrada" id="deambulando" value="deambulando" />
+                                <label class="form-check-label" for="deambulando">Deambulando</label>
+                            </div>
+                            <div class="form-check form-check-inline form-check-sm">
                                 <input class="form-check-input" type="checkbox" name="entrada" id="maca" value="maca" />
                                 <label class="form-check-label" for="maca">Em Maca</label>
                             </div>
@@ -60,12 +75,12 @@
                                 <label class="form-check-label" for="cadeira">Em Cadeira de Rodas</label>
                             </div>
                             <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="checkbox" name="entrada" id="deambulando" value="deambulando" />
-                                <label class="form-check-label" for="deambulando">Deambulando</label>
+                                <input class="form-check-input" type="checkbox" name="entrada" id="auxiliado" value="auxiliado" />
+                                <label class="form-check-label" for="auxiliado">Auxiliado</label>
                             </div>
                             <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="checkbox" name="entrada" id="auxiliado" value="auxiliado" />
-                                <label class="form-check-label" for="auxiliado">Apoiado/Auxiliado</label>
+                                <input class="form-check-input" type="checkbox" name="entrada" id="apoiado" value="apoiado" />
+                                <label class="form-check-label" for="apoiado">Apoiado</label>
                             </div>
                         </div>
                     </div>
@@ -358,7 +373,7 @@
                         <label class="form-label form-label-sm fw-bold">Peça anatômica para biópsia</label>
                         <div class="d-flex flex-wrap">
                             <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="checkbox" name="biopsia" id="fragmentosProstata" value="fragmentosProstata" />
+                                <input class="form-check-input" type="checkbox" name="biopsia" id="fragmentosProstata" value="fragmentosProstata" onclick="toggleLocationSection(this.checked)" />
                                 <label class="form-check-label" for="fragmentosProstata">Fragmentos de Próstata</label>
                             </div>
                             <div class="form-check form-check-inline form-check-sm">
@@ -375,14 +390,45 @@
                             <textarea class="form-control form-control-sm" rows="2" placeholder="Descreva a peça anatômica"></textarea>
                         </div>
                     </div>
+
+                    <!-- Localização da peça anatômica para biópsia -->
+                    <div class="col-sm-12 mt-3" id="locationSection" style="display: none">
+                        <div class="form-check form-check-inline form-check-sm">
+                            <input class="form-check-input" type="checkbox" name="localizacaoBiopsia" id="apiceDireito" value="apiceDireito" checked />
+                            <label class="form-check-label" for="apiceDireito">Ápice Direito</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-sm">
+                            <input class="form-check-input" type="checkbox" name="localizacaoBiopsia" id="apiceEsquerdo" value="apiceEsquerdo" checked />
+                            <label class="form-check-label" for="apiceEsquerdo">Ápice Esquerdo</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-sm">
+                            <input class="form-check-input" type="checkbox" name="localizacaoBiopsia" id="medioDireito" value="medioDireito" checked />
+                            <label class="form-check-label" for="medioDireito">Médio Direito</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-sm">
+                            <input class="form-check-input" type="checkbox" name="localizacaoBiopsia" id="medioEsquerdo" value="medioEsquerdo" checked />
+                            <label class="form-check-label" for="medioEsquerdo">Médio Esquerdo</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-sm">
+                            <input class="form-check-input" type="checkbox" name="localizacaoBiopsia" id="baseDireita" value="baseDireita" checked />
+                            <label class="form-check-label" for="baseDireita">Base Direita</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-sm">
+                            <input class="form-check-input" type="checkbox" name="localizacaoBiopsia" id="baseEsquerda" value="baseEsquerda" checked />
+                            <label class="form-check-label" for="baseEsquerda">Base Esquerda</label>
+                        </div>
+                        <textarea class="form-control form-control-sm" rows="2" placeholder="Observações"></textarea>
+                    </div>
+
                     <script>
                         function toggleBiopsiaDetails(show) {
                             const biopsiaDetails = document.getElementById("biopsiaDetails");
-                            if (show) {
-                                biopsiaDetails.style.display = "block";
-                            } else {
-                                biopsiaDetails.style.display = "none";
-                            }
+                            biopsiaDetails.style.display = show ? "block" : "none";
+                        }
+
+                        function toggleLocationSection(show) {
+                            const locationSection = document.getElementById("locationSection");
+                            locationSection.style.display = show ? "block" : "none";
                         }
                     </script>
                 </div>
@@ -425,86 +471,107 @@
                     }
                 </script>
 
-                <!-- Nome do Instrumental -->
-                <div class="row mt-3">
-                    <div class="col-sm-12">
-                        <label class="form-label form-label-sm fw-bold">Nome do Instrumental</label>
-                        <div class="row">
-                            <div class="col-4">
-                                <input type="text" class="form-control form-control-sm" placeholder="Nome do Instrumental" id="nomeInstrumental" oninput="toggleInstrumentalDetails()" />
-                            </div>
-                            <div class="col-2">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="checkbox" name="instrumental" id="naoSeAplicaInstrumental" value="naoSeAplica" onchange="toggleInstrumentalDetails()" />
-                                    <label class="form-check-label" for="naoSeAplicaInstrumental">Não se aplica</label>
+                <div id="instrumentalList">
+                    <!-- Nome do Instrumental -->
+                    <div class="row mt-3 instrumental-item">
+                        <div class="col-sm-12">
+                            <label class="form-label form-label-sm fw-bold">Nome do Instrumental</label>
+                            <div class="row">
+                                <div class="col-4">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Nome do Instrumental" oninput="toggleInstrumentalDetails(this)" />
+                                </div>
+                                <div class="col-2" id="naoSeAplicaWrapper">
+                                    <div class="form-check form-check-inline form-check-sm">
+                                        <input class="form-check-input" type="checkbox" onchange="toggleInstrumentalDetails(this)" id="naoSeAplica" />
+                                        <label class="form-check-label" for="naoSeAplica">Não se aplica</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Detalhes do Instrumental -->
+                    <div class="instrumental-details" style="display: none; border: 1px solid #198754; padding: 15px; margin-top: 15px; border-radius: 5px">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="form-label form-label-sm">Conferido embalagem da caixa de instrumentais</label>
+                                <div class="form-check form-check-sm">
+                                    <input class="form-check-input" type="checkbox" />
+                                    <label class="form-check-label">Sim</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <label class="form-label form-label-sm">Realizado leitura e interpretação do integrador dos instrumentais</label>
+                                <div class="form-check form-check-sm">
+                                    <input class="form-check-input" type="checkbox" />
+                                    <label class="form-check-label">Sim</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-2">
+                                <label class="form-label form-label-sm">Lote</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Lote" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="form-label form-label-sm">Validade</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Validade" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="form-label form-label-sm">Contagem inicial</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Contagem inicial" />
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="form-label form-label-sm">Contagem final</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Contagem final" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-12">
+                                <label class="form-label form-label-sm">Observação</label>
+                                <input type="text" class="form-control form-control-sm" placeholder="Observação" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="instrumentalDetails" style="display: none; border: 1px solid #198754; padding: 15px; margin-top: 15px; border-radius: 5px">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <!-- Conferido embalagem da caixa de instrumentais -->
-                            <label class="form-label form-label-sm">Conferido embalagem da caixa de instrumentais</label>
-                            <div class="form-check form-check-sm">
-                                <input class="form-check-input" type="checkbox" name="embalagemCaixa" id="embalagemCaixaSim" value="sim" />
-                                <label class="form-check-label" for="embalagemCaixaSim">Sim</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-5">
-                            <!-- Realizado leitura e interpretação do integrador dos instrumentais -->
-                            <label class="form-label form-label-sm">Realizado leitura e interpretação do integrador dos instrumentais</label>
-                            <div class="form-check form-check-sm">
-                                <input class="form-check-input" type="checkbox" name="leituraIntegrador" id="leituraIntegradorSim" value="sim" />
-                                <label class="form-check-label" for="leituraIntegradorSim">Sim</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-sm-2">
-                            <!-- Lote -->
-                            <label class="form-label form-label-sm">Lote</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Lote" />
-                        </div>
-                        <div class="col-sm-2">
-                            <!-- Validade -->
-                            <label class="form-label form-label-sm">Validade</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Validade" />
-                        </div>
-                        <div class="col-sm-2">
-                            <!-- Contagem inicial -->
-                            <label class="form-label form-label-sm">Contagem inicial</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Contagem inicial" />
-                        </div>
-                        <div class="col-sm-2">
-                            <!-- Contagem final -->
-                            <label class="form-label form-label-sm">Contagem final</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Contagem final" />
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-sm-12">
-                            <!-- Observação -->
-                            <label class="form-label form-label-sm">Observação</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Observação" />
-                        </div>
-                    </div>
+                <!-- Botão para adicionar mais instrumentais -->
+                <div class="mt-3">
+                    <button type="button" class="btn btn-primary" onclick="addInstrumental()">Adicionar Instrumental</button>
                 </div>
 
                 <script>
-                    function toggleInstrumentalDetails() {
-                        const nomeInstrumental = document.getElementById("nomeInstrumental").value;
-                        const naoSeAplicaInstrumental = document.getElementById("naoSeAplicaInstrumental").checked;
-                        const instrumentalDetails = document.getElementById("instrumentalDetails");
+                    function toggleInstrumentalDetails(element) {
+                        const instrumentalItem = element.closest(".instrumental-item");
+                        const nomeInstrumental = instrumentalItem.querySelector('input[type="text"]').value;
+                        const naoSeAplicaInstrumental = instrumentalItem.querySelector('input[type="checkbox"]') ? instrumentalItem.querySelector('input[type="checkbox"]').checked : false;
+                        const instrumentalDetails = instrumentalItem.nextElementSibling;
 
                         if (nomeInstrumental && !naoSeAplicaInstrumental) {
                             instrumentalDetails.style.display = "block";
                         } else {
                             instrumentalDetails.style.display = "none";
                         }
+                    }
+
+                    function addInstrumental() {
+                        const instrumentalList = document.getElementById("instrumentalList");
+                        const originalInstrumentalItem = instrumentalList.children[0].cloneNode(true);
+                        const originalInstrumentalDetails = instrumentalList.children[1].cloneNode(true);
+
+                        // Limpar os campos no novo conjunto
+                        originalInstrumentalItem.querySelector('input[type="text"]').value = "";
+                        originalInstrumentalDetails.style.display = "none"; // Esconder os detalhes inicialmente
+
+                        // Remover a checkbox "Não se aplica" dos novos instrumentais
+                        const naoSeAplicaWrapper = originalInstrumentalItem.querySelector("#naoSeAplicaWrapper");
+                        if (naoSeAplicaWrapper) {
+                            naoSeAplicaWrapper.remove();
+                        }
+
+                        // Adicionar os novos campos ao DOM
+                        instrumentalList.appendChild(originalInstrumentalItem);
+                        instrumentalList.appendChild(originalInstrumentalDetails);
                     }
                 </script>
 
@@ -563,14 +630,7 @@
             </div>
         </form>
         <hr />
-        <section>
-            <div class="container mt-3">
-                <!-- Botão para copiar os valores do formulário para a área de transferência -->
-                <button id="btnCopiar" class="btn btn-success mt-3">Vizualizar e Copiar</button>
-                <button id="btnPDF" class="btn btn-info mt-3">Gerar PDF</button>
-                <button id="btnRecarregar" class="btn btn-danger mt-3" onclick="recarregarPagina()">Limpar Formulario</button>
-            </div>
-        </section>
+
         <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -650,25 +710,66 @@
                     .join(", ");
                 adicionarDado("Temperatura da Manta Térmica", temperaturaManta);
 
-                const biopsia = Array.from(document.querySelectorAll('input[name="biopsia"]:checked'))
+                const biopsiaInputs = document.querySelectorAll('input[name="biopsia"]:checked');
+                let biopsia = Array.from(biopsiaInputs)
                     .map((input) => input.nextElementSibling.textContent)
                     .join(", ");
+
+                // Verificar se o campo "Outros" está selecionado e adicionar a descrição
+                const outrosBiopsiaInput = document.getElementById("outrosBiopsia");
+                if (outrosBiopsiaInput.checked) {
+                    const biopsiaDetails = document.querySelector("#biopsiaDetails textarea").value;
+                    biopsia += biopsiaDetails ? `, ${biopsiaDetails}` : "";
+                }
+
                 adicionarDado("Peça Anatômica para Biópsia", biopsia);
 
+                // Coletar dados de localização da biópsia se a seção estiver visível
+                const locationSection = document.getElementById("locationSection");
+                if (locationSection.style.display !== "none") {
+                    const localizacaoInputs = document.querySelectorAll('input[name="localizacaoBiopsia"]:checked');
+                    const localizacoes = Array.from(localizacaoInputs)
+                        .map((input) => input.nextElementSibling.textContent)
+                        .join(", ");
+                    adicionarDado("Localização da Peça Anatômica para Biópsia", localizacoes);
+                }
                 const produtoAntisepsia = Array.from(document.querySelectorAll('input[name="antisepsia"]:checked'))
                     .map((input) => input.nextElementSibling.textContent)
                     .join(", ");
                 adicionarDado("Produto para Anti-sepsia", produtoAntisepsia);
 
-                const nomeInstrumental = document.getElementById("nomeInstrumental").value;
-                adicionarDado("Nome do Instrumental", nomeInstrumental);
+                const instrumentais = Array.from(document.querySelectorAll(".instrumental-item"))
+                    .map((item, index) => {
+                        const nomeInstrumental = item.querySelector('input[type="text"]').value;
+                        if (!nomeInstrumental) return null; // Ignorar se não houver nome preenchido
+                        const detalhes = item.nextElementSibling;
+                        const embalagem = detalhes.querySelector('input[type="checkbox"]').checked ? "Sim" : "Não";
+                        const leituraIntegrador = detalhes.querySelectorAll('input[type="checkbox"]')[1].checked ? "Sim" : "Não";
+                        const lote = detalhes.querySelector('input[placeholder="Lote"]').value;
+                        const validade = detalhes.querySelector('input[placeholder="Validade"]').value;
+                        const contagemInicial = detalhes.querySelector('input[placeholder="Contagem inicial"]').value;
+                        const contagemFinal = detalhes.querySelector('input[placeholder="Contagem final"]').value;
+                        const observacao = detalhes.querySelector('input[placeholder="Observação"]').value;
+                        return `\nInstrumental ${index + 1}:
+Nome: ${nomeInstrumental}
+Conferido embalagem: ${embalagem}
+Leitura do integrador: ${leituraIntegrador}
+Lote: ${lote}
+Validade: ${validade}
+Contagem inicial: ${contagemInicial}
+Contagem final: ${contagemFinal}
+Observação: ${observacao}`;
+                    })
+                    .filter(Boolean)
+                    .join("\n\n");
+                adicionarDado("\nInstrumentais", instrumentais);
 
                 const saidaMesa = Array.from(document.querySelectorAll('input[name="saidaMesa"]:checked'))
                     .map((input) => input.nextElementSibling.textContent)
                     .join(", ");
                 adicionarDado("Auxiliado em saída da mesa cirúrgica para", saidaMesa);
 
-                const horarioSaida = document.querySelector('input[type="time"]').value;
+                const horarioSaida = document.querySelectorAll('input[type="time"]')[1].value;
                 adicionarDado("Horário de Saída da Sala Operatória", horarioSaida);
 
                 const observacao = document.querySelector("textarea").value;

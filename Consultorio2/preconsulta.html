@@ -8,7 +8,7 @@
     </head>
 
     <body style="background-color: #f4f4f5">
-        <header>
+        <header style="position: fixed; top: 0; width: 100%; z-index: 1000">
             <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
                 <div class="container">
                     <a class="navbar-brand" href="#">
@@ -31,16 +31,19 @@
                 </div>
             </nav>
         </header>
+        <header style="position: fixed; top: 70px; width: 100%; z-index: 999">
+            <div class="justify-content-start bg-light">
+                <div class="container mb-3">
+                    <button id="btnCopiar" class="btn btn-success mt-3 me-2 mb-2">Vizualizar e Copiar</button>
+                    <button id="btnPDF" class="btn btn-info mt-3 me-2 mb-2">Gerar PDF</button>
+                    <button id="btnRecarregar" class="btn btn-danger mt-3 mb-2" onclick="recarregarPagina()">Limpar Formulario</button>
+                </div>
+            </div>
+        </header>
+        <div style="height: 140px"></div>
+        <!-- Espaçador para evitar que o conteúdo fique oculto atrás dos cabeçalhos fixos -->
         <form>
             <div class="container mt-3">
-                <div class="row mt-3">
-                    <div class="col-md-12">
-                        <label for="dataCirurgia" class="form-label fw-bold">Data prevista para a cirurgia:</label>
-                        <div class="col-2">
-                            <input type="date" class="form-control form-control-sm" id="dataCirurgia" name="dataCirurgia" value="" />
-                        </div>
-                    </div>
-                </div>
                 <!-- Conteúdo do TAB -->
                 <div class="mt-5">
                     <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
@@ -57,7 +60,7 @@
                             <button class="nav-link" id="fisiologico-tab" data-bs-toggle="tab" data-bs-target="#fisiologico" type="button" role="tab" aria-controls="fisiologico" aria-selected="false">MODO FISIOLÓGICO</button>
                         </li>
                         <li class="nav-item fw-bold" role="presentation">
-                            <button class="nav-link" id="diagnosticos-tab" data-bs-toggle="tab" data-bs-target="#diagnosticos" type="button" role="tab" aria-controls="diagnosticos" aria-selected="false">DIAGNÓSTICOS/METAS/INTERVENÇÕES</button>
+                            <button class="nav-link" id="diagnosticos-tab" data-bs-toggle="tab" data-bs-target="#diagnosticos" type="button" role="tab" aria-controls="diagnosticos" aria-selected="false">PROCESSO DE ENFERMAGEM</button>
                         </li>
                     </ul>
                 </div>
@@ -244,20 +247,20 @@
                         <div id="autoconceito-form">
                             <div class="row mt-3">
                                 <!-- Coluna de tamanho 6 para Especialidade -->
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <label class="form-label fw-bold" for="especialidade">Especialidade:</label>
                                     <select class="form-select form-select-sm" id="especialidade" name="especialidade">
                                         <option value="vazio"></option>
-                                        <option value="cirurgiaGeral">Cirurgia Geral</option>
-                                        <option value="cirurgiaMao">Cirurgia de Mão</option>
-                                        <option value="cirurgiaPlastica">Cirurgia Plástica</option>
-                                        <option value="ctac">Ctac</option>
-                                        <option value="dermatologia">Dermatologia</option>
-                                        <option value="perio">Perio</option>
-                                        <option value="proctologia">Proctologia</option>
-                                        <option value="saudeHomem">Saúde do Homem</option>
-                                        <option value="urologia">Urologia</option>
-                                        <option value="vascular">Vascular</option>
+                                        <option value="Cirurgia Geral">Cirurgia Geral</option>
+                                        <option value="Cirur de Mão">Cirurgia de Mão</option>
+                                        <option value="cirurgia Plástica">Cirurgia Plástica</option>
+                                        <option value="Ctac">Ctac</option>
+                                        <option value="Dermatologia">Dermatologia</option>
+                                        <option value="Perio">Perio</option>
+                                        <option value="Proctologia">Proctologia</option>
+                                        <option value="Saude do Homem">Saúde do Homem</option>
+                                        <option value="Urologia">Urologia</option>
+                                        <option value="Cirurgia Vascular">Cirurgia Vascular</option>
                                     </select>
                                 </div>
                                 <!-- Coluna de tamanho 6 para Nome do Procedimento -->
@@ -345,7 +348,7 @@
                             <div class="row mt-3">
                                 <!-- Coluna de tamanho 12 para Comorbidades -->
                                 <div class="col-md-12">
-                                    <label class="form-label fw-bold" for="comorbidades">Comorbidades:</label>
+                                    <label class="form-label fw-bold" for="comorbidades">Comorbidades:</label><br />
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="hipertensao" name="comorbidadeHipertensao" value="Hipertensão" />
                                         <label class="form-check-label" for="hipertensao">Hipertensão</label>
@@ -366,26 +369,34 @@
                                         <input class="form-check-input" type="checkbox" id="aids" name="comorbidadeAIDS" value="AIDS" onclick="aidsCheckboxClicked()" />
                                         <label class="form-check-label" for="aids">AIDS</label>
                                     </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="doencaRenalCronica" name="comorbidadeDoencaRenalCronica" value="Doença Renal Crônica / Hemodialitico" />
+                                        <label class="form-check-label" for="doencaRenalCronica">Doença Renal Crônica / Hemodialitico</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="drc" name="comorbidadeDRC" value="Doença Renal Crônica" />
+                                        <label class="form-check-label" for="drc">Doença Renal Crônica</label>
+                                    </div>
+                                </div>
+                                <div id="aidsAlert" class="alert alert-danger mt-2" style="display: none">Atenção: Paciente realizará protocolo de segurança institucional.</div>
 
-                                    <div id="aidsAlert" class="alert alert-danger mt-2" style="display: none">Atenção: Paciente realizará protocolo de segurança institucional.</div>
-
-                                    <script>
-                                        function aidsCheckboxClicked() {
-                                            const aidsCheckbox = document.getElementById("aids");
-                                            const aidsAlert = document.getElementById("aidsAlert");
-                                            if (aidsCheckbox.checked) {
-                                                aidsAlert.style.display = "block";
-                                            } else {
-                                                aidsAlert.style.display = "none";
-                                            }
+                                <script>
+                                    function aidsCheckboxClicked() {
+                                        const aidsCheckbox = document.getElementById("aids");
+                                        const aidsAlert = document.getElementById("aidsAlert");
+                                        if (aidsCheckbox.checked) {
+                                            aidsAlert.style.display = "block";
+                                        } else {
+                                            aidsAlert.style.display = "none";
                                         }
-                                    </script>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="form-label" for="outrasComorbidadesDescricao">Outras:</label>
-                                    <input type="text" class="form-control form-control-sm" id="outrasComorbidadesDescricao" name="outrasComorbidadesDescricao" placeholder="Descreva outras comorbidades" aria-label="Outras Comorbidades" />
-                                </div>
+                                    }
+                                </script>
                             </div>
+                            <div class="col-md-12 mt-3">
+                                <label class="form-label" for="outrasComorbidadesDescricao">Outras:</label>
+                                <input type="text" class="form-control form-control-sm" id="outrasComorbidadesDescricao" name="outrasComorbidadesDescricao" placeholder="Descreva outras comorbidades" aria-label="Outras Comorbidades" />
+                            </div>
+
                             <div class="row mt-3">
                                 <!-- Coluna de tamanho 12 para Neoplasias -->
                                 <div class="col-md-12">
@@ -485,6 +496,7 @@
                                                     <th>Nome do Medicamento</th>
                                                     <th>Dose</th>
                                                     <th>Intervalo</th>
+                                                    <th>Última Dose</th>
                                                     <th>Ações</th>
                                                 </tr>
                                             </thead>
@@ -501,6 +513,10 @@
                                                     <td>
                                                         <label for="medicamento_intervalo_1" class="visually-hidden">Intervalo</label>
                                                         <input type="text" class="form-control form-control-sm" id="medicamento_intervalo_1" name="medicamento_intervalo[]" placeholder="Intervalo" />
+                                                    </td>
+                                                    <td>
+                                                        <label for="medicamento_ultima_dose_1" class="visually-hidden">Última Dose</label>
+                                                        <input type="text" class="form-control form-control-sm" id="medicamento_ultima_dose_1" name="medicamento_ultima_dose[]" placeholder="Última Dose" />
                                                     </td>
                                                     <td>
                                                         <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button>
@@ -554,6 +570,7 @@
                                     const medicamentoId = `medicamento_nome_${rowCount + 1}`;
                                     const doseId = `medicamento_dose_${rowCount + 1}`;
                                     const intervaloId = `medicamento_intervalo_${rowCount + 1}`;
+                                    const ultimaDoseId = `medicamento_ultima_dose_${rowCount + 1}`;
 
                                     newRow.innerHTML = `
             <td class="col-6">
@@ -567,6 +584,10 @@
             <td>
                 <label for="${intervaloId}" class="visually-hidden">Intervalo</label>
                 <input type="text" class="form-control form-control-sm" id="${intervaloId}" name="medicamento_intervalo[]" placeholder="Intervalo" />
+            </td>
+            <td>
+                <label for="${ultimaDoseId}" class="visually-hidden">Última Dose</label>
+                <input type="text" class="form-control form-control-sm" id="${ultimaDoseId}" name="medicamento_ultima_dose[]" placeholder="Última Dose" />
             </td>
             <td>
                 <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button>
@@ -791,37 +812,88 @@
 
                                 <!-- Uso de Prótese/Órtese -->
                                 <div class="row mt-3">
-                                    <div class="col-md-12">
+                                    <div class="col-12">
                                         <label class="form-label fw-bold" for="usoDentaria">Uso de Prótese/Órtese:</label><br />
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="usoDentaria" name="usoDentaria" value="Dentária" />
-                                            <label class="form-check-label" for="usoDentaria">Dentária</label>
+                                            <input class="form-check-input" type="checkbox" id="usoNaoUsaProteses" name="usoNaoUsaProteses" value="Não usa Próteses" />
+                                            <label class="form-check-label" for="usoNaoUsaProteses">Relata NÃO uso de Próteses</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="usoOrtopedica" name="usoOrtopedica" value="Ortopédica" />
+                                            <input class="form-check-input" type="checkbox" id="usoDentariaSuperior" name="usoDentariaSuperior" value="Dentária Superior" onclick="toggleEntregaSection()" />
+                                            <label class="form-check-label" for="usoDentariaSuperior">Dentária Superior</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoDentariaInferior" name="usoDentariaInferior" value="Dentária Inferior" onclick="toggleEntregaSection()" />
+                                            <label class="form-check-label" for="usoDentariaInferior">Dentária Inferior</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="usoOrtopedica" name="usoOrtopedica" value="Ortopédica" onclick="toggleEntregaSection()" />
                                             <label class="form-check-label" for="usoOrtopedica">Ortopédica</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="usoOcular" name="usoOcular" value="Ocular" />
+                                            <input class="form-check-input" type="checkbox" id="usoOcular" name="usoOcular" value="Ocular" onclick="toggleEntregaSection()" />
                                             <label class="form-check-label" for="usoOcular">Ocular</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="usoMarcapasso" name="usoMarcapasso" value="Marcapasso" />
+                                            <input class="form-check-input" type="checkbox" id="usoMarcapasso" name="usoMarcapasso" value="Marcapasso" onclick="toggleEntregaSection()" />
                                             <label class="form-check-label" for="usoMarcapasso">Marcapasso</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="usoOutras" name="usoOutras" value="Outras" onclick="toggleOutrasProtesesOrteses(this)" />
+                                            <input class="form-check-input" type="checkbox" id="usoOutras" name="usoOutras" value="Outras" onclick="toggleEntregaSection(); toggleOutrasProtesesSection();" />
                                             <label class="form-check-label" for="usoOutras">Outras</label>
+                                        </div>
+                                        <div class="row mt-3" id="outrasProtesesSection" style="display: none">
+                                            <div class="col-md-12">
+                                                <label for="outrasProtesesOrteses" class="form-label fw-bold">Descreva outras próteses/órteses:</label>
+                                                <textarea class="form-control form-control-sm" id="outrasProtesesOrteses" name="outrasProtesesOrteses" placeholder="Descreva outras próteses/órteses e qual foi o destino" aria-label="Descreva outras próteses/órteses" rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            function toggleOutrasProtesesSection() {
+                                                const outrasProtesesSection = document.getElementById("outrasProtesesSection");
+                                                const usoOutras = document.getElementById("usoOutras");
+                                                if (usoOutras.checked) {
+                                                    outrasProtesesSection.style.display = "block";
+                                                } else {
+                                                    outrasProtesesSection.style.display = "none";
+                                                }
+                                            }
+                                        </script>
+                                        
+                                </div>
+
+                                <div class="row mt-3" id="entregaSection" style="display: none">
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold" for="entregueAcompanhante">Entrega:</label><br />
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="entregueAcompanhante" name="entrega" value="Entregue ao Acompanhante" />
+                                            <label class="form-check-label" for="entregueAcompanhante">Entregue ao Acompanhante</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="guardadoUCAMB" name="entrega" value="Guardado na UCAMB" />
+                                            <label class="form-check-label" for="guardadoUCAMB">Guardado na UCAMB</label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row mt-3" id="outrasProtesesOrtesesRow" style="display: none">
+                                <div class="row mt-3" id="observacoesProtesesSection" style="display: none">
                                     <div class="col-md-12">
-                                        <label class="form-label" for="outrasProtesesOrteses">Descreva:</label>
-                                        <input type="text" class="form-control form-control-sm" id="outrasProtesesOrteses" name="outrasProtesesOrteses" placeholder="Outras Próteses/Órteses" aria-label="Outras Próteses/Órteses" />
+                                        <label for="observacoesProteses" class="form-label fw-bold">Observações sobre Próteses/Órteses:</label>
+                                        <textarea class="form-control form-control-sm" id="observacoesProteses" name="observacoesProteses" placeholder="Descreva observações sobre próteses/órteses" aria-label="Observações sobre Próteses/Órteses" rows="2"></textarea>
                                     </div>
                                 </div>
+
+                                <script>
+                                    function toggleEntregaSection() {
+                                        const checkboxes = [document.getElementById("usoDentariaSuperior"), document.getElementById("usoDentariaInferior"), document.getElementById("usoOrtopedica"), document.getElementById("usoOcular"), document.getElementById("usoMarcapasso")];
+                                        const entregaSection = document.getElementById("entregaSection");
+                                        const observacoesProtesesSection = document.getElementById("observacoesProtesesSection");
+                                        const isChecked = checkboxes.some((checkbox) => checkbox.checked);
+
+                                        entregaSection.style.display = isChecked ? "block" : "none";
+                                        observacoesProtesesSection.style.display = isChecked ? "block" : "none";
+                                    }
+                                </script>
 
                                 <!-- Tricotomia -->
                                 <div class="row mt-3">
@@ -863,13 +935,31 @@
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold" for="usoAderecosSim">Uso de Adereços/Adornos:</label><br />
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="usoAderecosSim" name="usoAderecos" value="Sim" />
+                                            <input class="form-check-input" type="radio" id="usoAderecosSim" name="usoAderecos" value="Sim" onclick="toggleObservacoesAderecos(this)" />
                                             <label class="form-check-label" for="usoAderecosSim">Sim</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="usoAderecosNao" name="usoAderecos" value="Não" />
+                                            <input class="form-check-input" type="radio" id="usoAderecosNao" name="usoAderecos" value="Não" onclick="toggleObservacoesAderecos(this)" />
                                             <label class="form-check-label" for="usoAderecosNao">Não</label>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function toggleObservacoesAderecos(radio) {
+                                        const observacoesAderecosSection = document.getElementById("observacoesAderecosSection");
+                                        if (radio.value === "Sim" && radio.checked) {
+                                            observacoesAderecosSection.style.display = "block";
+                                        } else {
+                                            observacoesAderecosSection.style.display = "none";
+                                        }
+                                    }
+                                </script>
+
+                                <div class="row mt-3" id="observacoesAderecosSection" style="display: none">
+                                    <div class="col-md-12">
+                                        <label for="observacoesAderecos" class="form-label fw-bold">Observações sobre Adereços/Adornos:</label>
+                                        <textarea class="form-control form-control-sm" id="observacoesAderecos" name="observacoesAderecos" placeholder="Descreva observações sobre adereços/adornos" aria-label="Observações sobre Adereços/Adornos" rows="2"></textarea>
                                     </div>
                                 </div>
 
@@ -1061,14 +1151,6 @@
                     </div>
                 </div>
                 <hr />
-                <section>
-                    <div class="container mt-3">
-                        <!-- Botão para copiar os valores do formulário para a área de transferência -->
-                        <button id="btnCopiar" class="btn btn-success mt-3" type="button">Copiar para MV</button>
-                        <button id="btnPDF" class="btn btn-info mt-3">Gerar PDF</button>
-                        <button id="btnRecarregar" class="btn btn-danger mt-3" onclick="recarregarPagina()">Limpar Formulario</button>
-                    </div>
-                </section>
             </div>
         </form>
         <br /><br /><br /><br /><br /><br /><br /><br />
@@ -1096,15 +1178,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
         <script>
-            function coletarDataCirurgia() {
-                const dataCirurgia = document.getElementById("dataCirurgia").value;
-                if (dataCirurgia) {
-                    const [year, month, day] = dataCirurgia.split("-");
-                    return `Data prevista para a cirurgia: ${day}/${month}/${year}`;
-                }
-                return "";
-            }
-
             function coletarFuncaoPapel() {
                 const dados = ["\nMODO FUNÇÃO DO PAPEL"];
 
@@ -1218,16 +1291,18 @@
                     .map((el, index) => {
                         const dose = document.querySelectorAll('input[name="medicamento_dose[]"]')[index].value;
                         const intervalo = document.querySelectorAll('input[name="medicamento_intervalo[]"]')[index].value;
+                        const ultimaDose = document.querySelectorAll('input[name="medicamento_ultima_dose[]"]')[index].value;
 
-                        // Verifica se há valor no nome, dose ou intervalo
-                        if (el.value || dose || intervalo) {
-                            return `${el.value} (Dose: ${dose}, Intervalo: ${intervalo})`;
+                        // Verifica se há valor no nome, dose, intervalo ou última dose
+                        if (el.value || dose || intervalo || ultimaDose) {
+                            return `${el.value} (Dose: ${dose}, Intervalo: ${intervalo}, Última Dose: ${ultimaDose})`;
                         } else {
                             return null; // Se não houver valores, retorna null
                         }
                     })
                     .filter(Boolean) // Remove valores nulos
                     .join(", ");
+
                 const alergias = Array.from(document.querySelectorAll('input[name="alergia_nome[]"]'))
                     .map((el) => el.value)
                     .join(", ");
@@ -1341,9 +1416,11 @@
                 const nivelConsciencia = Array.from(document.querySelectorAll('input[name^="nivelConsciencia"]:checked'))
                     .map((el) => el.value)
                     .join(", ");
+
                 const estadoEmocional = Array.from(document.querySelectorAll('input[name^="estadoEmocional"]:checked'))
                     .map((el) => el.value)
                     .join(", ");
+
                 const acuidadeVisual = document.querySelector('input[name="acuidadeVisual"]:checked')?.value || "";
                 const acuidadeAuditiva = document.querySelector('input[name="acuidadeAuditiva"]:checked')?.value || "";
                 const higiene = document.querySelector('input[name="higiene"]:checked')?.value || "";
@@ -1352,12 +1429,15 @@
                     .map((el) => el.value)
                     .join(", ");
                 const outrasProtesesOrteses = document.getElementById("outrasProtesesOrteses").value;
+                const entrega = document.querySelector('input[name="entrega"]:checked')?.value || "";
+                const observacoesProteses = document.getElementById("observacoesProteses").value;
                 const tricotomia = document.querySelector('input[name="tricotomia"]:checked')?.value || "";
                 const tricotomiaMetodos = Array.from(document.querySelectorAll('input[name^="tricotomia"]:checked'))
                     .map((el) => el.value)
                     .join(", ");
                 const tricotomiaQuando = document.getElementById("tricotomiaQuando").value;
                 const usoAderecos = document.querySelector('input[name="usoAderecos"]:checked')?.value || "";
+                const observacoesAderecos = document.getElementById("observacoesAderecos").value;
                 const descricaoAlteracoes = document.getElementById("descricaoAlteracoes").value;
 
                 if (nivelConsciencia) {
@@ -1385,10 +1465,16 @@
                     }
                     dados.push(usoTexto);
                 }
+                if (entrega) {
+                    dados.push(`Entrega: ${entrega}`);
+                }
+                if (observacoesProteses) {
+                    dados.push(`Observações sobre Próteses/Órteses: ${observacoesProteses}`);
+                }
                 if (tricotomia) {
                     let tricotomiaTexto = `Tricotomia: ${tricotomia}`;
                     if (tricotomia === "Sim" && tricotomiaMetodos) {
-                        tricotomiaTexto += ` (Métodos: ${tricotomiaMetodos})`;
+                        tricotomiaTexto += ` (${tricotomiaMetodos})`;
                     }
                     if (tricotomiaQuando) {
                         tricotomiaTexto += ` (Quando: ${tricotomiaQuando})`;
@@ -1396,7 +1482,11 @@
                     dados.push(tricotomiaTexto);
                 }
                 if (usoAderecos) {
-                    dados.push(`Uso de Adereços/Adornos: ${usoAderecos}`);
+                    let aderecosTexto = `Uso de Adereços/Adornos: ${usoAderecos}`;
+                    if (usoAderecos === "Sim" && observacoesAderecos) {
+                        aderecosTexto += ` (${observacoesAderecos})`;
+                    }
+                    dados.push(aderecosTexto);
                 }
                 if (descricaoAlteracoes) {
                     dados.push(`Descrição de Alterações: ${descricaoAlteracoes}`);
@@ -1459,8 +1549,18 @@
                 return dados.join("\n");
             }
 
+            function coletarSinaisVitais() {
+                const temperatura = "_________°C";
+                const pressaoArterial = "____________________________mmhg";
+                const pulso = "_________bpm";
+                const glicemiaCapilar = "__________mg/dl";
+                const saturacao = "__________%";
+
+                return `\nSINAIS VITAIS:\n\n Pressão Arterial: ${pressaoArterial}   Temperatura: ${temperatura}   \n\nPulso: ${pulso}   Glicemia Capilar: ${glicemiaCapilar}   Saturação: ${saturacao}`;
+            }
+
             function coletarDados() {
-                const dados = [coletarDataCirurgia(), coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos()].filter(Boolean); // Remove valores vazios
+                const dados = [coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos(), coletarSinaisVitais()].filter(Boolean); // Remove valores vazios
                 return dados.join("\n");
             }
 
