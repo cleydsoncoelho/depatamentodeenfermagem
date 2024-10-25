@@ -44,7 +44,6 @@
         <!-- Espaçador para evitar que o conteúdo fique oculto atrás dos cabeçalhos fixos -->
         <form>
             <div class="container mt-5">
-                <h5>Anotação de Enfermagem Intraoperatório</h5>
                 <!-- Horário de Entrada na Sala Operatória -->
                 <div class="row mt-3">
                     <div class="col-sm-8">
@@ -185,9 +184,74 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row mt-3">
+                        <!-- Possui Alergia Conhecida -->
+                        <div class="col-sm-4">
+                            <label class="form-label form-label-sm fw-bold">Possui Alergia Conhecida?</label>
+                            <div class="d-flex">
+                                <div class="form-check form-check-inline form-check-sm">
+                                    <input class="form-check-input" type="radio" name="alergiaConhecida" id="simAlergiaConhecida" value="sim" onclick="toggleAlergiaFields(true)" />
+                                    <label class="form-check-label" for="simAlergiaConhecida">Sim</label>
+                                </div>
+                                <div class="form-check form-check-inline form-check-sm">
+                                    <input class="form-check-input" type="radio" name="alergiaConhecida" id="naoAlergiaConhecida" value="nao" onclick="toggleAlergiaFields(false)" />
+                                    <label class="form-check-label" for="naoAlergiaConhecida">Não</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3" id="alergiaFields" style="display: none">
+                        <div class="form-group">
+                            <label for="medicamentosAlergia_1" class="form-label">Medicamentos Alergicos:</label>
+                            <table class="table table-bordered table-sm" id="tabelaMedicamentosAlergia">
+                                <thead>
+                                    <tr>
+                                        <th class="col-10">Alergias</th>
+                                        <th class="col-2">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="medicamentosTbodyAlergia"></tbody>
+                            </table>
+                            <button type="button" class="btn btn-danger" id="adicionarMedicamentoAlergia">Adicionar ALERGIA</button>
+                            <div id="alertAlergia" class="alert alert-warning mt-2 text-dark" style="display: none">
+                                Atenção: Certifique que o paciente está com a pulseira adequada.
+                                <script>
+                                    document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", function () {
+                                        document.getElementById("alertAlergia").style.display = "block";
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <script>
+                            // Adiciona uma linha de alergia
+                            function adicionarLinhaAlergia() {
+                                const tbody = document.getElementById("medicamentosTbodyAlergia");
+                                const newRow = document.createElement("tr");
+                                const alergiaId = `medicamentoAlergia_${tbody.rows.length + 1}`;
+                                newRow.innerHTML = `
+                                    <td>
+                                        <label for="${alergiaId}" class="visually-hidden">Alergia</label>
+                                        <input type="text" class="form-control form-control-sm" id="${alergiaId}" name="alergia_nome[]" placeholder="Medicamentos, Iodo, Espaladrapo, Luva de Procedimento" />
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaAlergia(this)">Remover</button>
+                                    </td>
+                                `;
+                                tbody.appendChild(newRow);
+                            }
 
-                        <!-- Pulseira de Alergia Afixada no Paciente -->
-
+                            // Função para remover uma linha da tabela de alergias
+                            function removerLinhaAlergia(button) {
+                                const row = button.closest("tr");
+                                row.remove();
+                            }
+                            // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento Alergia"
+                            document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", adicionarLinhaAlergia);
+                        </script>
+                    </div>
+                    <!-- Pulseira de Alergia Afixada no Paciente -->
+                    <div class="row mt-3" id="pulseiraAlergiaField" style="display: none">
                         <div class="col-sm-6">
                             <label class="form-label form-label-sm fw-bold">Pulseira de alergia afixada no paciente</label>
                             <div class="d-flex">
@@ -206,6 +270,20 @@
                             </div>
                         </div>
                     </div>
+                    <script>
+                        function toggleAlergiaFields(show) {
+                            const alergiaFields = document.getElementById("alergiaFields");
+                            const pulseiraAlergiaField = document.getElementById("pulseiraAlergiaField");
+                            if (show) {
+                                alergiaFields.style.display = "block";
+                                pulseiraAlergiaField.style.display = "block";
+                            } else {
+                                alergiaFields.style.display = "none";
+                                pulseiraAlergiaField.style.display = "none";
+                            }
+                        }
+                    </script>
+
                     <!-- Retirados próteses e/ou adornos -->
                     <div class="row mt-3">
                         <div class="col-sm-4">
@@ -322,7 +400,7 @@
             }
 
             function coletarDadosPreoperatorio() {
-                dados = ""; // Reinicia a variável de dados
+                dados = "ANOTAÇÕES DE ENFERMAGEM NO PRÉ OPERATÓRIO\n\n"; // Reinicia a variável de dados// Reinicia a variável de dados
 
                 // Coleta dos dados
                 const horarioEntrada = document.getElementById("horarioEntrada").value;
@@ -350,6 +428,14 @@
 
                 const sitioCirurgico = document.querySelector('input[name="sitioCirurgico"]:checked');
                 adicionarDado("Sítio Cirúrgico demarcado", sitioCirurgico ? sitioCirurgico.nextElementSibling.textContent : "");
+
+                const alergiaConhecida = document.querySelector('input[name="alergiaConhecida"]:checked');
+                adicionarDado("Possui Alergia Conhecida", alergiaConhecida ? alergiaConhecida.nextElementSibling.textContent : "");
+
+                const medicamentosAlergia = Array.from(document.querySelectorAll('input[name="alergia_nome[]"]'))
+                    .map((input) => input.value)
+                    .join(", ");
+                adicionarDado("Medicamentos Alergicos", medicamentosAlergia);
 
                 const pulseiraAlergia = document.querySelector('input[name="pulseiraAlergia"]:checked');
                 adicionarDado("Pulseira de alergia afixada no paciente", pulseiraAlergia ? pulseiraAlergia.nextElementSibling.textContent : "");

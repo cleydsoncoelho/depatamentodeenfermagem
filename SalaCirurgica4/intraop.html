@@ -52,7 +52,7 @@
                     <div class="col-sm-8">
                         <label class="form-label form-label-sm fw-bold">Horário de Entrada na Sala Operatória</label>
                         <div class="col-2">
-                            <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                            <input type="time" id="horarioEntrada" class="form-control form-control-sm" placeholder="Horário" />
                         </div>
                     </div>
                 </div>
@@ -600,7 +600,7 @@
                         <div class="col-sm-8">
                             <label class="form-label form-label-sm fw-bold">Horário de Saída da Sala Operatória</label>
                             <div class="col-2">
-                                <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                                <input type="time" id="horarioSaida" class="form-control form-control-sm" placeholder="Horário" />
                             </div>
                         </div>
                     </div>
@@ -663,7 +663,7 @@
             }
 
             function coletarDadosIntraoperatorio() {
-                dados = ""; // Reinicia a variável de dados
+                dados = "ANOTAÇÕES DE ENFERMAGEM INTRAOPERATÓRIO\n\n"; // Reinicia a variável de dados com o título
 
                 // Coleta dos dados
                 const horarioEntrada = document.querySelector('input[type="time"]').value;
@@ -767,7 +767,7 @@ Observação: ${observacao}`;
                 const saidaMesa = Array.from(document.querySelectorAll('input[name="saidaMesa"]:checked'))
                     .map((input) => input.nextElementSibling.textContent)
                     .join(", ");
-                adicionarDado("Auxiliado em saída da mesa cirúrgica para", saidaMesa);
+                adicionarDado("\nAuxiliado em saída da mesa cirúrgica para", saidaMesa);
 
                 const horarioSaida = document.querySelectorAll('input[type="time"]')[1].value;
                 adicionarDado("Horário de Saída da Sala Operatória", horarioSaida);
@@ -775,6 +775,8 @@ Observação: ${observacao}`;
                 const observacao = document.querySelector("textarea").value;
                 adicionarDado("Outras Anotações", observacao);
             }
+
+            document.getElementById("confirmCopy").addEventListener("click", copiarParaClipboard);
 
             function mostrarPrevisualizacao() {
                 coletarDadosIntraoperatorio();

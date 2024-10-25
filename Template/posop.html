@@ -52,7 +52,7 @@
                         <div class="col-sm-6">
                             <label class="form-label form-label-sm fw-bold">Horário de Retorno da Sala Operatória</label>
                             <div class="col-2">
-                                <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                                <input type="time" id="horarioRetorno" class="form-control form-control-sm" placeholder="Horário" />
                             </div>
                         </div>
                     </div>
@@ -295,7 +295,9 @@
                         </div>
                         <div class="col-md-2">
                             <label class="form-label form-label-sm fw-bold">Horário da Dieta</label>
-                            <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                            <div class="col-6">
+                                <input type="time" id="horarioDieta" class="form-control form-control-sm" placeholder="Horário" />
+                            </div>
                         </div>
                     </div>
                     <!-- Liberado da RPA -->
@@ -367,7 +369,7 @@
                         <div class="col-sm-6">
                             <label class="form-label form-label-sm fw-bold">Horário de Saída</label>
                             <div class="col-2">
-                                <input type="time" class="form-control form-control-sm" placeholder="Horário" />
+                                <input type="time" id="horarioSaida" class="form-control form-control-sm" placeholder="Horário" />
                             </div>
                         </div>
                     </div>
@@ -414,10 +416,10 @@
             }
 
             function coletarDadosPosOperatorio() {
-                dados = ""; // Reinicia a variável de dados
+                dados = "ANOTAÇÕES DE ENFERMAGEM NO PÓS OPERATÓRIO\n\n"; // Reinicia a variável de dados
 
                 // Coleta dos dados do formulário
-                const horarioRetorno = document.querySelector('input[type="time"]').value;
+                const horarioRetorno = document.getElementById("horarioRetorno").value;
                 adicionarDado("Horário de Retorno da Sala Operatória", horarioRetorno);
 
                 const retornoSala = document.querySelector('input[name="retornoSala"]:checked');
@@ -461,7 +463,7 @@
                 const dieta = document.querySelector('input[name="dieta"]:checked');
                 adicionarDado("Dieta", dieta ? dieta.nextElementSibling.textContent : "");
 
-                const horarioDieta = document.querySelector('input[placeholder="Horário"]').value;
+                const horarioDieta = document.getElementById("horarioDieta").value;
                 adicionarDado("Horário da Dieta", horarioDieta);
 
                 const liberadoRPA = Array.from(document.querySelectorAll('input[name="liberadoRPA"]:checked'))
@@ -477,7 +479,7 @@
                 const especificarOutro = document.getElementById("especificarOutroField").style.display !== "none" ? document.getElementById("especificarOutroField").querySelector("input").value : "";
                 adicionarDado("Especificar Outro", especificarOutro);
 
-                const horarioSaida = document.querySelector('input[placeholder="Horário"]').value;
+                const horarioSaida = document.getElementById("horarioSaida").value;
                 adicionarDado("Horário de Saída", horarioSaida);
             }
 

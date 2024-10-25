@@ -1179,7 +1179,7 @@
 
         <script>
             function coletarFuncaoPapel() {
-                const dados = ["\nMODO FUNÇÃO DO PAPEL"];
+                const dados = ["MODO FUNÇÃO DO PAPEL"];
 
                 const procedencia = Array.from(document.querySelectorAll('input[name="procedencia"]:checked'))
                     .map((el) => el.value)
@@ -1559,8 +1559,12 @@
                 return `\nSINAIS VITAIS:\n\n Pressão Arterial: ${pressaoArterial}   Temperatura: ${temperatura}   \n\nPulso: ${pulso}   Glicemia Capilar: ${glicemiaCapilar}   Saturação: ${saturacao}`;
             }
 
+            function titulo() {
+                return "CONSULTA DE ENFERMAGEM PRÉ OPERTÓRIA\n";
+            }
+
             function coletarDados() {
-                const dados = [coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos(), coletarSinaisVitais()].filter(Boolean); // Remove valores vazios
+                const dados = [titulo(), coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos(), coletarSinaisVitais()].filter(Boolean); // Remove valores vazios
                 return dados.join("\n");
             }
 

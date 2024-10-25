@@ -387,7 +387,7 @@
                                 <div class="row mt-3">
                                     <!-- Coluna de tamanho 12 para Comorbidades -->
                                     <div class="col-md-12">
-                                        <label class="form-label fw-bold">Comorbidades:</label>
+                                        <label class="form-label fw-bold" for="comorbidades">Comorbidades:</label><br />
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" id="hipertensao" name="comorbidadeHipertensao" value="Hipertensão" />
                                             <label class="form-check-label" for="hipertensao">Hipertensão</label>
@@ -404,67 +404,73 @@
                                             <input class="form-check-input" type="checkbox" id="asma" name="comorbidadeAsma" value="Asma" />
                                             <label class="form-check-label" for="asma">Asma</label>
                                         </div>
-                                        <div class="modal" tabindex="-1" id="hivProtocolModal" role="dialog">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Protocolo de HIV - AIDS</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <h6>Por favor, <br />Realize o protocolo de segurança para pacientes com Síndrome da Imunodeficiência Adquirida.</h6>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" id="aids" name="comorbidadeAIDS" value="AIDS" onclick="aidsCheckboxClicked()" />
                                             <label class="form-check-label" for="aids">AIDS</label>
                                         </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="doencaRenalCronica" name="comorbidadeDoencaRenalCronica" value="Doença Renal Crônica / Hemodialitico" />
+                                            <label class="form-check-label" for="doencaRenalCronica">Doença Renal Crônica / Hemodialitico</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="drc" name="comorbidadeDRC" value="Doença Renal Crônica" />
+                                            <label class="form-check-label" for="drc">Doença Renal Crônica</label>
+                                        </div>
+                                    </div>
+                                    <div id="aidsAlert" class="alert alert-danger mt-2" style="display: none">Atenção: Paciente realizará protocolo de segurança institucional.</div>
 
-                                        <div id="aidsAlert" class="alert alert-danger mt-2" style="display: none">Atenção: Paciente realizará protocolo de segurança institucional.</div>
-
-                                        <script>
-                                            function aidsCheckboxClicked() {
-                                                const aidsCheckbox = document.getElementById("aids");
-                                                const aidsAlert = document.getElementById("aidsAlert");
-                                                if (aidsCheckbox.checked) {
-                                                    aidsAlert.style.display = "block";
-                                                } else {
-                                                    aidsAlert.style.display = "none";
-                                                }
+                                    <script>
+                                        function aidsCheckboxClicked() {
+                                            const aidsCheckbox = document.getElementById("aids");
+                                            const aidsAlert = document.getElementById("aidsAlert");
+                                            if (aidsCheckbox.checked) {
+                                                aidsAlert.style.display = "block";
+                                            } else {
+                                                aidsAlert.style.display = "none";
                                             }
-                                        </script>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label" for="outrasComorbidades">Outras:</label>
-                                        <input type="text" class="form-control form-control-sm" id="outrasComorbidades" name="outrasComorbidadesDescricao" placeholder="Descreva outras comorbidades" aria-label="Outras Comorbidades" />
-                                    </div>
+                                        }
+                                    </script>
+                                </div>
+                                <div class="col-md-12 mt-3">
+                                    <label class="form-label" for="outrasComorbidadesDescricao">Outras:</label>
+                                    <input type="text" class="form-control form-control-sm" id="outrasComorbidadesDescricao" name="outrasComorbidadesDescricao" placeholder="Descreva outras comorbidades" aria-label="Outras Comorbidades" />
                                 </div>
                                 <!--Medicações em Uso-->
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="lista_medicamentos" class="form-label fw-bold">Lista de Medicamentos:</label>
+                                            <label for="medicamento_nome_1" class="form-label fw-bold">Lista de Medicamentos:</label>
                                             <table class="table table-bordered table-sm">
                                                 <thead>
                                                     <tr>
                                                         <th>Nome do Medicamento</th>
                                                         <th>Dose</th>
                                                         <th>Intervalo</th>
+                                                        <th>Última Dose</th>
                                                         <th>Ações</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="medicamentosTbody">
                                                     <tr>
-                                                        <td class="col-6"><input type="text" class="form-control form-control-sm" id="medicamento_nome_1" name="medicamento_nome[]" placeholder="Nome do Medicamento" /></td>
-                                                        <td><input type="text" class="form-control form-control-sm" id="medicamento_dose_1" name="medicamento_dose[]" placeholder="Dose" /></td>
-                                                        <td><input type="text" class="form-control form-control-sm" id="medicamento_intervalo_1" name="medicamento_intervalo[]" placeholder="Intervalo" /></td>
-                                                        <td><button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button></td>
+                                                        <td class="col-6">
+                                                            <label for="medicamento_nome_1" class="visually-hidden">Nome do Medicamento</label>
+                                                            <input type="text" class="form-control form-control-sm" id="medicamento_nome_1" name="medicamento_nome[]" placeholder="Nome do Medicamento" />
+                                                        </td>
+                                                        <td>
+                                                            <label for="medicamento_dose_1" class="visually-hidden">Dose</label>
+                                                            <input type="text" class="form-control form-control-sm" id="medicamento_dose_1" name="medicamento_dose[]" placeholder="Dose" />
+                                                        </td>
+                                                        <td>
+                                                            <label for="medicamento_intervalo_1" class="visually-hidden">Intervalo</label>
+                                                            <input type="text" class="form-control form-control-sm" id="medicamento_intervalo_1" name="medicamento_intervalo[]" placeholder="Intervalo" />
+                                                        </td>
+                                                        <td>
+                                                            <label for="medicamento_ultima_dose_1" class="visually-hidden">Última Dose</label>
+                                                            <input type="text" class="form-control form-control-sm" id="medicamento_ultima_dose_1" name="medicamento_ultima_dose[]" placeholder="Última Dose" />
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -472,10 +478,11 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row mt-3">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="medicamentos" class="form-label">Medicamentos Alergicos:</label>
+                                            <label for="medicamentosAlergia_1" class="form-label">Medicamentos Alergicos:</label>
                                             <table class="table table-bordered table-sm" id="tabelaMedicamentosAlergia">
                                                 <thead>
                                                     <tr>
@@ -486,110 +493,104 @@
                                                 <tbody id="medicamentosTbodyAlergia"></tbody>
                                             </table>
                                             <button type="button" class="btn btn-danger" id="adicionarMedicamentoAlergia">Adicionar ALERGIA</button>
+                                            <div id="alertAlergia" class="alert alert-warning mt-2 text-dark" style="display: none">Atenção: identifique o paciente conforme o protocolo de segurança para pacientes com alergia.</div>
+                                            <script>
+                                                document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", function () {
+                                                    document.getElementById("alertAlergia").style.display = "block";
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row mt-3">
                                     <!-- Coluna de tamanho 12 para Reações Alérgicas -->
                                     <div class="col-md-12">
-                                        <label class="form-label fw-bold mt-3" for="reacaoAlergica">Descreva a reação alérgica, se houver:</label>
+                                        <label for="reacaoAlergica" class="form-label fw-bold mt-3">Descreva a reação alérgica, se houver:</label>
                                         <input type="text" class="form-control form-control-sm" id="reacaoAlergica" name="reacaoAlergica" placeholder="Descreva a reação alérgica" aria-label="Reação Alérgica" />
                                     </div>
                                 </div>
-                                <div class="row mt-3">
-                                    <!-- Coluna de tamanho 6 para Observações -->
-                                    <div class="col-md-12">
-                                        <label for="observacoesautoconceito" class="form-label fw-bold">Observações:</label>
-                                        <textarea class="form-control form-control-sm" id="observacoesautoconceito" name="observacoesautoconceito" placeholder="Descreva alterações se houver" aria-label="Descreva alterações se houver" rows="3"></textarea>
-                                    </div>
-                                </div>
+
                                 <script>
-                                    // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento Alergia"
-                                    document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", function () {
-                                        adicionarLinhaAlergia();
-                                    });
-
-                                    function adicionarLinhaAlergia() {
-                                        const tbody = document.getElementById("medicamentosTbodyAlergia");
-                                        const newRow = document.createElement("tr");
-
-                                        newRow.innerHTML = `
-                            <td><input type="text" class="form-control form-control-sm medicamento_nome_alergia" placeholder="Medicamentos, Iodo, Espaladrapo, Luva de Procedimento"></td>
-                            <td><button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaAlergia(this)">Remover</button></td>
-                        `;
-
-                                        tbody.appendChild(newRow);
-                                    }
-
-                                    function removerLinhaAlergia(button) {
-                                        const row = button.closest("tr");
-                                        const tbody = row.parentNode;
-
-                                        if (tbody.children.length > 1) {
-                                            tbody.removeChild(row);
-                                        }
-                                    }
-
                                     // Função para adicionar uma nova linha à tabela de medicamentos
                                     function adicionarLinhaMedicamento() {
                                         const tbody = document.getElementById("medicamentosTbody");
                                         const rowCount = tbody.rows.length;
-
                                         const newRow = tbody.insertRow(rowCount);
-                                        const cell1 = newRow.insertCell(0);
-                                        const cell2 = newRow.insertCell(1);
-                                        const cell3 = newRow.insertCell(2);
-                                        const cell4 = newRow.insertCell(3);
+                                        const medicamentoId = `medicamento_nome_${rowCount + 1}`;
+                                        const doseId = `medicamento_dose_${rowCount + 1}`;
+                                        const intervaloId = `medicamento_intervalo_${rowCount + 1}`;
+                                        const ultimaDoseId = `medicamento_ultima_dose_${rowCount + 1}`;
 
-                                        const inputNome = document.createElement("input");
-                                        inputNome.type = "text";
-                                        inputNome.className = "form-control form-control-sm";
-                                        inputNome.id = "medicamento_nome_" + (rowCount + 1);
-                                        inputNome.name = "medicamento_nome[]";
-                                        inputNome.placeholder = "Nome do Medicamento";
-
-                                        cell1.appendChild(inputNome);
-
-                                        const inputDose = document.createElement("input");
-                                        inputDose.type = "text";
-                                        inputDose.className = "form-control form-control-sm";
-                                        inputDose.id = "medicamento_dose_" + (rowCount + 1);
-                                        inputDose.name = "medicamento_dose[]";
-                                        inputDose.placeholder = "Dose";
-
-                                        cell2.appendChild(inputDose);
-
-                                        const inputIntervalo = document.createElement("input");
-                                        inputIntervalo.type = "text";
-                                        inputIntervalo.className = "form-control form-control-sm";
-                                        inputIntervalo.id = "medicamento_intervalo_" + (rowCount + 1);
-                                        inputIntervalo.name = "medicamento_intervalo[]";
-                                        inputIntervalo.placeholder = "Intervalo";
-
-                                        cell3.appendChild(inputIntervalo);
-
-                                        const removeButton = document.createElement("button");
-                                        removeButton.type = "button";
-                                        removeButton.className = "btn btn-outline-danger btn-sm";
-                                        removeButton.textContent = "Remover";
-                                        removeButton.addEventListener("click", function () {
-                                            removerLinhaMedicamento(newRow);
-                                        });
-
-                                        cell4.appendChild(removeButton);
+                                        newRow.innerHTML = `
+            <td class="col-6">
+                <label for="${medicamentoId}" class="visually-hidden">Nome do Medicamento</label>
+                <input type="text" class="form-control form-control-sm" id="${medicamentoId}" name="medicamento_nome[]" placeholder="Nome do Medicamento" />
+            </td>
+            <td>
+                <label for="${doseId}" class="visually-hidden">Dose</label>
+                <input type="text" class="form-control form-control-sm" id="${doseId}" name="medicamento_dose[]" placeholder="Dose" />
+            </td>
+            <td>
+                <label for="${intervaloId}" class="visually-hidden">Intervalo</label>
+                <input type="text" class="form-control form-control-sm" id="${intervaloId}" name="medicamento_intervalo[]" placeholder="Intervalo" />
+            </td>
+            <td>
+                <label for="${ultimaDoseId}" class="visually-hidden">Última Dose</label>
+                <input type="text" class="form-control form-control-sm" id="${ultimaDoseId}" name="medicamento_ultima_dose[]" placeholder="Última Dose" />
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaMedicamento(this)">Remover</button>
+            </td>
+        `;
                                     }
 
                                     // Função para remover uma linha da tabela de medicamentos
-                                    function removerLinhaMedicamento(row) {
-                                        const tbody = document.getElementById("medicamentosTbody");
-                                        tbody.removeChild(row);
+                                    function removerLinhaMedicamento(button) {
+                                        const row = button.closest("tr");
+                                        row.remove();
+                                    }
+
+                                    // Adiciona uma linha de alergia
+                                    function adicionarLinhaAlergia() {
+                                        const tbody = document.getElementById("medicamentosTbodyAlergia");
+                                        const newRow = document.createElement("tr");
+
+                                        const alergiaId = `medicamentoAlergia_${tbody.rows.length + 1}`;
+
+                                        newRow.innerHTML = `
+            <td>
+                <label for="${alergiaId}" class="visually-hidden">Alergia</label>
+                <input type="text" class="form-control form-control-sm" id="${alergiaId}" name="alergia_nome[]" placeholder="Medicamentos, Iodo, Espaladrapo, Luva de Procedimento" />
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaAlergia(this)">Remover</button>
+            </td>
+        `;
+
+                                        tbody.appendChild(newRow);
+                                    }
+
+                                    // Função para remover uma linha da tabela de alergias
+                                    function removerLinhaAlergia(button) {
+                                        const row = button.closest("tr");
+                                        row.remove();
                                     }
 
                                     // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento"
-                                    document.getElementById("adicionarMedicamento").addEventListener("click", function () {
-                                        adicionarLinhaMedicamento();
-                                    });
+                                    document.getElementById("adicionarMedicamento").addEventListener("click", adicionarLinhaMedicamento);
+
+                                    // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento Alergia"
+                                    document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", adicionarLinhaAlergia);
                                 </script>
+
+                                <div class="row mt-3">
+                                    <!-- Coluna de tamanho 6 para Observações -->
+                                    <div class="col-md-12">
+                                        <label for="observacoesautoconceito" class="form-label fw-bold">Observações:</label>
+                                        <textarea class="form-control form-control-sm" id="observacoesautoconceito" name="observacoesautoconceito" placeholder="Descreva alterações se houver" aria-label="Descreva alterações se houver" rows="5"></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -765,7 +766,7 @@
                                             diagnostico: "Ansiedade",
                                             metas: "Ansiedade diminuída.",
                                             condutas: ["Identificados fatores causadores", "Encorajada verbalização de sentimentos", "Tranquilizada pessoa", "Tranquilizado familiar", "Solicitada permanência do familiar ou acompanhante"],
-                                            intervencoes: ["Identificar sinais e sintomas de anciedade em consulta pré operatória"],
+                                            intervencoes: ["Identificar sinais e sintomas de ansiedade em consulta pré operatória"],
                                         },
                                         {
                                             id: 12,
@@ -1010,12 +1011,30 @@
                 const descricaoDuvidas = document.getElementById("descricaoDuvidas").value;
                 const orientadoExamesSim = document.getElementById("orientadoExamesSim").checked;
                 const orientadoExamesNao = document.getElementById("orientadoExamesNao").checked;
-                const hipertensao = document.getElementById("hipertensao").checked;
-                const diabetes = document.getElementById("diabetes").checked;
-                const doencaCardiaca = document.getElementById("doencaCardiaca").checked;
-                const asma = document.getElementById("asma").checked;
-                const aids = document.getElementById("aids").checked;
-                const outrasComorbidades = document.getElementById("outrasComorbidades").value;
+                const comorbidades = Array.from(document.querySelectorAll('input[name^="comorbidade"]:checked'))
+                    .map((el) => el.value)
+                    .join(", ");
+                const outrasComorbidadesDescricao = document.getElementById("outrasComorbidadesDescricao").value;
+                const medicamentos = Array.from(document.querySelectorAll('input[name="medicamento_nome[]"]'))
+                    .map((el, index) => {
+                        const dose = document.querySelectorAll('input[name="medicamento_dose[]"]')[index].value;
+                        const intervalo = document.querySelectorAll('input[name="medicamento_intervalo[]"]')[index].value;
+                        const ultimaDose = document.querySelectorAll('input[name="medicamento_ultima_dose[]"]')[index].value;
+
+                        // Verifica se há valor no nome, dose, intervalo ou última dose
+                        if (el.value || dose || intervalo || ultimaDose) {
+                            return `${el.value} (Dose: ${dose}, Intervalo: ${intervalo}, Última Dose: ${ultimaDose})`;
+                        } else {
+                            return null; // Se não houver valores, retorna null
+                        }
+                    })
+                    .filter(Boolean) // Remove valores nulos
+                    .join(", ");
+
+                const alergias = Array.from(document.querySelectorAll('input[name="alergia_nome[]"]'))
+                    .map((el) => el.value)
+                    .join(", ");
+
                 const reacaoAlergica = document.getElementById("reacaoAlergica").value;
                 const observacoesautoconceito = document.getElementById("observacoesautoconceito").value;
 
@@ -1048,28 +1067,19 @@
                     dados.push("Paciente foi orientado quanto a necessidade de trazer os exames: Não");
                 }
 
-                if (hipertensao) {
-                    dados.push("Comorbidade: Hipertensão");
+                if (comorbidades) {
+                    let comorbidadesTexto = `Comorbidades: ${comorbidades}`;
+                    if (outrasComorbidadesDescricao) {
+                        comorbidadesTexto += ` (Outras: ${outrasComorbidadesDescricao})`;
+                    }
+                    dados.push(comorbidadesTexto);
                 }
 
-                if (diabetes) {
-                    dados.push("Comorbidade: Diabetes");
+                if (medicamentos) {
+                    dados.push(`Medicamentos em Uso: ${medicamentos}`);
                 }
-
-                if (doencaCardiaca) {
-                    dados.push("Comorbidade: Doença Cardíaca");
-                }
-
-                if (asma) {
-                    dados.push("Comorbidade: Asma");
-                }
-
-                if (aids) {
-                    dados.push("Comorbidade: AIDS");
-                }
-
-                if (outrasComorbidades) {
-                    dados.push(`Outras Comorbidades: ${outrasComorbidades}`);
+                if (alergias) {
+                    dados.push(`Medicamentos Alergicos: ${alergias}`);
                 }
 
                 if (reacaoAlergica) {
@@ -1233,8 +1243,12 @@
                 return dados.join("\n");
             }
 
+            function titulo() {
+                return "TELECONSULTA DE ENFERMAGEM\n";
+            }
+
             function coletarDados() {
-                const dados = [coletarDataCirurgia(), coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos()].filter(Boolean); // Remove valores vazios
+                const dados = [titulo(), coletarDataCirurgia(), coletarFuncaoPapel(), coletarInterdependencia(), coletarAutoconceito(), coletarFisiologico(), coletarDiagnosticos()].filter(Boolean); // Remove valores vazios
                 return dados.join("\n");
             }
 
