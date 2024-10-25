@@ -762,12 +762,12 @@ Observação: ${observacao}`;
                     })
                     .filter(Boolean)
                     .join("\n\n");
-                adicionarDado("\nInstrumentais", instrumentais);
+                adicionarDado("\nInstrumentais", instrumentais, "\n");
 
                 const saidaMesa = Array.from(document.querySelectorAll('input[name="saidaMesa"]:checked'))
                     .map((input) => input.nextElementSibling.textContent)
                     .join(", ");
-                adicionarDado("\n\nAuxiliado em saída da mesa cirúrgica para", saidaMesa);
+                adicionarDado("\nAuxiliado em saída da mesa cirúrgica para", saidaMesa);
 
                 const horarioSaida = document.querySelectorAll('input[type="time"]')[1].value;
                 adicionarDado("Horário de Saída da Sala Operatória", horarioSaida);
