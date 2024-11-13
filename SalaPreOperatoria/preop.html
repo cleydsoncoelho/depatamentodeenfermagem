@@ -56,7 +56,7 @@
                 <div class="row mt-3">
                     <!-- Coluna de tamanho 6 para Deambulação -->
                     <div class="col-12">
-                        <label class="form-label fw-bold">Entrada do paciente em sala opertória:</label><br />
+                        <label class="form-label fw-bold">Modo de entrada do paciente em Sala Pré opertória:</label><br />
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="deambulacaoSemDificuldade" name="deambulacao" value="Sem dificuldade" />
                             <label class="form-check-label" for="deambulacaoSemDificuldade">Sem dificuldade</label>
@@ -404,12 +404,12 @@
 
                 // Coleta dos dados
                 const horarioEntrada = document.getElementById("horarioEntrada").value;
-                adicionarDado("Horário de Entrada na Sala Operatória", horarioEntrada);
+                adicionarDado("Horário de Entrada na Sala Pré Operatória", horarioEntrada);
 
                 const deambulacao = Array.from(document.querySelectorAll('input[name="deambulacao"]:checked'))
                     .map((input) => input.nextElementSibling.textContent)
                     .join(", ");
-                adicionarDado("Modo de entrada do paciente em sala pré operatória", deambulacao);
+                adicionarDado("Modo de entrada do paciente em Sala Pré Operatória", deambulacao);
 
                 const pulseiraRiscoQueda = document.querySelector('input[name="pulseiraRiscoQueda"]:checked');
                 adicionarDado("\nPulseira para risco de queda afixada no paciente", pulseiraRiscoQueda ? pulseiraRiscoQueda.nextElementSibling.textContent : "");
@@ -450,7 +450,7 @@
                 adicionarDado("Consentimento e avaliação anestésica", consentimentoAvaliacaoAnestesica ? consentimentoAvaliacaoAnestesica.nextElementSibling.textContent : "");
 
                 const horarioSaida = document.getElementById("horarioSaida").value;
-                adicionarDado("\nHorário de Saída da Sala Operatória", horarioSaida);
+                adicionarDado("\nHorário de Saída da Sala Pré Operatória", horarioSaida);
 
                 const observacao = document.querySelector("textarea").value;
                 adicionarDado("Observação", observacao);
