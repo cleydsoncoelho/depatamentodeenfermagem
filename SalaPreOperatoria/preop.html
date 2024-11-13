@@ -1,235 +1,479 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Pré Operatório</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet" />
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pré Operatório</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  </head>
 
-    <body style="background-color: #f4f4f5">
-        <header style="position: fixed; top: 0; width: 100%; z-index: 1000">
-            <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img src="../img/logo.png" alt="Logo" width="200" height="50" class="d-inline-block align-text-top" />
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarColor03">
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Menu Principal<span class="visually-hidden">(current)</span> </a>
-                            </li>
-                        </ul>
-                        <form class="d-flex">
-                            <a class="btn btn-secondary me-2" href="../contato/contato.html">Contato</a>
-                            <button class="btn btn-secondary" type="submit">Version 1.0.1</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <header style="position: fixed; top: 70px; width: 100%; z-index: 999">
-            <div class="justify-content-start bg-light">
-                <div class="container mb-3">
-                    <button id="btnCopiar" class="btn btn-success mt-3 me-2 mb-2">Vizualizar e Copiar</button>
-                    <button id="btnPDF" class="btn btn-info mt-3 me-2 mb-2">Gerar PDF</button>
-                    <button id="btnRecarregar" class="btn btn-danger mt-3 mb-2" onclick="recarregarPagina()">Limpar Formulario</button>
-                </div>
+  <body style="background-color: #f4f4f5">
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000">
+      <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="../img/logo.png"
+              alt="Logo"
+              width="200"
+              height="50"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor03"
+            aria-controls="navbarColor03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                  Menu Principal
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <a class="btn btn-secondary me-2" href="../contato/contato.html">
+                Contato
+              </a>
+              <button class="btn btn-secondary" type="submit">
+                Version 1.0.1
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <header style="position: fixed; top: 70px; width: 100%; z-index: 999">
+      <div class="justify-content-start bg-light">
+        <div class="container mb-3">
+          <button id="btnCopiar" class="btn btn-success mt-3 me-2 mb-2">
+            Vizualizar e Copiar
+          </button>
+          <button id="btnPDF" class="btn btn-info mt-3 me-2 mb-2">
+            Gerar PDF
+          </button>
+          <button
+            id="btnRecarregar"
+            class="btn btn-danger mt-3 mb-2"
+            onclick="recarregarPagina()"
+          >
+            Limpar Formulario
+          </button>
+        </div>
+      </div>
+    </header>
+    <div style="height: 140px"></div>
+    <!-- Espaçador para evitar que o conteúdo fique oculto atrás dos cabeçalhos fixos -->
+    <form>
+      <div class="container mt-5">
+        <!-- Horário de Entrada na Sala Operatória -->
+        <div class="row mt-3">
+          <div class="col-sm-8">
+            <label
+              class="form-label form-label-sm fw-bold"
+              for="horarioEntrada"
+            >
+              Horário de entrada na Sala de Pré Operatório
+            </label>
+            <div class="col-2">
+              <input
+                type="time"
+                class="form-control form-control-sm"
+                id="horarioEntrada"
+                name="horarioEntrada"
+                placeholder="Horário"
+              />
             </div>
-        </header>
-        <div style="height: 140px"></div>
-        <!-- Espaçador para evitar que o conteúdo fique oculto atrás dos cabeçalhos fixos -->
-        <form>
-            <div class="container mt-5">
-                <!-- Horário de Entrada na Sala Operatória -->
-                <div class="row mt-3">
-                    <div class="col-sm-8">
-                        <label class="form-label form-label-sm fw-bold" for="horarioEntrada">Horário de entrada na Sala de Pré Operatório</label>
-                        <div class="col-2">
-                            <input type="time" class="form-control form-control-sm" id="horarioEntrada" name="horarioEntrada" placeholder="Horário" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <!-- Coluna de tamanho 6 para Deambulação -->
-                    <div class="col-12">
-                        <label class="form-label fw-bold">Modo de entrada do paciente em Sala Pré opertória:</label><br />
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoSemDificuldade" name="deambulacao" value="Sem dificuldade" />
-                            <label class="form-check-label" for="deambulacaoSemDificuldade">Sem dificuldade</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoComDificuldade" name="deambulacao" value="Com dificuldade" />
-                            <label class="form-check-label" for="deambulacaoComDificuldade">Com dificuldade</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoAndador" name="deambulacao" value="Andador" />
-                            <label class="form-check-label" for="deambulacaoAndador">Andador</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoMuletas" name="deambulacao" value="Muletas" />
-                            <label class="form-check-label" for="deambulacaoMuletas">Muletas</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoBengala" name="deambulacao" value="Bengala" />
-                            <label class="form-check-label" for="deambulacaoBengala">Bengala</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoCadeiraDeRodas" name="deambulacao" value="Cadeira de rodas" />
-                            <label class="form-check-label" for="deambulacaoCadeiraDeRodas">Cadeira de rodas</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="deambulacaoEmMaca" name="deambulacao" value="Em maca" />
-                            <label class="form-check-label" for="deambulacaoEmMaca">Em maca</label>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <label class="form-label form-label-sm"><h5>Cirurgia Segura</h5></label>
-                <div class="row mt-3">
-                    <div class="col-sm-4">
-                        <label class="form-label form-label-sm fw-bold">Pulseira para risco de queda afixada no paciente</label>
-                        <div class="d-block">
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="pulseiraRiscoQueda" id="simPulseira" value="sim" />
-                                <label class="form-check-label" for="simPulseira">Sim</label>
-                            </div>
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="pulseiraRiscoQueda" id="naoAplicaPulseira" value="naoSeAplica" />
-                                <label class="form-check-label" for="naoAplicaPulseira">Não se aplica</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Confirmação de Identificação do Paciente -->
-                    <div class="col-sm-8">
-                        <label class="form-label form-label-sm fw-bold">Confirmada identificação do paciente no prontuário e pulseira de identificação</label>
-                        <div class="d-block">
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="identificacaoPaciente" id="simIdentificacao" value="sim" />
-                                <label class="form-check-label" for="simIdentificacao">Sim</label>
-                            </div>
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="identificacaoPaciente" id="naoIdentificacao" value="nao" />
-                                <label class="form-check-label" for="naoIdentificacao">Não</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pulseira de Identificação Afixada no Paciente -->
-                <div class="row mt-3">
-                    <div class="col-sm-4">
-                        <label class="form-label form-label-sm fw-bold">Pulseira de identificação afixada no paciente</label>
-                        <div class="d-flex">
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="pulseiraIdentificacao" id="simPulseiraIdentificacao" value="sim" />
-                                <label class="form-check-label" for="simPulseiraIdentificacao">Sim</label>
-                            </div>
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="pulseiraIdentificacao" id="naoPulseiraIdentificacao" value="nao" />
-                                <label class="form-check-label" for="naoPulseiraIdentificacao">Não</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Jejum -->
-                    <div class="col-sm-3">
-                        <label class="form-label form-label-sm fw-bold">Jejum</label>
-                        <div class="d-flex">
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="jejum" id="simJejum" value="sim" onclick="toggleHorarioJejum(this.checked)" />
-                                <label class="form-check-label" for="simJejum">Sim</label>
-                            </div>
-                            <div class="form-check form-check-inline form-check-sm">
-                                <input class="form-check-input" type="radio" name="jejum" id="naoAplicaJejum" value="naoSeAplica" onclick="toggleHorarioJejum(!this.checked)" />
-                                <label class="form-check-label" for="naoAplicaJejum">Não se aplica</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-12" id="horarioJejumField" style="display: none">
-                            <label class="form-label form-label-sm" for="horarioJejum">Se sim, Horário do início do Jejum:</label>
-                            <div class="col-6">
-                                <input type="time" class="form-control form-control-sm" id="horarioJejum" name="horarioJejum" />
-                            </div>
-                        </div>
-                    </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <!-- Coluna de tamanho 6 para Deambulação -->
+          <div class="col-12">
+            <label class="form-label fw-bold">
+              Modo de entrada do paciente em Sala Pré opertória:
+            </label>
+            <br />
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoSemDificuldade"
+                name="deambulacao"
+                value="Sem dificuldade"
+              />
+              <label class="form-check-label" for="deambulacaoSemDificuldade">
+                Sem dificuldade
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoComDificuldade"
+                name="deambulacao"
+                value="Com dificuldade"
+              />
+              <label class="form-check-label" for="deambulacaoComDificuldade">
+                Com dificuldade
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoAndador"
+                name="deambulacao"
+                value="Andador"
+              />
+              <label class="form-check-label" for="deambulacaoAndador">
+                Andador
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoMuletas"
+                name="deambulacao"
+                value="Muletas"
+              />
+              <label class="form-check-label" for="deambulacaoMuletas">
+                Muletas
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoBengala"
+                name="deambulacao"
+                value="Bengala"
+              />
+              <label class="form-check-label" for="deambulacaoBengala">
+                Bengala
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoCadeiraDeRodas"
+                name="deambulacao"
+                value="Cadeira de rodas"
+              />
+              <label class="form-check-label" for="deambulacaoCadeiraDeRodas">
+                Cadeira de rodas
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="deambulacaoEmMaca"
+                name="deambulacao"
+                value="Em maca"
+              />
+              <label class="form-check-label" for="deambulacaoEmMaca">
+                Em maca
+              </label>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <label class="form-label form-label-sm"><h5>Cirurgia Segura</h5></label>
+        <div class="row mt-3">
+          <div class="col-sm-4">
+            <label class="form-label form-label-sm fw-bold">
+              Pulseira para risco de queda afixada no paciente
+            </label>
+            <div class="d-block">
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="pulseiraRiscoQueda"
+                  id="simPulseira"
+                  value="sim"
+                />
+                <label class="form-check-label" for="simPulseira">Sim</label>
+              </div>
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="pulseiraRiscoQueda"
+                  id="naoAplicaPulseira"
+                  value="naoSeAplica"
+                />
+                <label class="form-check-label" for="naoAplicaPulseira">
+                  Não se aplica
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Confirmação de Identificação do Paciente -->
+          <div class="col-sm-8">
+            <label class="form-label form-label-sm fw-bold">
+              Confirmada identificação do paciente no prontuário e pulseira de
+              identificação
+            </label>
+            <div class="d-block">
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="identificacaoPaciente"
+                  id="simIdentificacao"
+                  value="sim"
+                />
+                <label class="form-check-label" for="simIdentificacao">
+                  Sim
+                </label>
+              </div>
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="identificacaoPaciente"
+                  id="naoIdentificacao"
+                  value="nao"
+                />
+                <label class="form-check-label" for="naoIdentificacao">
+                  Não
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pulseira de Identificação Afixada no Paciente -->
+        <div class="row mt-3">
+          <div class="col-sm-4">
+            <label class="form-label form-label-sm fw-bold">
+              Pulseira de identificação afixada no paciente
+            </label>
+            <div class="d-flex">
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="pulseiraIdentificacao"
+                  id="simPulseiraIdentificacao"
+                  value="sim"
+                />
+                <label class="form-check-label" for="simPulseiraIdentificacao">
+                  Sim
+                </label>
+              </div>
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="pulseiraIdentificacao"
+                  id="naoPulseiraIdentificacao"
+                  value="nao"
+                />
+                <label class="form-check-label" for="naoPulseiraIdentificacao">
+                  Não
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Jejum -->
+          <div class="col-sm-3">
+            <label class="form-label form-label-sm fw-bold">Jejum</label>
+            <div class="d-flex">
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="jejum"
+                  id="simJejum"
+                  value="sim"
+                  onclick="toggleHorarioJejum(this.checked)"
+                />
+                <label class="form-check-label" for="simJejum">Sim</label>
+              </div>
+              <div class="form-check form-check-inline form-check-sm">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="jejum"
+                  id="naoAplicaJejum"
+                  value="naoSeAplica"
+                  onclick="toggleHorarioJejum(!this.checked)"
+                />
+                <label class="form-check-label" for="naoAplicaJejum">
+                  Não se aplica
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-12" id="horarioJejumField" style="display: none">
+              <label class="form-label form-label-sm" for="horarioJejum">
+                Se sim, Horário do início do Jejum:
+              </label>
+              <div class="col-6">
+                <input
+                  type="time"
+                  class="form-control form-control-sm"
+                  id="horarioJejum"
+                  name="horarioJejum"
+                />
+              </div>
+            </div>
+          </div>
 
-                    <script>
-                        function toggleHorarioJejum(show) {
-                            const horarioJejumField = document.getElementById("horarioJejumField");
-                            if (show) {
-                                horarioJejumField.style.display = "block";
-                            } else {
-                                horarioJejumField.style.display = "none";
-                            }
-                        }
-                    </script>
+          <script>
+            function toggleHorarioJejum(show) {
+              const horarioJejumField =
+                document.getElementById("horarioJejumField");
+              if (show) {
+                horarioJejumField.style.display = "block";
+              } else {
+                horarioJejumField.style.display = "none";
+              }
+            }
+          </script>
 
-                    <!-- Sítio Cirúrgico Demarcado -->
-                    <div class="row mt-3">
-                        <div class="col-sm-4">
-                            <label class="form-label form-label-sm fw-bold">Sítio Cirúrgico demarcado</label>
-                            <div class="d-flex">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="sitioCirurgico" id="simSitioCirurgico" value="sim" />
-                                    <label class="form-check-label" for="simSitioCirurgico">Sim</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="sitioCirurgico" id="naoSitioCirurgico" value="nao" />
-                                    <label class="form-check-label" for="naoSitioCirurgico">Não</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="sitioCirurgico" id="naoAplicaSitioCirurgico" value="naoSeAplica" />
-                                    <label class="form-check-label" for="naoAplicaSitioCirurgico">Não se aplica</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <!-- Possui Alergia Conhecida -->
-                        <div class="col-sm-4">
-                            <label class="form-label form-label-sm fw-bold">Possui Alergia Conhecida?</label>
-                            <div class="d-flex">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="alergiaConhecida" id="simAlergiaConhecida" value="sim" onclick="toggleAlergiaFields(true)" />
-                                    <label class="form-check-label" for="simAlergiaConhecida">Sim</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="alergiaConhecida" id="naoAlergiaConhecida" value="nao" onclick="toggleAlergiaFields(false)" />
-                                    <label class="form-check-label" for="naoAlergiaConhecida">Não</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3" id="alergiaFields" style="display: none">
-                        <div class="form-group">
-                            <label for="medicamentosAlergia_1" class="form-label">Medicamentos Alergicos:</label>
-                            <table class="table table-bordered table-sm" id="tabelaMedicamentosAlergia">
-                                <thead>
-                                    <tr>
-                                        <th class="col-10">Alergias</th>
-                                        <th class="col-2">Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="medicamentosTbodyAlergia"></tbody>
-                            </table>
-                            <button type="button" class="btn btn-danger" id="adicionarMedicamentoAlergia">Adicionar ALERGIA</button>
-                            <div id="alertAlergia" class="alert alert-warning mt-2 text-dark" style="display: none">
-                                Atenção: Certifique que o paciente está com a pulseira adequada.
-                                <script>
-                                    document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", function () {
-                                        document.getElementById("alertAlergia").style.display = "block";
-                                    });
-                                </script>
-                            </div>
-                        </div>
-                        <script>
-                            // Adiciona uma linha de alergia
-                            function adicionarLinhaAlergia() {
-                                const tbody = document.getElementById("medicamentosTbodyAlergia");
-                                const newRow = document.createElement("tr");
-                                const alergiaId = `medicamentoAlergia_${tbody.rows.length + 1}`;
-                                newRow.innerHTML = `
+          <!-- Sítio Cirúrgico Demarcado -->
+          <div class="row mt-3">
+            <div class="col-sm-4">
+              <label class="form-label form-label-sm fw-bold">
+                Sítio Cirúrgico demarcado
+              </label>
+              <div class="d-flex">
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sitioCirurgico"
+                    id="simSitioCirurgico"
+                    value="sim"
+                  />
+                  <label class="form-check-label" for="simSitioCirurgico">
+                    Sim
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sitioCirurgico"
+                    id="naoSitioCirurgico"
+                    value="nao"
+                  />
+                  <label class="form-check-label" for="naoSitioCirurgico">
+                    Não
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="sitioCirurgico"
+                    id="naoAplicaSitioCirurgico"
+                    value="naoSeAplica"
+                  />
+                  <label class="form-check-label" for="naoAplicaSitioCirurgico">
+                    Não se aplica
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <!-- Possui Alergia Conhecida -->
+            <div class="col-sm-4">
+              <label class="form-label form-label-sm fw-bold">
+                Possui Alergia Conhecida?
+              </label>
+              <div class="d-flex">
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="alergiaConhecida"
+                    id="simAlergiaConhecida"
+                    value="sim"
+                    onclick="toggleAlergiaFields(true)"
+                  />
+                  <label class="form-check-label" for="simAlergiaConhecida">
+                    Sim
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="alergiaConhecida"
+                    id="naoAlergiaConhecida"
+                    value="nao"
+                    onclick="toggleAlergiaFields(false)"
+                  />
+                  <label class="form-check-label" for="naoAlergiaConhecida">
+                    Não
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3" id="alergiaFields" style="display: none">
+            <div class="form-group">
+              <label for="medicamentosAlergia_1" class="form-label">
+                Medicamentos Alergicos:
+              </label>
+              <table
+                class="table table-bordered table-sm"
+                id="tabelaMedicamentosAlergia"
+              >
+                <thead>
+                  <tr>
+                    <th class="col-10">Alergias</th>
+                    <th class="col-2">Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="medicamentosTbodyAlergia"></tbody>
+              </table>
+              <button
+                type="button"
+                class="btn btn-danger"
+                id="adicionarMedicamentoAlergia"
+              >
+                Adicionar ALERGIA
+              </button>
+              <div
+                id="alertAlergia"
+                class="alert alert-warning mt-2 text-dark"
+                style="display: none"
+              >
+                Atenção: Certifique que o paciente está com a pulseira adequada.
+                <script>
+                  document
+                    .getElementById("adicionarMedicamentoAlergia")
+                    .addEventListener("click", function () {
+                      document.getElementById("alertAlergia").style.display =
+                        "block";
+                    });
+                </script>
+              </div>
+            </div>
+            <script>
+              // Adiciona uma linha de alergia
+              function adicionarLinhaAlergia() {
+                const tbody = document.getElementById(
+                  "medicamentosTbodyAlergia"
+                );
+                const newRow = document.createElement("tr");
+                const alergiaId = `medicamentoAlergia_${tbody.rows.length + 1}`;
+                newRow.innerHTML = `
                                     <td>
                                         <label for="${alergiaId}" class="visually-hidden">Alergia</label>
                                         <input type="text" class="form-control form-control-sm" id="${alergiaId}" name="alergia_nome[]" placeholder="Medicamentos, Iodo, Espaladrapo, Luva de Procedimento" />
@@ -238,248 +482,474 @@
                                         <button type="button" class="btn btn-outline-danger btn-sm" onclick="removerLinhaAlergia(this)">Remover</button>
                                     </td>
                                 `;
-                                tbody.appendChild(newRow);
-                            }
+                tbody.appendChild(newRow);
+              }
 
-                            // Função para remover uma linha da tabela de alergias
-                            function removerLinhaAlergia(button) {
-                                const row = button.closest("tr");
-                                row.remove();
-                            }
-                            // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento Alergia"
-                            document.getElementById("adicionarMedicamentoAlergia").addEventListener("click", adicionarLinhaAlergia);
-                        </script>
-                    </div>
-                    <!-- Pulseira de Alergia Afixada no Paciente -->
-                    <div class="row mt-3" id="pulseiraAlergiaField" style="display: none">
-                        <div class="col-sm-6">
-                            <label class="form-label form-label-sm fw-bold">Pulseira de alergia afixada no paciente</label>
-                            <div class="d-flex">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="pulseiraAlergia" id="simPulseiraAlergia" value="sim" />
-                                    <label class="form-check-label" for="simPulseiraAlergia">Sim</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="pulseiraAlergia" id="naoPulseiraAlergia" value="nao" />
-                                    <label class="form-check-label" for="naoPulseiraAlergia">Não</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="pulseiraAlergia" id="naoAplicaPulseiraAlergia" value="naoSeAplica" />
-                                    <label class="form-check-label" for="naoAplicaPulseiraAlergia">Não se aplica</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        function toggleAlergiaFields(show) {
-                            const alergiaFields = document.getElementById("alergiaFields");
-                            const pulseiraAlergiaField = document.getElementById("pulseiraAlergiaField");
-                            if (show) {
-                                alergiaFields.style.display = "block";
-                                pulseiraAlergiaField.style.display = "block";
-                            } else {
-                                alergiaFields.style.display = "none";
-                                pulseiraAlergiaField.style.display = "none";
-                            }
-                        }
-                    </script>
-
-                    <!-- Retirados próteses e/ou adornos -->
-                    <div class="row mt-3">
-                        <div class="col-sm-4">
-                            <label class="form-label form-label-sm fw-bold">Retirados próteses e/ou adornos</label>
-                            <div class="d-flex">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="protesesAdornos" id="simProtesesAdornos" value="sim" />
-                                    <label class="form-check-label" for="simProtesesAdornos">Sim</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="protesesAdornos" id="naoProtesesAdornos" value="nao" />
-                                    <label class="form-check-label" for="naoProtesesAdornos">Não</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <br />
-                    <hr class="mt-3" />
-                    <label class="form-label form-label-sm"><h5>Documentação</h5></label>
-                    <!-- Consentimento Cirúrgico Assinado -->
-                    <div class="row mt-3">
-                        <div class="col-sm-6">
-                            <label class="form-label form-label-sm fw-bold">Consentimento Cirúrgico assinado</label>
-                            <div class="d-flex">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="consentimentoCirurgico" id="simConsentimento" value="sim" />
-                                    <label class="form-check-label" for="simConsentimento">Sim</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="consentimentoCirurgico" id="naoConsentimento" value="nao" />
-                                    <label class="form-check-label" for="naoConsentimento">Não</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="consentimentoCirurgico" id="naoAplicaConsentimento" value="naoSeAplica" />
-                                    <label class="form-check-label" for="naoAplicaConsentimento">Não se aplica</label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Consentimento e Avaliação Anestésica -->
-                        <div class="col-sm-6">
-                            <label class="form-label form-label-sm fw-bold">Consentimento e avaliação anestésica</label>
-                            <div class="d-flex">
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="consentimentoAvaliacaoAnestesica" id="simConsentimentoAnestesica" value="sim" />
-                                    <label class="form-check-label" for="simConsentimentoAnestesica">Sim</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="consentimentoAvaliacaoAnestesica" id="naoConsentimentoAnestesica" value="nao" />
-                                    <label class="form-check-label" for="naoConsentimentoAnestesica">Não</label>
-                                </div>
-                                <div class="form-check form-check-inline form-check-sm">
-                                    <input class="form-check-input" type="radio" name="consentimentoAvaliacaoAnestesica" id="naoAplicaConsentimentoAnestesica" value="naoSeAplica" />
-                                    <label class="form-check-label" for="naoAplicaConsentimentoAnestesica">Não se aplica</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              // Função para remover uma linha da tabela de alergias
+              function removerLinhaAlergia(button) {
+                const row = button.closest("tr");
+                row.remove();
+              }
+              // Adiciona um ouvinte de eventos ao botão "Adicionar Medicamento Alergia"
+              document
+                .getElementById("adicionarMedicamentoAlergia")
+                .addEventListener("click", adicionarLinhaAlergia);
+            </script>
+          </div>
+          <!-- Pulseira de Alergia Afixada no Paciente -->
+          <div class="row mt-3" id="pulseiraAlergiaField" style="display: none">
+            <div class="col-sm-6">
+              <label class="form-label form-label-sm fw-bold">
+                Pulseira de alergia afixada no paciente
+              </label>
+              <div class="d-flex">
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pulseiraAlergia"
+                    id="simPulseiraAlergia"
+                    value="sim"
+                  />
+                  <label class="form-check-label" for="simPulseiraAlergia">
+                    Sim
+                  </label>
                 </div>
-                <hr />
-
-                <!-- Horário de Saída da Sala Operatória -->
-                <div class="row mt-3">
-                    <div class="col-sm-8">
-                        <label class="form-label form-label-sm fw-bold" for="horarioSaida">Horário de Saída da Sala Pré Operatório</label>
-                        <div class="col-2">
-                            <input type="time" class="form-control form-control-sm" id="horarioSaida" name="horarioSaida" placeholder="Horário" />
-                        </div>
-                    </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pulseiraAlergia"
+                    id="naoPulseiraAlergia"
+                    value="nao"
+                  />
+                  <label class="form-check-label" for="naoPulseiraAlergia">
+                    Não
+                  </label>
                 </div>
-                <!-- Observação -->
-                <div class="row mt-3">
-                    <div class="col-sm-12">
-                        <label class="form-label form-label-sm fw-bold">Observação</label>
-                        <textarea class="form-control form-control-sm" rows="5" placeholder="Escreva suas observações aqui"></textarea>
-                    </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pulseiraAlergia"
+                    id="naoAplicaPulseiraAlergia"
+                    value="naoSeAplica"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="naoAplicaPulseiraAlergia"
+                  >
+                    Não se aplica
+                  </label>
                 </div>
+              </div>
             </div>
-        </form>
+          </div>
+          <script>
+            function toggleAlergiaFields(show) {
+              const alergiaFields = document.getElementById("alergiaFields");
+              const pulseiraAlergiaField = document.getElementById(
+                "pulseiraAlergiaField"
+              );
+              if (show) {
+                alergiaFields.style.display = "block";
+                pulseiraAlergiaField.style.display = "block";
+              } else {
+                alergiaFields.style.display = "none";
+                pulseiraAlergiaField.style.display = "none";
+              }
+            }
+          </script>
+
+          <!-- Retirados próteses e/ou adornos -->
+          <div class="row mt-3">
+            <div class="col-sm-4">
+              <label class="form-label form-label-sm fw-bold">
+                Retirados próteses e/ou adornos
+              </label>
+              <div class="d-flex">
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="protesesAdornos"
+                    id="simProtesesAdornos"
+                    value="sim"
+                  />
+                  <label class="form-check-label" for="simProtesesAdornos">
+                    Sim
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="protesesAdornos"
+                    id="naoProtesesAdornos"
+                    value="nao"
+                  />
+                  <label class="form-check-label" for="naoProtesesAdornos">
+                    Não
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <hr class="mt-3" />
+          <label class="form-label form-label-sm"><h5>Documentação</h5></label>
+          <!-- Consentimento Cirúrgico Assinado -->
+          <div class="row mt-3">
+            <div class="col-sm-6">
+              <label class="form-label form-label-sm fw-bold">
+                Consentimento Cirúrgico assinado
+              </label>
+              <div class="d-flex">
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="consentimentoCirurgico"
+                    id="simConsentimento"
+                    value="sim"
+                  />
+                  <label class="form-check-label" for="simConsentimento">
+                    Sim
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="consentimentoCirurgico"
+                    id="naoConsentimento"
+                    value="nao"
+                  />
+                  <label class="form-check-label" for="naoConsentimento">
+                    Não
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="consentimentoCirurgico"
+                    id="naoAplicaConsentimento"
+                    value="naoSeAplica"
+                  />
+                  <label class="form-check-label" for="naoAplicaConsentimento">
+                    Não se aplica
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Consentimento e Avaliação Anestésica -->
+            <div class="col-sm-6">
+              <label class="form-label form-label-sm fw-bold">
+                Consentimento e avaliação anestésica
+              </label>
+              <div class="d-flex">
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="consentimentoAvaliacaoAnestesica"
+                    id="simConsentimentoAnestesica"
+                    value="sim"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="simConsentimentoAnestesica"
+                  >
+                    Sim
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="consentimentoAvaliacaoAnestesica"
+                    id="naoConsentimentoAnestesica"
+                    value="nao"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="naoConsentimentoAnestesica"
+                  >
+                    Não
+                  </label>
+                </div>
+                <div class="form-check form-check-inline form-check-sm">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="consentimentoAvaliacaoAnestesica"
+                    id="naoAplicaConsentimentoAnestesica"
+                    value="naoSeAplica"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="naoAplicaConsentimentoAnestesica"
+                  >
+                    Não se aplica
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <hr />
 
-        <!-- Modal para pré-visualização -->
-        <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="previewModalLabel">Pré-visualização dos Dados</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <pre id="previewContent" style="white-space: pre-wrap"></pre>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" id="confirmCopy">Confirmar e Copiar</button>
-                    </div>
-                </div>
+        <!-- Horário de Saída da Sala Operatória -->
+        <div class="row mt-3">
+          <div class="col-sm-8">
+            <label class="form-label form-label-sm fw-bold" for="horarioSaida">
+              Horário de saída da Sala Pré Operatório
+            </label>
+            <div class="col-2">
+              <input
+                type="time"
+                class="form-control form-control-sm"
+                id="horarioSaida"
+                name="horarioSaida"
+                placeholder="Horário"
+              />
             </div>
+          </div>
         </div>
+        <!-- Observação -->
+        <div class="row mt-3">
+          <div class="col-sm-12">
+            <label class="form-label form-label-sm fw-bold">Observação</label>
+            <textarea
+              class="form-control form-control-sm"
+              rows="5"
+              placeholder="Escreva suas observações aqui"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+    <hr />
 
-        <!-- Script para pré-visualização e cópia -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                document.getElementById("btnCopiar").addEventListener("click", mostrarPrevisualizacao);
-                document.getElementById("confirmCopy").addEventListener("click", copiarParaClipboard);
-            });
+    <!-- Modal para pré-visualização -->
+    <div
+      class="modal fade"
+      id="previewModal"
+      tabindex="-1"
+      aria-labelledby="previewModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previewModalLabel">
+              Pré-visualização dos Dados
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <pre id="previewContent" style="white-space: pre-wrap"></pre>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary" id="confirmCopy">
+              Confirmar e Copiar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            let dados = "";
+    <!-- Script para pré-visualização e cópia -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("btnCopiar")
+          .addEventListener("click", mostrarPrevisualizacao);
+        document
+          .getElementById("confirmCopy")
+          .addEventListener("click", copiarParaClipboard);
+      });
 
-            function adicionarDado(label, valor) {
-                if (valor) {
-                    dados += `${label}: ${valor}\n`;
-                }
-            }
+      let dados = "";
 
-            function coletarDadosPreoperatorio() {
-                dados = "ANOTAÇÕES DE ENFERMAGEM NO PRÉ OPERATÓRIO\n\n"; // Reinicia a variável de dados// Reinicia a variável de dados
+      function adicionarDado(label, valor) {
+        if (valor) {
+          dados += `${label}: ${valor}\n`;
+        }
+      }
 
-                // Coleta dos dados
-                const horarioEntrada = document.getElementById("horarioEntrada").value;
-                adicionarDado("Horário de Entrada na Sala Pré Operatória", horarioEntrada);
+      function coletarDadosPreoperatorio() {
+        dados = "ANOTAÇÕES DE ENFERMAGEM NO PRÉ OPERATÓRIO\n\n"; // Reinicia a variável de dados// Reinicia a variável de dados
 
-                const deambulacao = Array.from(document.querySelectorAll('input[name="deambulacao"]:checked'))
-                    .map((input) => input.nextElementSibling.textContent)
-                    .join(", ");
-                adicionarDado("Modo de entrada do paciente em Sala Pré Operatória", deambulacao);
+        // Coleta dos dados
+        const horarioEntrada = document.getElementById("horarioEntrada").value;
+        adicionarDado(
+          "Horário de Entrada na Sala Pré Operatória",
+          horarioEntrada
+        );
 
-                const pulseiraRiscoQueda = document.querySelector('input[name="pulseiraRiscoQueda"]:checked');
-                adicionarDado("\nPulseira para risco de queda afixada no paciente", pulseiraRiscoQueda ? pulseiraRiscoQueda.nextElementSibling.textContent : "");
+        const deambulacao = Array.from(
+          document.querySelectorAll('input[name="deambulacao"]:checked')
+        )
+          .map((input) => input.nextElementSibling.textContent)
+          .join(", ");
+        adicionarDado(
+          "Modo de entrada do paciente em Sala Pré Operatória",
+          deambulacao
+        );
 
-                const identificacaoPaciente = document.querySelector('input[name="identificacaoPaciente"]:checked');
-                adicionarDado("Confirmada identificação do paciente no prontuário e pulseira de identificação", identificacaoPaciente ? identificacaoPaciente.nextElementSibling.textContent : "");
+        const pulseiraRiscoQueda = document.querySelector(
+          'input[name="pulseiraRiscoQueda"]:checked'
+        );
+        adicionarDado(
+          "\nPulseira para risco de queda afixada no paciente",
+          pulseiraRiscoQueda
+            ? pulseiraRiscoQueda.nextElementSibling.textContent
+            : ""
+        );
 
-                const pulseiraIdentificacao = document.querySelector('input[name="pulseiraIdentificacao"]:checked');
-                adicionarDado("Pulseira de identificação afixada no paciente", pulseiraIdentificacao ? pulseiraIdentificacao.nextElementSibling.textContent : "");
+        const identificacaoPaciente = document.querySelector(
+          'input[name="identificacaoPaciente"]:checked'
+        );
+        adicionarDado(
+          "Confirmada identificação do paciente no prontuário e pulseira de identificação",
+          identificacaoPaciente
+            ? identificacaoPaciente.nextElementSibling.textContent
+            : ""
+        );
 
-                const jejum = document.querySelector('input[name="jejum"]:checked');
-                adicionarDado("Jejum", jejum ? jejum.nextElementSibling.textContent : "");
+        const pulseiraIdentificacao = document.querySelector(
+          'input[name="pulseiraIdentificacao"]:checked'
+        );
+        adicionarDado(
+          "Pulseira de identificação afixada no paciente",
+          pulseiraIdentificacao
+            ? pulseiraIdentificacao.nextElementSibling.textContent
+            : ""
+        );
 
-                const horarioJejum = document.getElementById("horarioJejum").value;
-                adicionarDado("Horário do início do Jejum", horarioJejum);
+        const jejum = document.querySelector('input[name="jejum"]:checked');
+        adicionarDado(
+          "Jejum",
+          jejum ? jejum.nextElementSibling.textContent : ""
+        );
 
-                const sitioCirurgico = document.querySelector('input[name="sitioCirurgico"]:checked');
-                adicionarDado("Sítio Cirúrgico demarcado", sitioCirurgico ? sitioCirurgico.nextElementSibling.textContent : "");
+        const horarioJejum = document.getElementById("horarioJejum").value;
+        adicionarDado("Horário do início do Jejum", horarioJejum);
 
-                const alergiaConhecida = document.querySelector('input[name="alergiaConhecida"]:checked');
-                adicionarDado("Possui Alergia Conhecida", alergiaConhecida ? alergiaConhecida.nextElementSibling.textContent : "");
+        const sitioCirurgico = document.querySelector(
+          'input[name="sitioCirurgico"]:checked'
+        );
+        adicionarDado(
+          "Sítio Cirúrgico demarcado",
+          sitioCirurgico ? sitioCirurgico.nextElementSibling.textContent : ""
+        );
 
-                const medicamentosAlergia = Array.from(document.querySelectorAll('input[name="alergia_nome[]"]'))
-                    .map((input) => input.value)
-                    .join(", ");
-                adicionarDado("Medicamentos Alergicos", medicamentosAlergia);
+        const alergiaConhecida = document.querySelector(
+          'input[name="alergiaConhecida"]:checked'
+        );
+        adicionarDado(
+          "Possui Alergia Conhecida",
+          alergiaConhecida
+            ? alergiaConhecida.nextElementSibling.textContent
+            : ""
+        );
 
-                const pulseiraAlergia = document.querySelector('input[name="pulseiraAlergia"]:checked');
-                adicionarDado("Pulseira de alergia afixada no paciente", pulseiraAlergia ? pulseiraAlergia.nextElementSibling.textContent : "");
+        const medicamentosAlergia = Array.from(
+          document.querySelectorAll('input[name="alergia_nome[]"]')
+        )
+          .map((input) => input.value)
+          .join(", ");
+        adicionarDado("Medicamentos Alergicos", medicamentosAlergia);
 
-                const protesesAdornos = document.querySelector('input[name="protesesAdornos"]:checked');
-                adicionarDado("Retirados próteses e/ou adornos", protesesAdornos ? protesesAdornos.nextElementSibling.textContent : "");
+        const pulseiraAlergia = document.querySelector(
+          'input[name="pulseiraAlergia"]:checked'
+        );
+        adicionarDado(
+          "Pulseira de alergia afixada no paciente",
+          pulseiraAlergia ? pulseiraAlergia.nextElementSibling.textContent : ""
+        );
 
-                const consentimentoCirurgico = document.querySelector('input[name="consentimentoCirurgico"]:checked');
-                adicionarDado("\nConsentimento Cirúrgico assinado", consentimentoCirurgico ? consentimentoCirurgico.nextElementSibling.textContent : "");
+        const protesesAdornos = document.querySelector(
+          'input[name="protesesAdornos"]:checked'
+        );
+        adicionarDado(
+          "Retirados próteses e/ou adornos",
+          protesesAdornos ? protesesAdornos.nextElementSibling.textContent : ""
+        );
 
-                const consentimentoAvaliacaoAnestesica = document.querySelector('input[name="consentimentoAvaliacaoAnestesica"]:checked');
-                adicionarDado("Consentimento e avaliação anestésica", consentimentoAvaliacaoAnestesica ? consentimentoAvaliacaoAnestesica.nextElementSibling.textContent : "");
+        const consentimentoCirurgico = document.querySelector(
+          'input[name="consentimentoCirurgico"]:checked'
+        );
+        adicionarDado(
+          "\nConsentimento Cirúrgico assinado",
+          consentimentoCirurgico
+            ? consentimentoCirurgico.nextElementSibling.textContent
+            : ""
+        );
 
-                const horarioSaida = document.getElementById("horarioSaida").value;
-                adicionarDado("\nHorário de Saída da Sala Pré Operatória", horarioSaida);
+        const consentimentoAvaliacaoAnestesica = document.querySelector(
+          'input[name="consentimentoAvaliacaoAnestesica"]:checked'
+        );
+        adicionarDado(
+          "Consentimento e avaliação anestésica",
+          consentimentoAvaliacaoAnestesica
+            ? consentimentoAvaliacaoAnestesica.nextElementSibling.textContent
+            : ""
+        );
 
-                const observacao = document.querySelector("textarea").value;
-                adicionarDado("Observação", observacao);
-            }
+        const horarioSaida = document.getElementById("horarioSaida").value;
+        adicionarDado(
+          "\nHorário de Saída da Sala Pré Operatória",
+          horarioSaida
+        );
 
-            function mostrarPrevisualizacao() {
-                coletarDadosPreoperatorio();
-                document.getElementById("previewContent").textContent = dados;
+        const observacao = document.querySelector("textarea").value;
+        adicionarDado("Observação", observacao);
+      }
 
-                // Abre o modal
-                const modal = new bootstrap.Modal(document.getElementById("previewModal"));
-                modal.show();
-            }
+      function mostrarPrevisualizacao() {
+        coletarDadosPreoperatorio();
+        document.getElementById("previewContent").textContent = dados;
 
-            async function copiarParaClipboard() {
-                try {
-                    await navigator.clipboard.writeText(dados);
-                    alert("Dados copiados para a área de transferência");
-                } catch (err) {
-                    console.error("Erro ao copiar os dados: ", err);
-                    alert("Erro ao copiar os dados. Tente novamente.");
-                }
-            }
-            function recarregarPagina() {
-                location.reload();
-            }
-            document.getElementById("btnRecarregar").addEventListener("click", recarregarPagina);
-        </script>
+        // Abre o modal
+        const modal = new bootstrap.Modal(
+          document.getElementById("previewModal")
+        );
+        modal.show();
+      }
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+      async function copiarParaClipboard() {
+        try {
+          await navigator.clipboard.writeText(dados);
+          alert("Dados copiados para a área de transferência");
+        } catch (err) {
+          console.error("Erro ao copiar os dados: ", err);
+          alert("Erro ao copiar os dados. Tente novamente.");
+        }
+      }
+      function recarregarPagina() {
+        location.reload();
+      }
+      document
+        .getElementById("btnRecarregar")
+        .addEventListener("click", recarregarPagina);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
