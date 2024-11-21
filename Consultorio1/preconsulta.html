@@ -2776,6 +2776,7 @@
         const riscoCirurgico =
           document.querySelector('input[name="riscoCirurgico"]:checked')
             ?.value || "";
+
         const outrasRiscoObservacao = document.getElementById(
           "outrasRiscoObservacao"
         ).value;
@@ -2873,6 +2874,7 @@
           dados.push(`Nome do Procedimento: ${nomeProcedimento}`);
         }
         if (riscoCirurgico) {
+          dados.push(`Risco Cirúrgico: ${riscoCirurgico}`);
         }
 
         if (outrasRiscoObservacao) {
@@ -2882,14 +2884,12 @@
         }
 
         if (examesComplementares) {
-          let examesTexto = `Exames Complementares: ${examesComplementares}`;
-          if (
-            examesComplementares.includes("Outros") &&
-            outrosExamesObservacao
-          ) {
-            examesTexto += ` (${outrosExamesObservacao})`;
-          }
-          dados.push(examesTexto);
+          dados.push(`Exames Complementares: ${examesComplementares}`);
+        }
+        if (outrosExamesObservacao) {
+          dados.push(
+            `Observação sobre Exames Complementares: ${outrosExamesObservacao}`
+          );
         }
         if (jejum) {
           let jejumTexto = `Jejum: ${jejum}`;
