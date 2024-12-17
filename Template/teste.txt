@@ -1,19 +1,19 @@
+ANOTAÇÕES DE ENFERMAGEM NO PÓS OPERATÓRIO
 
-MODO FUNÇÃO DO PAPEL
-
-MODO INTERDEPENDÊNCIA
-Nome do Acompanhante: Maria da Gloria 
-Vínculo com Acompanhante: casado
-Idade do Acompanhante: 40
-
-MODO AUTOCONCEITO
-
-MODO FISIOLÓGICO
-
-PROCESSO DE ENFERMAGEM
-
-SINAIS VITAIS:
-
- Pressão Arterial: ____________________________mmhg   Temperatura: _________°C   
-
-Pulso: _________bpm   Glicemia Capilar: __________mg/dl   Saturação: __________%
+Horário de Retorno da Sala Operatória: 09:37
+Retorno da Sala Operatória: Cadeira de Rodas
+Nível de Consciência: Sedado
+Dor: Sim
+Local da Dor: Qui similique volupt
+Escala EVA: 5
+Padrão Respiratório: Ventilando em ar ambiente com esforço
+Pulsos: Sem alterações
+Aquecido com: Não se aplica
+Local de acesso venoso: Nostrum dolor sunt e
+Curativo Cirúrgico: Sangramento visível
+Local do Curativo Cirúrgico: Voluptatem sint con
+Dieta: Parcial
+Horário da Dieta: 15:02
+Liberado da RPA: Deambulando, em Maca
+Encaminhado para: Residência, Repouso, HUPE
+Horário de Saída: 08:15
