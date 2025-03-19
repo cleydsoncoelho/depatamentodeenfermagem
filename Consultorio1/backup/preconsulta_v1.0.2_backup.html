@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-consulta de Enfermagem</title>
+    <!-- Bootstrap CSS local -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center mb-4">Pré-consulta de Enfermagem</h1>
+        </div>
+      </div>
+
+      <!-- Barra de ferramentas -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="salvarDados()">
+              <i class="fas fa-save"></i> Salvar
+            </button>
+            <button class="btn btn-warning" onclick="limparDados()">
+              <i class="fas fa-trash"></i> Limpar
+            </button>
+            <button class="btn btn-success" onclick="exportarDados()">
+              <i class="fas fa-file-export"></i> Exportar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário principal -->
+      <form id="formulario">
+        <!-- Navegação por abas -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="identificacao-tab" data-bs-toggle="tab" data-bs-target="#identificacao" type="button" role="tab">
+              <i class="fas fa-user"></i> Identificação
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="anamnese-tab" data-bs-toggle="tab" data-bs-target="#anamnese" type="button" role="tab">
+              <i class="fas fa-clipboard-list"></i> Anamnese
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="diagnostico-tab" data-bs-toggle="tab" data-bs-target="#diagnostico" type="button" role="tab">
+              <i class="fas fa-stethoscope"></i> Diagnóstico
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="prescricoes-tab" data-bs-toggle="tab" data-bs-target="#prescricoes" type="button" role="tab">
+              <i class="fas fa-prescription"></i> Prescrições
+            </button>
+          </li>
+        </ul>
+
+        <!-- Conteúdo das abas -->
+        <div class="tab-content" id="myTabContent">
+          <!-- Aba Identificação -->
+          <div class="tab-pane fade show active" id="identificacao" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Dados de Identificação</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="nome" class="form-label">Nome do Paciente</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+                  </div>
+                </div>
+                <!-- Adicione mais campos conforme necessário -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba Anamnese -->
+          <div class="tab-pane fade" id="anamnese" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Anamnese</h5>
+              </div>
+              <div class="card-body">
+                <!-- Adicione os campos da anamnese aqui -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba Diagnóstico -->
+          <div class="tab-pane fade" id="diagnostico" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Diagnóstico e Intervenções</h5>
+              </div>
+              <div class="card-body">
+                <!-- Adicione os campos de diagnóstico aqui -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba Prescrições -->
+          <div class="tab-pane fade" id="prescricoes" role="tabpanel">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="mb-0">Prescrições</h5>
+              </div>
+              <div class="card-body">
+                <!-- Adicione os campos de prescrições aqui -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Botões de ação -->
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <button class="btn btn-primary" onclick="validarCampos()">
+            <i class="fas fa-check"></i> Validar
+          </button>
+          <button class="btn btn-success" onclick="copiarDados()">
+            <i class="fas fa-copy"></i> Copiar Dados
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de visualização -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previewModalLabel">Pré-visualização dos Dados</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <pre id="previewContent"></pre>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" onclick="copiarDados()">Copiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>
