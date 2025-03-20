@@ -1,0 +1,1388 @@
+[
+	{
+		"id": 1,
+		"diagnostico": "Risco de insegurança na Terapia via Endovenosa",
+		"metas": "Segurança na Terapia via endovenosa, eficaz",
+		"intervencoes": [
+			"Confirmar prescrição médica",
+			"Assegurar que é a medicação correta",
+			"Confirmar dose correta",
+			"Confirmar a identidade do paciente",
+			"Confirmar tempo de infusão correto",
+			"Assegurar técnica asséptica",
+			"Rotular adequadamente a medicação preparada",
+			"Administrar Medicação Intravenosa (ou Endovenosa)",
+			"Realizar punção venosa periférica",
+			"Documentar o processo de preparação da medicação"
+		],
+		"condutas": [
+			"Realizar dupla checagem da medicação e paciente antes da administração.",
+			"Monitorar sinais de complicações, como infiltração ou flebite.",
+			"Verificar acesso venoso antes e após a administração.",
+			"Manter técnica asséptica rigorosa durante todo o procedimento.",
+			"Registrar qualquer evento adverso ou intercorrência no prontuário.",
+			"Educar o paciente sobre possíveis efeitos colaterais e sinais de complicações."
+		]
+	},
+	{
+		"id": 2,
+		"diagnostico": "Risco de insegurança na Terapia via Subcutânea",
+		"metas": "Segurança na Terapia via subcutânea, eficaz",
+		"intervencoes": [
+			"Monitorar sinais vitais",
+			"Assegurar técnica asséptica",
+			"Monitorar os sinais e sintomas de reação alérgica sistêmica e anafilaxia",
+			"Orientar paciente quanto aos cuidados com local da administração subcutânea",
+			"Aplicar medicação em local prescrito",
+			"Documentar o processo"
+		],
+		"condutas": [
+			"Confirmar prescrição médica antes da administração.",
+			"Escolher corretamente o local de aplicação e alternar os locais para evitar lipodistrofia.",
+			"Usar técnica de preensão adequada da pele para minimizar dor e absorção irregular.",
+			"Observar sinais de hematoma ou reação no local da aplicação.",
+			"Registrar a administração e possíveis reações do paciente.",
+			"Esclarecer o paciente sobre os cuidados após a aplicação da medicação."
+		]
+	},
+	{
+		"id": 3,
+		"diagnostico": "Adesão ao Regime Dietético",
+		"metas": "Adesão ao Regime Dietético, eficaz",
+		"intervencoes": ["Fornecer orientação nutricional personalizada", "Envolver um nutricionista para acompanhamento", "Monitorar a adesão às recomendações dietéticas"],
+		"condutas": [
+			"Avaliar a aceitação e dificuldades do paciente quanto ao plano alimentar.",
+			"Incentivar a ingestão de alimentos saudáveis e balanceados.",
+			"Identificar barreiras e fatores que influenciam a adesão ao regime alimentar.",
+			"Acompanhar peso e sinais clínicos que indiquem déficit ou excesso nutricional.",
+			"Esclarecer dúvidas do paciente sobre substituições alimentares.",
+			"Estimular suporte familiar na adesão ao plano alimentar."
+		]
+	},
+	{
+		"id": 4,
+		"diagnostico": "Efeito secundário da medicação, se presente",
+		"metas": "Efeito secundário da medicação, ausente",
+		"intervencoes": [
+			"Interromper medicação endovenosa",
+			"Inserir dispositivo de acesso vascular, se necessário",
+			"Verificar permeabilidade de acesso venoso",
+			"Comunicar ao enfermeiro",
+			"Comunicar a equipe médica",
+			"Monitorar os sinais e sintomas de reação alérgica sistêmica e anafilaxia",
+			"Administrar medicação endovenosa"
+		],
+		"condutas": [
+			"Identificar sinais e sintomas adversos relacionados à medicação.",
+			"Suspender imediatamente a administração em caso de reações graves.",
+			"Notificar imediatamente a equipe médica e registrar o evento.",
+			"Garantir acesso venoso para administração de possíveis antídotos.",
+			"Monitorar os sinais vitais do paciente constantemente.",
+			"Esclarecer o paciente sobre os sintomas a serem observados após a medicação."
+		]
+	},
+	{
+		"id": 5,
+		"diagnostico": "Risco de extravasamento de medicação",
+		"metas": "Risco de extravasamento de medicação, diminuído",
+		"intervencoes": ["Acompanhar pessoa em seus deslocamentos", "Manter vigilância contínua"],
+		"condutas": [
+			"Observar sinais de infiltração ou extravasamento durante a infusão.",
+			"Reavaliar periodicamente o local de punção venosa.",
+			"Usar cateteres adequados ao tipo de medicação e veia disponível.",
+			"Orientar o paciente para relatar qualquer desconforto no local da infusão.",
+			"Em caso de extravasamento, interromper a infusão imediatamente.",
+			"Aplicar protocolo específico para extravasamento conforme o medicamento envolvido."
+		]
+	},
+	{
+		"id": 6,
+		"diagnostico": "Risco de Alergia",
+		"metas": "Alergia, ausente",
+		"intervencoes": ["Verificar quais são os alergênicos do paciente", "Certificar-se do não uso de alergênicos do paciente durante a infusão"],
+		"condutas": [
+			"Realizar anamnese detalhada sobre histórico de alergias.",
+			"Identificar possíveis alérgenos na medicação prescrita.",
+			"Monitorar sinais de reação alérgica durante e após a administração da medicação.",
+			"Ter disponível material de emergência para reações anafiláticas.",
+			"Educar o paciente sobre evitar substâncias potencialmente alérgicas.",
+			"Manter pulseira de identificação de alergia no paciente, se necessário."
+		]
+	},
+	{
+		"id": 7,
+		"diagnostico": "Deambulação alterada",
+		"metas": "Deambulação melhorada",
+		"intervencoes": ["Acompanhar e ajudar durante deambulação", "Monitorar marcha, equilíbrio e fadiga", "Manter vigilância contínua", "Encaminhar a poltrona em cadeira de rodas"],
+		"condutas": [
+			"Avaliar capacidade motora do paciente antes da deambulação.",
+			"Fornecer apoio durante a movimentação para evitar quedas.",
+			"Adaptar ambiente para facilitar a mobilidade do paciente.",
+			"Incentivar exercícios de fortalecimento muscular e alongamento.",
+			"Monitorar sinais de fadiga ou dor durante a mobilização.",
+			"Encaminhar para fisioterapia se necessário."
+		]
+	},
+	{
+		"id": 8,
+		"diagnostico": "Atitude em Relação ao Manejo (Controle) da Medicação, Conflituosa",
+		"metas": "Atitude em Relação ao Manejo (Controle) da Medicação",
+		"intervencoes": ["Orientar o paciente quanto ao manejo correto da medicação", "Orientar quanto à importância de manter refrigeração adequada da medicação", "Orientar quanto à importância de transporte adequado da medicação"],
+		"condutas": [
+			"Identificar barreiras e crenças errôneas sobre o uso da medicação.",
+			"Fornecer material educativo sobre o correto armazenamento da medicação.",
+			"Orientar sobre a importância da adesão ao tratamento prescrito.",
+			"Acompanhar o paciente em consultas para reforço das orientações.",
+			"Facilitar a comunicação entre paciente e equipe multidisciplinar.",
+			"Avaliar necessidade de suporte familiar para o manejo correto da medicação."
+		]
+	},
+	{
+		"id": 9,
+		"diagnostico": "Conhecimento, inadequado sobre a Medicação",
+		"metas": "Conhecimento, adequado, sobre medicação",
+		"intervencoes": [
+			"Orientar acerca do uso da medicação",
+			"Orientar automonitoramento do regime terapêutico",
+			"Orientar horário e dosagem de medicamentos",
+			"Orientar a pessoa quanto à medicação prescrita",
+			"Orientar sobre o regime terapêutico"
+		],
+		"condutas": [
+			"Avaliar o conhecimento prévio do paciente sobre a medicação.",
+			"Explicar os benefícios e riscos da medicação prescrita.",
+			"Demonstrar a forma correta de administração dos medicamentos.",
+			"Fornecer folhetos explicativos ou materiais visuais.",
+			"Reforçar a importância da adesão ao tratamento.",
+			"Esclarecer dúvidas e incentivar o paciente a relatar dificuldades no tratamento."
+		]
+	},
+	{
+		"id": 10,
+		"diagnostico": "Ansiedade, presente",
+		"metas": "Ansiedade diminuída",
+		"intervencoes": [
+			"Avaliar fatores causadores",
+			"Encorajar verbalização de sentimentos, percepções e medos",
+			"Identificar quando o nível de ansiedade se modifica",
+			"Tranquilizar a pessoa e/ou familiar",
+			"Solicitar permanência do familiar ou acompanhante"
+		],
+		"condutas": [
+			"Identificar os gatilhos da ansiedade do paciente.",
+			"Utilizar técnicas de respiração e relaxamento guiado.",
+			"Proporcionar um ambiente calmo e seguro.",
+			"Oferecer suporte emocional e escuta ativa.",
+			"Encaminhar para apoio psicológico, se necessário.",
+			"Incentivar a participação do paciente em atividades recreativas e terapêuticas."
+		]
+	},
+	{
+		"id": 11,
+		"diagnostico": "Aceitação da Condição de Saúde",
+		"metas": "Aceitação da Condição de Saúde, melhorada",
+		"intervencoes": ["Auxiliar no autocuidado", "Avaliar adesão ao regime terapêutico", "Avaliar resposta ao tratamento", "Avaliar satisfação com atenção à saúde", "Colaborar com a família"],
+		"condutas": [
+			"Estimular o paciente a expressar seus sentimentos sobre a condição de saúde.",
+			"Fornecer informações claras sobre a doença e tratamento.",
+			"Reforçar a importância do autocuidado e adesão ao tratamento.",
+			"Incluir a família no processo de aceitação e adaptação.",
+			"Identificar sinais de depressão ou resistência ao tratamento.",
+			"Encaminhar para acompanhamento psicológico ou grupos de apoio, se necessário."
+		]
+	},
+	{
+		"id": 12,
+		"diagnostico": "Conhecimento, inadequado sobre a Medicação",
+		"metas": "Conhecimento, adequado, sobre medicação",
+		"intervencoes": [
+			"Orientar acerca do uso da medicação",
+			"Orientar automonitoramento do regime terapêutico",
+			"Orientar horário e dosagem de medicamentos",
+			"Orientar a pessoa quanto à medicação prescrita",
+			"Orientar sobre o regime terapêutico"
+		],
+		"condutas": [
+			"Fornecer instruções escritas e verbais sobre a medicação.",
+			"Demonstrar técnicas de administração correta.",
+			"Explicar os efeitos colaterais mais comuns e como gerenciá-los.",
+			"Reforçar a necessidade de adesão ao regime medicamentoso.",
+			"Avaliar o entendimento do paciente por meio de questionamentos.",
+			"Incentivar o acompanhamento contínuo com a equipe de saúde."
+		]
+	},
+	{
+		"id": 13,
+		"diagnostico": "Adesão ao Regime Medicamentoso",
+		"metas": "Adesão ao Regime Medicamentoso, eficaz",
+		"intervencoes": ["Estabelecer lembretes para medicação", "Educar o paciente sobre efeitos colaterais", "Revisar a medicação em cada consulta"],
+		"condutas": [
+			"Identificar barreiras que dificultam a adesão ao tratamento.",
+			"Auxiliar na criação de um cronograma de administração dos medicamentos.",
+			"Educar o paciente sobre a importância da medicação na recuperação.",
+			"Oferecer suporte psicológico para resistência ao uso da medicação.",
+			"Verificar a necessidade de ajuste nas dosagens ou horários.",
+			"Monitorar sinais de não adesão e relatar à equipe médica."
+		]
+	},
+	{
+		"id": 14,
+		"diagnostico": "Adesão ao Regime Terapêutico",
+		"metas": "Adesão ao Regime Terapêutico, eficaz",
+		"intervencoes": ["Envolver o paciente na criação do plano terapêutico", "Oferecer suporte psicológico para barreiras", "Monitorar resultados da terapia e ajustá-los"],
+		"condutas": [
+			"Avaliar a motivação do paciente para seguir o tratamento.",
+			"Personalizar as orientações conforme a rotina do paciente.",
+			"Reforçar os benefícios do tratamento a longo prazo.",
+			"Facilitar o acesso a recursos que auxiliem na adesão.",
+			"Manter acompanhamento frequente para ajustes e suporte.",
+			"Incluir familiares ou cuidadores na rotina terapêutica, quando necessário."
+		]
+	},
+	{
+		"id": 15,
+		"diagnostico": "Agitação",
+		"metas": "Agitação controlada",
+		"intervencoes": ["Avaliar causas subjacentes da agitação", "Proporcionar um ambiente calmo e seguro"],
+		"condutas": [
+			"Observar padrões de comportamento e gatilhos da agitação.",
+			"Implementar estratégias para reduzir estímulos estressores.",
+			"Manter uma rotina estruturada e previsível para o paciente.",
+			"Utilizar técnicas de relaxamento e respiração guiada.",
+			"Encaminhar para avaliação psicológica ou psiquiátrica, se necessário.",
+			"Apoiar a família na gestão da agitação e ansiedade do paciente."
+		]
+	},
+	{
+		"id": 16,
+		"diagnostico": "Alergia presente",
+		"metas": "Alergia, ausente",
+		"intervencoes": ["Identificar alérgenos específicos", "Evitar exposição aos alérgenos identificados"],
+		"condutas": [
+			"Registrar histórico detalhado de alergias do paciente.",
+			"Manter pulseira de identificação de alergia, se necessário.",
+			"Orientar sobre sinais e sintomas de reações alérgicas graves.",
+			"Garantir acesso rápido a medicamentos antialérgicos e adrenalina.",
+			"Educar o paciente sobre medidas preventivas para evitar exposição.",
+			"Encaminhar para avaliação especializada em casos de alergia grave."
+		]
+	},
+	{
+		"id": 17,
+		"diagnostico": "Alergia a Látex",
+		"metas": "Alergia a Látex, ausente",
+		"intervencoes": ["Utilizar materiais alternativos ao látex"],
+		"condutas": [
+			"Certificar-se de que todo material utilizado seja livre de látex.",
+			"Informar a equipe de saúde sobre a alergia do paciente.",
+			"Educar o paciente e familiares sobre produtos que contenham látex.",
+			"Monitorar sinais de reação alérgica ao contato com materiais médicos.",
+			"Fornecer pulseira de identificação de alergia.",
+			"Encaminhar para acompanhamento com alergologista, se necessário."
+		]
+	},
+	{
+		"id": 18,
+		"diagnostico": "Alergia Alimentar",
+		"metas": "Alergia Alimentar, ausente",
+		"intervencoes": ["Monitorar dieta e identificar alimentos causadores de alergia", "Comunicar a nutricionista sobre as alergias do paciente"],
+		"condutas": [
+			"Registrar detalhadamente as alergias alimentares do paciente.",
+			"Fornecer orientações sobre leitura de rótulos de alimentos.",
+			"Elaborar plano alimentar seguro com nutricionista.",
+			"Monitorar sinais de reações alérgicas após ingestão acidental.",
+			"Ensinar sobre medidas emergenciais em caso de reação grave.",
+			"Encaminhar para acompanhamento com alergologista."
+		]
+	},
+	{
+		"id": 19,
+		"diagnostico": "Amplitude de Movimento Ativa, Prejudicada",
+		"metas": "Melhoria da amplitude de movimento",
+		"intervencoes": ["Realizar exercícios de alongamento e fortalecimento"],
+		"condutas": [
+			"Avaliar o grau de limitação da amplitude de movimento.",
+			"Encaminhar para fisioterapia, se necessário.",
+			"Orientar o paciente sobre a importância dos exercícios diários.",
+			"Monitorar sinais de dor ou desconforto durante os movimentos.",
+			"Auxiliar o paciente na execução correta dos exercícios.",
+			"Registrar a evolução do quadro motor do paciente."
+		]
+	},
+	{
+		"id": 20,
+		"diagnostico": "Apoio Familiar, Ausente",
+		"metas": "Apoio familiar, melhorado",
+		"intervencoes": ["Identificar barreiras para envolvimento familiar", "Encorajar a família a participar nos cuidados"],
+		"condutas": [
+			"Identificar os motivos da ausência do apoio familiar.",
+			"Promover reuniões com familiares para envolvimento no cuidado.",
+			"Fornecer suporte emocional ao paciente.",
+			"Encaminhar para assistência social, se necessário.",
+			"Criar estratégias para fortalecer a rede de apoio do paciente.",
+			"Facilitar o acesso do paciente a grupos de suporte emocional."
+		]
+	},
+	{
+		"id": 21,
+		"diagnostico": "Atenção, Prejudicada",
+		"metas": "Atenção, Melhorada",
+		"intervencoes": ["Implementar estratégias para reduzir distrações", "Fornecer atividades focadas e estruturadas", "Avaliar periodicamente a capacidade de atenção"],
+		"condutas": [
+			"Observar possíveis causas para a dificuldade de atenção.",
+			"Reduzir estímulos externos que possam causar distração.",
+			"Utilizar atividades terapêuticas para estímulo cognitivo.",
+			"Monitorar a evolução da capacidade de concentração.",
+			"Incentivar pausas e intervalos durante atividades cognitivas prolongadas.",
+			"Encaminhar para avaliação neurológica ou psicológica, se necessário."
+		]
+	},
+	{
+		"id": 22,
+		"diagnostico": "Atitude do Cuidador, Conflituosa",
+		"metas": "Atitude do Cuidador, harmonizada",
+		"intervencoes": ["Mediar discussões entre cuidadores e pacientes", "Oferecer treinamento e suporte para cuidadores", "Avaliar regularmente a interação entre cuidador e paciente"],
+		"condutas": [
+			"Identificar fatores que influenciam a atitude do cuidador.",
+			"Fornecer suporte psicológico ao cuidador, se necessário.",
+			"Realizar reuniões educativas sobre o papel do cuidador.",
+			"Promover a empatia e o entendimento das necessidades do paciente.",
+			"Criar um canal de comunicação eficiente entre cuidador e equipe de saúde.",
+			"Incentivar práticas de autocuidado para evitar estresse excessivo no cuidador."
+		]
+	},
+	{
+		"id": 23,
+		"diagnostico": "Atitude do Cuidador, Positiva",
+		"metas": "Atitude do Cuidador, positiva",
+		"intervencoes": ["Reconhecer e reforçar as práticas positivas do cuidador", "Promover o bem-estar do cuidador através de suporte contínuo", "Monitorar o impacto do suporte sobre o cuidador"],
+		"condutas": [
+			"Fornecer feedback positivo sobre o papel do cuidador.",
+			"Criar um plano de suporte emocional contínuo para o cuidador.",
+			"Monitorar sinais de sobrecarga emocional e cansaço do cuidador.",
+			"Proporcionar momentos de descanso e autocuidado para o cuidador.",
+			"Estimular o autocuidado e estratégias de enfrentamento saudáveis.",
+			"Encaminhar para grupos de apoio ao cuidador, se necessário."
+		]
+	},
+	{
+		"id": 24,
+		"diagnostico": "Atitude em Relação à Condição Nutricional, Prejudicada",
+		"metas": "Atitude em Relação à Condição Nutricional, Melhorada",
+		"intervencoes": ["Educar sobre a importância da nutrição adequada", "Avaliar crenças e atitudes nutricionais e fornecer feedback", "Implementar planos nutricionais personalizados"],
+		"condutas": [
+			"Identificar fatores que influenciam a atitude negativa sobre a nutrição.",
+			"Explicar os impactos da nutrição inadequada na saúde do paciente.",
+			"Criar estratégias personalizadas para melhorar a aceitação alimentar.",
+			"Incluir a família no processo de reeducação alimentar.",
+			"Acompanhar a evolução do estado nutricional do paciente.",
+			"Encaminhar para acompanhamento com nutricionista, se necessário."
+		]
+	},
+	{
+		"id": 25,
+		"diagnostico": "Atitude em Relação ao Cuidado, Conflituosa",
+		"metas": "Atitude em Relação ao Cuidado, Harmonizada",
+		"intervencoes": ["Facilitar a comunicação efetiva entre equipe de cuidados e paciente", "Identificar e abordar preocupações específicas do paciente e da equipe", "Promover sessões de mediação e resolução de conflitos"],
+		"condutas": [
+			"Observar sinais de resistência ou recusa ao cuidado.",
+			"Estabelecer diálogo aberto e acolhedor com o paciente.",
+			"Explicar a importância dos cuidados prestados para a recuperação.",
+			"Facilitar a participação do paciente no plano terapêutico.",
+			"Fornecer suporte emocional para reduzir conflitos.",
+			"Encaminhar para suporte psicológico, se necessário."
+		]
+	},
+	{
+		"id": 26,
+		"diagnostico": "Atitude em Relação ao Manejo (Controle) da Medicação, Conflituosa",
+		"metas": "Atitude em Relação ao Manejo da Medicação, Harmonizada",
+		"intervencoes": ["Avaliar e discutir preocupações com a medicação", "Fornecer educação detalhada sobre o regime de medicação", "Promover o entendimento e a adesão ao plano medicamentoso"],
+		"condutas": [
+			"Identificar as razões da resistência ao uso da medicação.",
+			"Fornecer informações claras sobre a importância do tratamento.",
+			"Esclarecer dúvidas e preocupações sobre os efeitos adversos.",
+			"Criar estratégias para facilitar a adesão ao tratamento.",
+			"Monitorar sinais de recusa persistente da medicação.",
+			"Encaminhar para avaliação psicológica, se necessário."
+		]
+	},
+	{
+		"id": 27,
+		"diagnostico": "Atitude em Relação ao Tratamento, Conflituosa",
+		"metas": "Atitude em Relação ao Tratamento, Harmonizada",
+		"intervencoes": ["Facilitar a compreensão dos objetivos do tratamento", "Discutir abertamente expectativas e preocupações do paciente", "Ajustar o plano de tratamento para melhor atender às necessidades do paciente"],
+		"condutas": [
+			"Identificar as dificuldades do paciente em aceitar o tratamento.",
+			"Explicar os benefícios do tratamento de forma clara e objetiva.",
+			"Incentivar a participação ativa do paciente nas decisões terapêuticas.",
+			"Criar estratégias para reduzir a resistência ao tratamento.",
+			"Garantir apoio psicológico e emocional contínuo.",
+			"Acompanhar a evolução do quadro e ajustar o tratamento conforme necessário."
+		]
+	},
+	{
+		"id": 28,
+		"diagnostico": "Atitude Familiar, Conflituosa",
+		"metas": "Atitude Familiar, Harmonizada",
+		"intervencoes": ["Promover diálogos construtivos entre membros da família", "Oferecer sessões de terapia familiar quando necessário", "Identificar e tratar as causas subjacentes dos conflitos familiares"],
+		"condutas": [
+			"Observar padrões de comunicação entre os membros da família.",
+			"Incentivar a empatia e compreensão mútua entre os familiares.",
+			"Fornecer suporte psicológico para facilitar o entendimento.",
+			"Promover reuniões familiares para alinhamento das expectativas.",
+			"Encaminhar para terapia familiar, se necessário.",
+			"Monitorar a evolução da relação familiar no cuidado ao paciente."
+		]
+	},
+	{
+		"id": 29,
+		"diagnostico": "Audição, Prejudicada",
+		"metas": "Audição, Recuperada ou Melhorada",
+		"intervencoes": ["Realizar avaliação audiológica completa", "Oferecer dispositivos de apoio auditivo", "Educar o paciente sobre maneiras de melhorar a audição"],
+		"condutas": [
+			"Avaliar o grau da perda auditiva e seu impacto na comunicação.",
+			"Fornecer instruções sobre o uso adequado de aparelhos auditivos.",
+			"Criar estratégias para melhorar a comunicação do paciente.",
+			"Garantir um ambiente adequado para facilitar a escuta.",
+			"Encaminhar para fonoaudiologia, se necessário.",
+			"Acompanhar a evolução auditiva do paciente periodicamente."
+		]
+	},
+	{
+		"id": 30,
+		"diagnostico": "Autoimagem, Negativa",
+		"metas": "Autoimagem Melhorada",
+		"intervencoes": ["Encorajar o paciente a expressar sentimentos sobre sua autoimagem", "Proporcionar suporte emocional e psicológico", "Fomentar atividades que promovam uma autoimagem positiva"],
+		"condutas": [
+			"Avaliar os fatores que influenciam a autoimagem negativa.",
+			"Promover um ambiente de aceitação e respeito.",
+			"Estimular a valorização de qualidades e conquistas pessoais.",
+			"Incentivar a participação em atividades sociais e terapêuticas.",
+			"Encaminhar para apoio psicológico, se necessário.",
+			"Monitorar sinais de baixa autoestima e transtornos emocionais."
+		]
+	},
+	{
+		"id": 31,
+		"diagnostico": "Baixa Autoeficácia",
+		"metas": "Autoeficácia Melhorada",
+		"intervencoes": ["Incentivar a realização de pequenas tarefas para aumentar a confiança", "Oferecer feedback positivo em relação às realizações"],
+		"condutas": [
+			"Identificar barreiras que afetam a autoconfiança do paciente.",
+			"Reforçar positivamente cada conquista alcançada.",
+			"Criar metas realistas e progressivas para o paciente.",
+			"Promover atividades que estimulem a independência.",
+			"Facilitar o acesso a grupos de apoio e terapia ocupacional.",
+			"Monitorar sinais de desmotivação e oferecer suporte contínuo."
+		]
+	},
+	{
+		"id": 32,
+		"diagnostico": "Baixo Peso",
+		"metas": "Peso Corporal Adequado Alcançado",
+		"intervencoes": ["Encaminhar para atenção nutricional", "Monitorar regularmente o peso e o estado nutricional do paciente"],
+		"condutas": [
+			"Identificar causas do baixo peso, como doenças subjacentes.",
+			"Orientar sobre a importância de uma alimentação adequada.",
+			"Elaborar um plano alimentar equilibrado com suporte nutricional.",
+			"Monitorar sinais de desnutrição e complicações associadas.",
+			"Incentivar a ingestão calórica e proteica conforme necessidade.",
+			"Encaminhar para especialista em nutrição, se necessário."
+		]
+	},
+	{
+		"id": 33,
+		"diagnostico": "Barreira na Comunicação",
+		"metas": "Comunicação Eficaz Alcançada",
+		"intervencoes": ["Identificar e abordar as barreiras de comunicação", "Utilizar ferramentas de comunicação alternativas, se necessário", "Oferecer suporte contínuo para melhorar a comunicação"],
+		"condutas": [
+			"Identificar fatores que afetam a comunicação do paciente.",
+			"Utilizar estratégias de comunicação adaptadas às necessidades do paciente.",
+			"Estimular o uso de recursos visuais ou auditivos para auxiliar a comunicação.",
+			"Treinar familiares e equipe sobre formas eficazes de interação.",
+			"Encaminhar para fonoaudiologia, se necessário.",
+			"Monitorar a evolução da capacidade comunicativa do paciente."
+		]
+	},
+	{
+		"id": 34,
+		"diagnostico": "Capacidade para Executar o Cuidado, Prejudicada",
+		"metas": "Capacidade para Executar o Cuidado, Melhorada",
+		"intervencoes": [
+			"Identificar os fatores que limitam a execução do cuidado",
+			"Oferecer suporte educativo ao paciente sobre práticas de autocuidado",
+			"Fornecer assistência física ao paciente quando necessário para realizar cuidados pessoais"
+		],
+		"condutas": [
+			"Avaliar os déficits que limitam a execução do autocuidado.",
+			"Criar estratégias para facilitar a autonomia do paciente.",
+			"Treinar familiares e cuidadores para o auxílio adequado.",
+			"Fornecer suporte para atividades básicas diárias.",
+			"Encaminhar para fisioterapia ou terapia ocupacional, se necessário.",
+			"Monitorar a evolução do paciente na realização do autocuidado."
+		]
+	},
+	{
+		"id": 35,
+		"diagnostico": "Capaz de Executar o Autocuidado",
+		"metas": "Autocuidado realizado com eficácia",
+		"intervencoes": [
+			"Promover o autocuidado com orientações adequadas",
+			"Auxiliar no autocuidado quando necessário, promovendo independência",
+			"Orientar o paciente sobre práticas seguras de autocuidado para manter a saúde",
+			"Acompanhar o progresso do paciente e ajustar intervenções conforme necessário"
+		],
+		"condutas": [
+			"Incentivar práticas diárias de autocuidado e higiene pessoal.",
+			"Identificar dificuldades na execução de atividades de autocuidado.",
+			"Estimular a independência progressiva do paciente.",
+			"Monitorar a eficácia das estratégias de autocuidado aplicadas.",
+			"Fornecer treinamento para melhora das habilidades funcionais.",
+			"Acompanhar e registrar a evolução do paciente periodicamente."
+		]
+	},
+	{
+		"id": 36,
+		"diagnostico": "Capaz de Comunicar-se",
+		"metas": "Comunicação eficaz alcançada",
+		"intervencoes": ["Facilitar a comunicação entre o paciente e a equipe de saúde", "Oferecer suporte em caso de dificuldades de comunicação verbal"],
+		"condutas": [
+			"Identificar dificuldades específicas de comunicação.",
+			"Estimular a expressão verbal e não verbal do paciente.",
+			"Utilizar recursos de comunicação alternativa, se necessário.",
+			"Garantir um ambiente favorável para facilitar a comunicação.",
+			"Monitorar a eficácia das estratégias de comunicação utilizadas.",
+			"Encaminhar para terapia fonoaudiológica, se necessário."
+		]
+	},
+	{
+		"id": 37,
+		"diagnostico": "Comportamento Interativo, Prejudicado",
+		"metas": "Comportamento interativo, eficaz",
+		"intervencoes": ["Promover a interação social por meio de atividades em grupo", "Identificar e remover barreiras que dificultam o comportamento interativo", "Fornecer apoio emocional e encorajamento para interações positivas"],
+		"condutas": [
+			"Observar padrões de isolamento ou dificuldade de interação.",
+			"Estimular a participação do paciente em atividades sociais.",
+			"Identificar fatores emocionais que dificultam a interação.",
+			"Encaminhar para suporte psicológico, se necessário.",
+			"Oferecer um ambiente acolhedor e seguro para socialização.",
+			"Monitorar progressos na comunicação interpessoal."
+		]
+	},
+	{
+		"id": 38,
+		"diagnostico": "Comportamento, Agressivo",
+		"metas": "Redução do comportamento agressivo",
+		"intervencoes": ["Gerenciar comportamento agressivo", "Prover técnicas de relaxamento para controle da agressividade", "Oferecer suporte emocional e criar um ambiente seguro para minimizar episódios agressivos"],
+		"condutas": [
+			"Observar os gatilhos que desencadeiam o comportamento agressivo.",
+			"Implementar estratégias para desescalar crises de agressividade.",
+			"Fornecer suporte emocional para ajudar na regulação emocional.",
+			"Manter uma abordagem calma e assertiva ao lidar com o paciente.",
+			"Encaminhar para acompanhamento psicológico ou psiquiátrico, se necessário.",
+			"Monitorar episódios de agressividade e registrar intervenções eficazes."
+		]
+	},
+	{
+		"id": 39,
+		"diagnostico": "Confusão, Aguda",
+		"metas": "Confusão resolvida ou minimizada",
+		"intervencoes": ["Monitorar sinais de confusão", "Promover ambiente seguro"],
+		"condutas": [
+			"Identificar possíveis causas da confusão aguda, como infecções ou medicamentos.",
+			"Orientar o paciente de forma clara e simples para reduzir a desorientação.",
+			"Garantir um ambiente calmo e livre de estímulos excessivos.",
+			"Supervisionar o paciente para evitar quedas ou acidentes.",
+			"Fornecer apoio emocional e segurança ao paciente.",
+			"Encaminhar para avaliação médica para determinar possíveis causas."
+		]
+	},
+	{
+		"id": 40,
+		"diagnostico": "Conhecimento sobre Doença",
+		"metas": "Conhecimento adequado sobre a doença adquirido",
+		"intervencoes": ["Obter dados sobre conhecimento da doença", "Fornecer informações claras e compreensíveis sobre a doença"],
+		"condutas": [
+			"Avaliar o nível de conhecimento do paciente sobre sua condição.",
+			"Fornecer material educativo adequado e de fácil compreensão.",
+			"Esclarecer dúvidas e corrigir crenças errôneas sobre a doença.",
+			"Estabelecer diálogo contínuo sobre o manejo da doença.",
+			"Envolver a família no processo educativo, se necessário.",
+			"Reforçar a importância do acompanhamento médico e adesão ao tratamento."
+		]
+	},
+	{
+		"id": 41,
+		"diagnostico": "Conhecimento sobre Medicação",
+		"metas": "Conhecimento adequado sobre a medicação, adquirido",
+		"intervencoes": ["Obter dados sobre conhecimento da medicação", "Orientar sobre efeitos colaterais da medicação"],
+		"condutas": [
+			"Avaliar o grau de conhecimento do paciente sobre a medicação prescrita.",
+			"Explicar os benefícios e riscos do uso correto dos medicamentos.",
+			"Demonstrar a forma correta de administração das medicações.",
+			"Fornecer material educativo para reforçar as orientações.",
+			"Monitorar possíveis efeitos adversos relatados pelo paciente.",
+			"Acompanhar a adesão ao tratamento e reforçar orientações periodicamente."
+		]
+	},
+	{
+		"id": 42,
+		"diagnostico": "Convulsão",
+		"metas": "Convulsão, ausente",
+		"intervencoes": ["Implementar regime de manejo da convulsão", "Monitorar sinais e sintomas associados à convulsão", "Proteger paciente durante a convulsão", "Comunicar ao profissional enfermeiro", "Comunicar ao médico"],
+		"condutas": [
+			"Manter a segurança do paciente durante os episódios convulsivos.",
+			"Registrar a duração e características das convulsões.",
+			"Garantir que a via aérea do paciente permaneça desobstruída.",
+			"Evitar contenções físicas bruscas para não causar lesões.",
+			"Administrar medicação prescrita para controle das crises.",
+			"Monitorar sinais vitais após o episódio e encaminhar para avaliação médica."
+		]
+	},
+	{
+		"id": 43,
+		"diagnostico": "Desequilíbrio Ácido-Base",
+		"metas": "Equilíbrio ácido-base",
+		"intervencoes": ["Encaminhar ao profissional médico responsável"],
+		"condutas": [
+			"Monitorar sinais clínicos de acidose ou alcalose.",
+			"Avaliar exames laboratoriais relacionados ao equilíbrio ácido-base.",
+			"Observar padrão respiratório e sinais de alterações neurológicas.",
+			"Administrar fluidos e eletrólitos conforme prescrição médica.",
+			"Encaminhar para avaliação médica em caso de desequilíbrio grave.",
+			"Registrar intervenções e evolução do paciente."
+		]
+	},
+	{
+		"id": 44,
+		"diagnostico": "Desequilíbrio de Eletrólitos",
+		"metas": "Equilíbrio de eletrólitos",
+		"intervencoes": ["Encaminhar ao profissional médico responsável"],
+		"condutas": [
+			"Monitorar níveis séricos de eletrólitos periodicamente.",
+			"Observar sinais clínicos de hipo ou hipereletrólitos.",
+			"Garantir hidratação adequada para equilíbrio dos eletrólitos.",
+			"Administrar reposição de eletrólitos conforme prescrição médica.",
+			"Educar o paciente sobre dieta e hábitos que afetam os eletrólitos.",
+			"Encaminhar para avaliação médica em caso de desequilíbrio grave."
+		]
+	},
+	{
+		"id": 45,
+		"diagnostico": "Desequilíbrio de Líquidos",
+		"metas": "Balanço de líquidos restabelecido",
+		"intervencoes": ["Encaminhar ao profissional médico responsável"],
+		"condutas": [
+			"Monitorar o balanço hídrico diariamente.",
+			"Observar sinais de desidratação ou sobrecarga hídrica.",
+			"Ajustar a oferta de líquidos conforme necessidade do paciente.",
+			"Controlar diurese e avaliar edemas periféricos.",
+			"Administrar fluidoterapia conforme prescrição médica.",
+			"Registrar dados e evolução do paciente periodicamente."
+		]
+	},
+	{
+		"id": 46,
+		"diagnostico": "Desidratação",
+		"metas": "Hidratação adequada",
+		"intervencoes": ["Gerenciar desidratação", "Orientar sobre desidratação", "Monitorar o balanço hídrico"],
+		"condutas": [
+			"Monitorar sinais clínicos de desidratação como mucosas secas e turgor diminuído.",
+			"Controlar ingesta hídrica diária e incentivar a hidratação adequada.",
+			"Administrar reposição de líquidos por via oral ou endovenosa, conforme necessidade.",
+			"Educar o paciente sobre os riscos da desidratação.",
+			"Observar sinais de desidratação severa e encaminhar para avaliação médica.",
+			"Registrar intervenções e resposta do paciente à hidratação."
+		]
+	},
+	{
+		"id": 47,
+		"diagnostico": "Diarreia",
+		"metas": "Diarreia ausente",
+		"intervencoes": ["Gerenciar diarreia", "Orientar sobre manejo da diarreia", "Monitorar o balanço hídrico"],
+		"condutas": [
+			"Observar frequência e características das evacuações.",
+			"Incentivar a ingestão de líquidos para prevenir desidratação.",
+			"Administrar soluções de reidratação oral, se necessário.",
+			"Identificar causas subjacentes da diarreia.",
+			"Monitorar sinais de desequilíbrio eletrolítico.",
+			"Encaminhar para avaliação médica se persistência dos sintomas."
+		]
+	},
+	{
+		"id": 48,
+		"diagnostico": "Dispneia",
+		"metas": "Dispneia Ausente",
+		"intervencoes": [
+			"Monitorar sinais vitais e nível de oxigênio",
+			"Iniciar oxigenoterapia, se necessário",
+			"Instruir o paciente sobre técnicas de respiração",
+			"Posicionar o paciente para facilitar a respiração",
+			"Encaminhar ao profissional médico responsável"
+		],
+		"condutas": [
+			"Observar padrão respiratório e uso de musculatura acessória.",
+			"Manter o paciente em posição semi-Fowler para facilitar a respiração.",
+			"Monitorar sinais de desconforto respiratório e cianose.",
+			"Administrar oxigênio conforme prescrição médica.",
+			"Ensinar técnicas de respiração para controle da dispneia.",
+			"Encaminhar para avaliação médica em caso de piora clínica."
+		]
+	},
+	{
+		"id": 49,
+		"diagnostico": "Dor, Aguda",
+		"metas": ["Dor Melhorada", "Dor Ausente"],
+		"intervencoes": [
+			"Monitorar a intensidade da dor",
+			"Administrar medicação para dor conforme prescrição",
+			"Orientar o paciente sobre técnicas de alívio da dor",
+			"Implementar intervenções não farmacológicas para controle da dor",
+			"Encaminhar ao profissional médico responsável"
+		],
+		"condutas": [
+			"Avaliar a intensidade, localização e características da dor.",
+			"Administrar analgesia conforme prescrição médica.",
+			"Aplicar medidas não farmacológicas, como compressas quentes ou frias.",
+			"Incentivar técnicas de relaxamento e distração.",
+			"Monitorar a eficácia das intervenções e ajustar conforme necessidade.",
+			"Encaminhar para equipe multidisciplinar, se necessário."
+		]
+	},
+	{
+		"id": 50,
+		"diagnostico": "Edema Periférico",
+		"metas": ["Edema Reduzido"],
+		"intervencoes": ["Monitorar sinais do edema", "Encaminhar ao profissional médico responsável", "Implementar cuidados com a pele para prevenir complicações"],
+		"condutas": [
+			"Observar e registrar a evolução do edema.",
+			"Elevar os membros afetados para reduzir o inchaço.",
+			"Aplicar compressas frias ou quentes conforme indicação.",
+			"Controlar a ingestão de líquidos e sódio, se necessário.",
+			"Administrar diuréticos conforme prescrição médica.",
+			"Encaminhar para avaliação médica se persistência do quadro."
+		]
+	},
+	{
+		"id": 51,
+		"diagnostico": "Emaciado (Emagrecido)",
+		"metas": ["Peso Aumentado", "Nutrição Adequada"],
+		"intervencoes": ["Orientar sobre a importância da nutrição adequada", "Monitorar o estado nutricional do paciente", "Registrar e avaliar o peso"],
+		"condutas": [
+			"Identificar possíveis causas do emagrecimento excessivo.",
+			"Fornecer suporte nutricional adequado ao paciente.",
+			"Incentivar alimentação calórica e proteica balanceada.",
+			"Monitorar peso e sinais de desnutrição regularmente.",
+			"Encaminhar para nutricionista para plano alimentar específico.",
+			"Avaliar necessidade de suplementação nutricional."
+		]
+	},
+	{
+		"id": 52,
+		"diagnostico": "Estresse do Cuidador",
+		"metas": ["Estresse, diminuído"],
+		"intervencoes": ["Apoiar o cuidador", "Oferecer estratégias de enfrentamento do momento"],
+		"condutas": [
+			"Identificar fatores que contribuem para o estresse do cuidador.",
+			"Oferecer suporte emocional e psicossocial.",
+			"Sugerir pausas e momentos de descanso ao cuidador.",
+			"Incentivar participação em grupos de apoio.",
+			"Orientar sobre técnicas de gerenciamento do estresse.",
+			"Encaminhar para acompanhamento psicológico, se necessário."
+		]
+	},
+	{
+		"id": 53,
+		"diagnostico": "Fadiga",
+		"metas": ["Fadiga, ausente", "Fadiga, reduzida"],
+		"intervencoes": ["Gerenciar fadiga", "Orientar sobre fadiga", "Monitorar os padrões de sono e atividade do paciente"],
+		"condutas": [
+			"Identificar possíveis causas da fadiga crônica.",
+			"Incentivar períodos de descanso ao longo do dia.",
+			"Promover uma rotina equilibrada entre atividade e repouso.",
+			"Orientar sobre alimentação adequada para melhorar energia.",
+			"Encaminhar para avaliação médica se persistência dos sintomas.",
+			"Registrar a evolução do paciente e ajustes necessários."
+		]
+	},
+	{
+		"id": 54,
+		"diagnostico": "Falta de Apetite",
+		"metas": "Ingestão alimentar melhorada",
+		"intervencoes": ["Estimular refeições em pequenos volumes e frequentes", "Aconselhar sobre escolhas alimentares saudáveis", "Monitorar sinais de desnutrição"],
+		"condutas": [
+			"Identificar fatores que contribuem para a perda do apetite.",
+			"Estimular a ingestão de líquidos e alimentos proteicos.",
+			"Evitar alimentos que possam causar aversão ao paciente.",
+			"Incentivar refeições em ambiente tranquilo e agradável.",
+			"Encaminhar para avaliação nutricional, se necessário.",
+			"Monitorar sinais de desnutrição e peso corporal periodicamente."
+		]
+	},
+	{
+		"id": 55,
+		"diagnostico": "Febre",
+		"metas": ["Febre Ausente"],
+		"intervencoes": ["Gerenciar Febre", "Orientar sobre Manejo (Controle) da Febre", "Comunicar ao profissional enfermeiro", "Comunicar ao médico", "Realizar medicação se prescrita"],
+		"condutas": [
+			"Monitorar a temperatura corporal periodicamente.",
+			"Oferecer hidratação adequada para controle da febre.",
+			"Administrar antitérmicos conforme prescrição médica.",
+			"Observar sinais de infecção e outras complicações.",
+			"Utilizar compressas mornas para conforto do paciente.",
+			"Encaminhar para avaliação médica se febre persistente."
+		]
+	},
+	{
+		"id": 56,
+		"diagnostico": "Função Cardíaca, Prejudicada",
+		"metas": ["Função cardíaca controlada"],
+		"intervencoes": ["Comunicar ao profissional enfermeiro", "Comunicar ao médico", "Monitorar sinais vitais, especialmente frequência cardíaca"],
+		"condutas": [
+			"Observar sinais de insuficiência cardíaca e arritmias.",
+			"Monitorar pressão arterial e frequência cardíaca regularmente.",
+			"Incentivar repouso e evitar esforços excessivos.",
+			"Administrar medicação conforme prescrição médica.",
+			"Educar o paciente sobre hábitos saudáveis para o coração.",
+			"Encaminhar para acompanhamento cardiológico, se necessário."
+		]
+	},
+	{
+		"id": 57,
+		"diagnostico": "Função do Sistema Gastrointestinal, Prejudicada",
+		"metas": ["Função gastrointestinal melhorada"],
+		"intervencoes": [
+			"Encaminhar ao médico gastroenterologista",
+			"Monitorar os padrões de eliminação fecal",
+			"Avaliar a dieta e a ingestão de líquidos",
+			"Avaliar sintomas gastrointestinais",
+			"Educar o paciente sobre a importância da alimentação adequada"
+		],
+		"condutas": [
+			"Observar sinais de náusea, constipação ou diarreia.",
+			"Garantir dieta equilibrada para facilitar a digestão.",
+			"Acompanhar padrões de evacuação do paciente.",
+			"Administrar medicamentos conforme prescrição médica.",
+			"Encaminhar para especialista gastroenterologista.",
+			"Registrar evolução do quadro e resposta às intervenções."
+		]
+	},
+	{
+		"id": 58,
+		"diagnostico": "Função do Sistema Respiratório, Prejudicada",
+		"metas": "Função do Sistema Respiratório, melhorada",
+		"intervencoes": [
+			"Verificar permeabilidade das vias aéreas",
+			"Monitorar sinais vitais, incluindo frequência respiratória e saturação periférica",
+			"Instruir o paciente sobre técnicas de respiração",
+			"Avaliar a presença de sons patológicos respiratórios"
+		],
+		"condutas": [
+			"Avaliar a frequência respiratória e sinais de desconforto.",
+			"Manter a permeabilidade das vias aéreas do paciente.",
+			"Utilizar técnicas de higiene brônquica para facilitar a respiração.",
+			"Encaminhar para fisioterapia respiratória, se necessário.",
+			"Administrar oxigenoterapia conforme prescrição médica.",
+			"Monitorar evolução e resposta às intervenções respiratórias."
+		]
+	},
+	{
+		"id": 59,
+		"diagnostico": "Hiperglicemia",
+		"metas": ["Glicose sanguínea normalizada"],
+		"intervencoes": [
+			"Gerenciar Hiperglicemia",
+			"Gerenciar Glicose Sanguínea",
+			"Comunicar ao Enfermeiro",
+			"Comunicar ao Médico",
+			"Certificar do uso regular das medicações",
+			"Realizar administração de medicamento, se prescrito",
+			"Orientar sobre Dieta"
+		],
+		"condutas": [
+			"Monitorar níveis de glicemia capilar regularmente.",
+			"Administrar insulina conforme prescrição médica.",
+			"Garantir hidratação adequada para evitar complicações.",
+			"Observar sinais de cetoacidose diabética.",
+			"Educar o paciente sobre controle alimentar e exercícios.",
+			"Encaminhar para endocrinologista, se necessário."
+		]
+	},
+	{
+		"id": 60,
+		"diagnostico": "Hipoglicemia",
+		"metas": ["Glicemia normalizada", "Sintomas de hipoglicemia resolvidos"],
+		"intervencoes": ["Comunicar ao enfermeiro", "Comunicar ao médico", "Gerenciar hipoglicemia", "Administrar medicamentos, se prescrito"],
+		"condutas": [
+			"Monitorar sinais de hipoglicemia, como sudorese e tontura.",
+			"Administrar glicose oral ou intravenosa conforme necessidade.",
+			"Observar resposta do paciente à correção glicêmica.",
+			"Aconselhar sobre a importância de refeições regulares.",
+			"Reavaliar a necessidade de ajuste na medicação hipoglicemiante.",
+			"Encaminhar para avaliação médica caso episódios persistam."
+		]
+	},
+	{
+		"id": 61,
+		"diagnostico": "Hipotermia",
+		"metas": ["Temperatura corporal normalizada"],
+		"intervencoes": ["Monitorar a temperatura corporal", "Oferecer cobertores térmicos", "Ajustar o ambiente para aquecimento", "Comunicar ao enfermeiro", "Comunicar ao médico"],
+		"condutas": [
+			"Observar sinais clínicos de hipotermia, como pele fria e palidez.",
+			"Manter o paciente aquecido com roupas adequadas e cobertores.",
+			"Evitar exposição prolongada a ambientes frios.",
+			"Administrar líquidos mornos para ajudar na regulação térmica.",
+			"Monitorar sinais vitais regularmente.",
+			"Encaminhar para avaliação médica, se necessário."
+		]
+	},
+	{
+		"id": 62,
+		"diagnostico": "Impotência",
+		"metas": ["Impotência diminuída", "Impotência ausente"],
+		"intervencoes": ["Oferecer suporte emocional", "Orientar sobre opções terapêuticas", "Encaminhar para avaliação médica especializada"],
+		"condutas": [
+			"Identificar fatores psicológicos ou fisiológicos que influenciam a impotência.",
+			"Fornecer suporte emocional ao paciente e parceiro(a).",
+			"Educar sobre mudanças no estilo de vida que podem melhorar a função sexual.",
+			"Encaminhar para urologista ou endocrinologista, se necessário.",
+			"Avaliar o impacto da medicação sobre a função sexual.",
+			"Reforçar a importância do acompanhamento médico contínuo."
+		]
+	},
+	{
+		"id": 63,
+		"diagnostico": "Incontinência Intestinal",
+		"metas": ["Controle da eliminação intestinal restabelecido"],
+		"intervencoes": ["Monitorar padrão de eliminação intestinal", "Orientar sobre técnicas para controle intestinal", "Encaminhar ao médico para avaliação"],
+		"condutas": [
+			"Identificar hábitos intestinais e padrões de evacuação.",
+			"Orientar sobre dieta rica em fibras e hidratação adequada.",
+			"Promover técnicas de controle esfincteriano.",
+			"Monitorar sinais de desconforto abdominal e distensão.",
+			"Encaminhar para avaliação médica ou proctológica.",
+			"Registrar evolução e resposta às intervenções propostas."
+		]
+	},
+	{
+		"id": 64,
+		"diagnostico": "Incontinência Urinária",
+		"metas": ["Incontinência urinária ausente"],
+		"intervencoes": ["Monitorar padrão de eliminação urinária", "Orientar sobre técnicas para controle urinário", "Encaminhar ao médico para avaliação"],
+		"condutas": [
+			"Observar frequência urinária e episódios de incontinência.",
+			"Orientar sobre exercícios para fortalecimento do assoalho pélvico.",
+			"Monitorar sinais de infecção urinária.",
+			"Evitar uso excessivo de diuréticos sem prescrição.",
+			"Encaminhar para urologista ou fisioterapia pélvica.",
+			"Acompanhar evolução do paciente e registrar mudanças."
+		]
+	},
+	{
+		"id": 65,
+		"diagnostico": "Infecção",
+		"metas": ["Infecção ausente"],
+		"intervencoes": ["Monitorar sinais e sintomas de infecção", "Orientar sobre medidas de higiene", "Encaminhar para avaliação médica"],
+		"condutas": [
+			"Observar febre, calafrios e alterações nos sinais vitais.",
+			"Manter rigorosa higiene das mãos e equipamentos.",
+			"Administrar antimicrobianos conforme prescrição médica.",
+			"Evitar disseminação da infecção entre pacientes.",
+			"Encaminhar para exames laboratoriais, se necessário.",
+			"Monitorar resposta ao tratamento e registrar evolução."
+		]
+	},
+	{
+		"id": 66,
+		"diagnostico": "Inflamação",
+		"metas": ["Inflamação ausente"],
+		"intervencoes": ["Monitorar sinais e sintomas de inflamação", "Aplicar medidas anti-inflamatórias conforme prescrição", "Encaminhar para avaliação médica"],
+		"condutas": [
+			"Identificar sinais locais e sistêmicos de inflamação.",
+			"Manter repouso da área afetada para facilitar recuperação.",
+			"Aplicar medidas não farmacológicas, como compressas frias.",
+			"Administrar anti-inflamatórios conforme prescrição.",
+			"Monitorar evolução da inflamação periodicamente.",
+			"Encaminhar para exames laboratoriais, se necessário."
+		]
+	},
+	{
+		"id": 67,
+		"diagnostico": "Integridade da Pele, Prejudicada",
+		"metas": ["Integridade da pele melhorada", "Integridade da pele eficaz"],
+		"intervencoes": ["Monitorar as condições da pele", "Aplicar cuidados com a pele conforme orientação", "Encaminhar para avaliação de um especialista, se necessário"],
+		"condutas": [
+			"Observar presença de lesões, úlceras ou escaras.",
+			"Manter hidratação e higiene da pele.",
+			"Aplicar curativos conforme indicação.",
+			"Incentivar mudanças de decúbito para prevenção de lesões.",
+			"Encaminhar para dermatologista ou especialista em feridas.",
+			"Monitorar a evolução da integridade da pele regularmente."
+		]
+	},
+	{
+		"id": 70,
+		"diagnostico": "Lesão",
+		"metas": ["Lesão ausente", "Cicatrização eficaz"],
+		"intervencoes": ["Monitorar a área da lesão", "Aplicar curativos apropriados", "Manter a pele ao redor da lesão limpa e seca", "Encaminhar para avaliação por especialista em feridas"],
+		"condutas": [
+			"Avaliar profundidade, extensão e características da lesão.",
+			"Realizar curativos conforme protocolo institucional.",
+			"Monitorar sinais de infecção local e inflamação.",
+			"Orientar sobre higiene da área afetada e troca de curativos.",
+			"Estimular a alimentação balanceada para favorecer a cicatrização.",
+			"Encaminhar para atendimento especializado, se necessário."
+		]
+	},
+	{
+		"id": 71,
+		"diagnostico": "Ligação Afetiva Cuidador-Criança, Prejudicada",
+		"metas": ["Ligação afetiva cuidador-criança melhorada", "Interação entre cuidador e criança eficaz"],
+		"intervencoes": [
+			"Facilitar momentos de interação positiva entre o cuidador e a criança",
+			"Orientar o cuidador sobre a importância do vínculo afetivo no desenvolvimento da criança",
+			"Encaminhar para terapia",
+			"Promover atividades que envolvam o cuidador e a criança",
+			"Fornecer suporte psicológico ao cuidador para melhorar o vínculo afetivo"
+		],
+		"condutas": [
+			"Observar sinais de rejeição ou distanciamento emocional.",
+			"Estimular o contato físico e verbal entre o cuidador e a criança.",
+			"Propor atividades lúdicas para fortalecer o vínculo afetivo.",
+			"Identificar fatores que interferem na relação cuidador-criança.",
+			"Encaminhar para terapia familiar ou psicológica, se necessário.",
+			"Monitorar evolução da interação ao longo do tempo."
+		]
+	},
+	{
+		"id": 72,
+		"diagnostico": "Manutenção da Saúde, Prejudicada",
+		"metas": ["Manutenção da saúde restabelecida"],
+		"intervencoes": ["Orientar o paciente sobre a importância de práticas preventivas de saúde", "Promover atividades educativas sobre hábitos saudáveis"],
+		"condutas": [
+			"Identificar fatores que interferem na adesão às práticas saudáveis.",
+			"Estimular a realização de exames preventivos e check-ups regulares.",
+			"Oferecer informações sobre alimentação, exercício e higiene.",
+			"Monitorar sinais de descompensação de doenças pré-existentes.",
+			"Encaminhar para atendimento multidisciplinar, se necessário.",
+			"Acompanhar a evolução da adesão a hábitos saudáveis."
+		]
+	},
+	{
+		"id": 73,
+		"diagnostico": "Medo",
+		"metas": ["Medo controlado"],
+		"intervencoes": ["Identificar a causa do medo com o paciente", "Fornecer suporte psicológico para o enfrentamento", "Encaminhar para avaliação especializada, se necessário"],
+		"condutas": [
+			"Observar sinais de ansiedade e pânico.",
+			"Criar um ambiente seguro e acolhedor para o paciente.",
+			"Utilizar técnicas de relaxamento e respiração para reduzir o medo.",
+			"Fornecer informações claras para diminuir a incerteza.",
+			"Incentivar o paciente a verbalizar seus medos.",
+			"Encaminhar para acompanhamento psicológico, se necessário."
+		]
+	},
+	{
+		"id": 74,
+		"diagnostico": "Medo da Morte",
+		"metas": ["Medo da morte controlado"],
+		"intervencoes": ["Identificar e discutir os medos relacionados à morte com o paciente", "Fornecer apoio emocional contínuo", "Encaminhar para acompanhamento com especialista"],
+		"condutas": [
+			"Observar sinais de sofrimento emocional intenso.",
+			"Estimular conversas abertas sobre sentimentos e expectativas.",
+			"Proporcionar um ambiente de acolhimento e escuta ativa.",
+			"Oferecer suporte espiritual conforme crenças do paciente.",
+			"Incentivar participação da família no apoio emocional.",
+			"Encaminhar para equipe de cuidados paliativos, se necessário."
+		]
+	},
+	{
+		"id": 75,
+		"diagnostico": "Memória, Prejudicada",
+		"metas": ["Memória, eficaz", "Memória, melhorada"],
+		"intervencoes": [
+			"Implementar técnicas de estimulação cognitiva",
+			"Orientar sobre o uso de ferramentas de memória, como anotações ou lembretes",
+			"Encaminhar para avaliação neuropsicológica, se necessário",
+			"Promover atividades que estimulem a função cognitiva"
+		],
+		"condutas": [
+			"Observar padrões de esquecimento e dificuldades cognitivas.",
+			"Incentivar atividades de estimulação cognitiva, como jogos e leitura.",
+			"Ensinar estratégias para organização e registro de informações.",
+			"Monitorar a evolução da função cognitiva ao longo do tempo.",
+			"Encaminhar para neurologista ou neuropsicólogo, se necessário.",
+			"Apoiar familiares no manejo das dificuldades do paciente."
+		]
+	},
+	{
+		"id": 76,
+		"diagnostico": "Mobilidade em Cadeira de Rodas, Prejudicada",
+		"metas": ["Mobilidade em cadeira de rodas, melhorada"],
+		"intervencoes": ["Auxiliar na mobilidade", "Manter paciente seguro"],
+		"condutas": [
+			"Avaliar limitações físicas que afetam a mobilidade.",
+			"Garantir ambiente seguro e acessível para deslocamento.",
+			"Instruir sobre técnicas adequadas de uso da cadeira de rodas.",
+			"Monitorar sinais de fadiga e desconforto durante a mobilidade.",
+			"Encaminhar para fisioterapia motora e reabilitação, se necessário.",
+			"Orientar cuidadores sobre manuseio seguro do paciente."
+		]
+	},
+	{
+		"id": 77,
+		"diagnostico": "Não Adesão ao Regime de Imunização",
+		"metas": ["Adesão ao regime de imunização alcançada"],
+		"intervencoes": ["Aconselhar o paciente sobre a importância da imunização para prevenir doenças", "Avaliar barreiras para adesão ao regime de imunização"],
+		"condutas": [
+			"Identificar motivos da não adesão à vacinação.",
+			"Esclarecer dúvidas e mitos sobre imunização.",
+			"Facilitar o acesso a locais de vacinação.",
+			"Monitorar o calendário vacinal e alertar sobre doses pendentes.",
+			"Incentivar a participação de familiares na conscientização.",
+			"Registrar vacinas administradas e acompanhamento do paciente."
+		]
+	},
+	{
+		"id": 78,
+		"diagnostico": "Náusea",
+		"metas": ["Náusea, ausente"],
+		"intervencoes": ["Realizar medicação, se prescrita", "Deixar paciente confortável", "Comunicar ao Enfermeiro", "Comunicar ao médico", "Orientar sobre manejo da náusea"],
+		"condutas": [
+			"Identificar fatores que desencadeiam a náusea.",
+			"Evitar odores fortes e alimentos de difícil digestão.",
+			"Manter paciente em posição confortável para reduzir desconforto.",
+			"Administrar antieméticos conforme prescrição médica.",
+			"Oferecer líquidos em pequenas quantidades para evitar desidratação.",
+			"Monitorar evolução e resposta ao tratamento."
+		]
+	},
+	{
+		"id": 79,
+		"diagnostico": "Negação sobre a Severidade da Doença",
+		"metas": ["Negação sobre a Severidade da Doença, ausente"],
+		"intervencoes": [
+			"Obter dados sobre a percepção do paciente em relação à severidade da doença",
+			"Orientar sobre a gravidade e consequências da doença, conforme necessário",
+			"Apoiar emocionalmente o paciente para facilitar a aceitação da condição",
+			"Encaminhar o paciente para apoio psicológico, se necessário"
+		],
+		"condutas": [
+			"Observar sinais de negação e resistência ao tratamento.",
+			"Fornecer informações claras e baseadas em evidências sobre a doença.",
+			"Utilizar estratégias de comunicação empática para facilitar a aceitação.",
+			"Incentivar participação em grupos de apoio para troca de experiências.",
+			"Envolver familiares no processo de aceitação e adesão ao tratamento.",
+			"Encaminhar para suporte psicológico ou psiquiátrico, se necessário."
+		]
+	},
+	{
+		"id": 80,
+		"diagnostico": "Pele, Seca",
+		"metas": ["Integridade da pele mantida"],
+		"intervencoes": ["Avaliar a integridade da pele", "Orientar sobre autocuidado com a pele", "Manter a pele hidratada"],
+		"condutas": [
+			"Identificar fatores que contribuem para o ressecamento da pele.",
+			"Aplicar cremes hidratantes para manter a umidade da pele.",
+			"Orientar sobre ingestão adequada de líquidos.",
+			"Evitar o uso excessivo de sabonetes agressivos e banhos quentes.",
+			"Monitorar sinais de fissuras e descamação cutânea.",
+			"Encaminhar para dermatologista, se necessário."
+		]
+	},
+	{
+		"id": 81,
+		"diagnostico": "Perfusão Tissular Periférica, Prejudicada",
+		"metas": ["Perfusão tissular periférica adequada"],
+		"intervencoes": ["Avaliar perfusão tissular periférica", "Monitorar perfusão tissular", "Implementar intervenções para melhorar a perfusão"],
+		"condutas": [
+			"Observar sinais de isquemia, como palidez e cianose.",
+			"Monitorar pulsos periféricos e temperatura da pele.",
+			"Estimular mobilização ativa para favorecer a circulação.",
+			"Administrar medicamentos vasoativos conforme prescrição médica.",
+			"Elevar membros inferiores, se indicado, para melhorar o retorno venoso.",
+			"Encaminhar para avaliação médica em casos graves."
+		]
+	},
+	{
+		"id": 82,
+		"diagnostico": "Polifármacos (ou Polifarmácia)",
+		"metas": ["Gerenciamento eficaz do regime medicamentoso"],
+		"intervencoes": [
+			"Coletar informações sobre o regime medicamentoso",
+			"Gerenciar o regime medicamentoso",
+			"Orientar sobre polifármacos",
+			"Monitorar efeitos colaterais da medicação",
+			"Identificar interações medicamentosas",
+			"Acompanhar a eficácia dos medicamentos",
+			"Orientar sobre o uso correto de cada medicação",
+			"Implementar medidas para minimizar riscos associados à polifarmácia"
+		],
+		"condutas": [
+			"Revisar periodicamente a lista de medicamentos do paciente.",
+			"Identificar interações medicamentosas e ajustar conforme necessário.",
+			"Monitorar sinais de reações adversas e toxicidade.",
+			"Educar o paciente sobre o uso correto dos medicamentos prescritos.",
+			"Coordenar com equipe médica para evitar prescrições desnecessárias.",
+			"Encaminhar para farmacêutico clínico, se necessário."
+		]
+	},
+	{
+		"id": 83,
+		"diagnostico": "Pressão Arterial, Alterada",
+		"metas": ["Pressão arterial estável"],
+		"intervencoes": [
+			"Medir e registrar a pressão arterial regularmente",
+			"Monitorar sinais vitais e alterações no estado do paciente",
+			"Orientar sobre a importância do controle da pressão arterial",
+			"Acompanhar a adesão ao tratamento e às orientações médicas",
+			"Identificar e monitorar fatores de risco para hipertensão",
+			"Promover uma dieta equilibrada e a prática de exercícios físicos"
+		],
+		"condutas": [
+			"Avaliar sinais de hipertensão ou hipotensão.",
+			"Monitorar pressão arterial em diferentes momentos do dia.",
+			"Estimular dieta com baixo teor de sódio e rica em fibras.",
+			"Incentivar atividade física regular, conforme capacidade do paciente.",
+			"Administrar medicações anti-hipertensivas conforme prescrição médica.",
+			"Encaminhar para cardiologista em casos persistentes."
+		]
+	},
+	{
+		"id": 84,
+		"diagnostico": "Raiva",
+		"metas": ["Controle da raiva mantido"],
+		"intervencoes": ["Gerenciar a raiva do paciente", "Aconselhar sobre técnicas de controle emocional", "Apoiar o paciente em situações de estresse para evitar reações de raiva"],
+		"condutas": [
+			"Observar gatilhos e padrões de comportamento agressivo.",
+			"Ensinar técnicas de respiração e relaxamento para controle emocional.",
+			"Criar um ambiente seguro para reduzir conflitos.",
+			"Estimular a verbalização dos sentimentos de forma saudável.",
+			"Encaminhar para suporte psicológico ou psiquiátrico, se necessário.",
+			"Monitorar progressos e registrar evolução do comportamento."
+		]
+	},
+	{
+		"id": 85,
+		"diagnostico": "Respiração, Prejudicada",
+		"metas": ["Respiração eficaz"],
+		"intervencoes": [
+			"Monitorar sinais vitais e respiração",
+			"Manter vias aéreas permeáveis",
+			"Orientar sobre técnicas de respiração",
+			"Oferecer oxigenoterapia conforme prescrição",
+			"Registrar a frequência respiratória e observar padrões"
+		],
+		"condutas": [
+			"Observar sinais de desconforto respiratório e dispneia.",
+			"Garantir posição adequada para facilitar a respiração.",
+			"Administrar oxigenoterapia, se indicado.",
+			"Realizar fisioterapia respiratória para melhora da função pulmonar.",
+			"Monitorar gases sanguíneos, se necessário.",
+			"Encaminhar para pneumologista em casos de insuficiência respiratória."
+		]
+	},
+	{
+		"id": 86,
+		"diagnostico": "Risco de Anafilaxia",
+		"metas": ["Risco de anafilaxia ausente"],
+		"intervencoes": ["Identificar alergias conhecidas", "Orientar sobre sinais e sintomas de anafilaxia", "Monitorar sinais vitais e estado do paciente", "Prover informações sobre evitar alérgenos conhecidos"],
+		"condutas": [
+			"Identificar histórico de reações alérgicas graves.",
+			"Manter material de emergência disponível para administração de epinefrina.",
+			"Monitorar o paciente após administração de novos medicamentos.",
+			"Educar sobre precauções e identificação precoce de sintomas.",
+			"Registrar alergias no prontuário para evitar exposições acidentais.",
+			"Encaminhar para imunologista ou alergologista, se necessário."
+		]
+	},
+	{
+		"id": 87,
+		"diagnostico": "Sinal Vital (Sinais Vitais), Alterado",
+		"metas": ["Sinais vitais normais"],
+		"intervencoes": [
+			"Monitorar sinais vitais regularmente",
+			"Registrar alterações nos sinais vitais",
+			"Identificar a causa das alterações nos sinais vitais",
+			"Notificar a equipe de saúde sobre alterações",
+			"Utilizar dispositivos de monitoramento conforme necessário"
+		],
+		"condutas": [
+			"Observar padrões anormais em sinais vitais.",
+			"Monitorar evolução e impacto das alterações.",
+			"Encaminhar para avaliação médica conforme gravidade.",
+			"Ajustar terapias conforme necessidade clínica.",
+			"Registrar intervenções e resposta ao tratamento."
+		]
+	},
+	{
+		"id": 88,
+		"diagnostico": "Sobrepeso",
+		"metas": ["Sobrepeso melhorado", "Sobrepeso ausente"],
+		"intervencoes": [
+			"Acompanhar e monitorar o peso regularmente",
+			"Orientar sobre alimentação saudável e balanceada",
+			"Promover a prática de atividade física regular",
+			"Identificar barreiras à adesão a um estilo de vida saudável",
+			"Apoiar o paciente em mudanças de comportamento para perda de peso",
+			"Encaminhar para acompanhamento nutricional, se necessário"
+		],
+		"condutas": [
+			"Monitorar IMC e circunferência abdominal periodicamente.",
+			"Identificar hábitos alimentares e sugerir alternativas saudáveis.",
+			"Estimular a prática de atividade física conforme condição do paciente.",
+			"Monitorar sinais de comorbidades relacionadas ao sobrepeso.",
+			"Fornecer suporte emocional para evitar compulsão alimentar.",
+			"Encaminhar para endocrinologista ou nutricionista, se necessário."
+		]
+	},
+	{
+		"id": 89,
+		"diagnostico": "Tristeza",
+		"metas": ["Tristeza reduzida"],
+		"intervencoes": [
+			"Apoiar o paciente na expressão de sentimentos",
+			"Identificar fatores contribuintes para a tristeza",
+			"Encaminhar para terapia ou aconselhamento psicológico, se necessário",
+			"Promover atividades que melhorem o humor",
+			"Apoiar o paciente na construção de uma rede de apoio"
+		],
+		"condutas": [
+			"Observar sinais de depressão ou isolamento social.",
+			"Estimular a verbalização de sentimentos e emoções.",
+			"Incentivar participação em atividades prazerosas e sociais.",
+			"Apoiar a família na compreensão do quadro emocional do paciente.",
+			"Encaminhar para psicoterapia ou psiquiatria, se necessário.",
+			"Monitorar evolução do humor e resposta às intervenções."
+		]
+	},
+	{
+		"id": 90,
+		"diagnostico": "Vertigem Postural (Tontura)",
+		"metas": ["Vertigem controlada"],
+		"intervencoes": ["Monitorar episódios de tontura", "Orientar o paciente sobre como evitar quedas", "Encaminhar para avaliação médica", "Registrar a frequência e duração dos episódios de tontura"],
+		"condutas": [
+			"Observar padrões de tontura e fatores desencadeantes.",
+			"Instruir sobre mudanças de posição lenta para evitar quedas.",
+			"Garantir hidratação adequada para reduzir sintomas.",
+			"Encaminhar para otorrinolaringologista ou neurologista, se necessário.",
+			"Avaliar possíveis causas, como hipotensão postural ou labirintite.",
+			"Registrar episódios e monitorar resposta ao tratamento."
+		]
+	},
+	{
+		"id": 91,
+		"diagnostico": "Vômito",
+		"metas": ["Controle do vômito"],
+		"intervencoes": ["Monitorar a frequência e a quantidade de vômito", "Orientar sobre a hidratação adequada", "Identificar possíveis causas do vômito", "Administrar medicamentos antieméticos conforme prescrição"],
+		"condutas": [
+			"Observar sinais de desidratação relacionados ao vômito excessivo.",
+			"Garantir repouso gástrico conforme necessidade do paciente.",
+			"Oferecer líquidos em pequenas quantidades para evitar agravamento.",
+			"Administrar antieméticos conforme indicação médica.",
+			"Identificar causas subjacentes, como intoxicação ou infecções.",
+			"Encaminhar para avaliação médica em casos persistentes."
+		]
+	}
+]
